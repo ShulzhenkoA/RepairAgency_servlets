@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Arimo&display=swap');
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Arimo";
+  font-weight: 300;
+  font-size: 16px;
+  color: # 555;
+  min-width: 100%;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2 ,h3, h4, h5, h6 {
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #343148;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+p {
+  line-height: 28px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: #343148;
+}
+
+a:hover {
+  color: #ff7878;
+  text-decoration: none;
+  outline: 0;
+}
+
+.navbar {
+  font-weight: 500;
+  font-size: 12px;
+  background: #343148;
+  border-color: #343148;
+}
+
+.navbar .navbar-text {
+  font-size: 22px;
+  color: #eae6da;
+  margin-left: 3px;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-nav .btn i {
+  color: #eae6da;
+}
+
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .btn i:hover,
+#pageBody .row .col-sm-3 .list-group a:hover {
+  color: #ff7878;
+}
+
+.navbar-nav .btn {
+  background: #343148;
+  border-color: #343148;
+}
+
+.col-sm-3 {
+  background-color: #cccccc;
+}
+
+.list-group,
+#pageBody .row .col-sm-9 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#pageBody .list-group a {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 5px;
+  background-color: #343148;
+  color: #eae6da;
+}
+
+#pageBody .col-md-10 {
+  background-color: #cccccc;
+  color: #343148;
+}
+
+#pageBody .col-md-6 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+
+
+#aboutUs {
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.movableIcon {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 80px;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.movableIcon:hover{
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+#contacts {
+  background-color: #cccccc;
+  color: #343148;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+#suggestions h4 {
+  padding-bottom: 40px;
+}
+
+#contacts {
+  text-align: center;
+}
+
+#footer {
+  background: #343148;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  min-width: 100%;
+  font-family: "Roboto";
+  color: #eae6da;
+}
