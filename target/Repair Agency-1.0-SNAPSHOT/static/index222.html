@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RepairAgency</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <span class="navbar-text">Агенство Ремонту Автомобілів</span>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <div class="dropdown dropleft">
+                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-globe-americas"></i>
+                        <div class="dropdown-menu" overflow="hidden">
+                            <a class="dropdown-item" href="#"><img src="img/ukr.png" alt="Ukraine flag">
+                                Українська</a>
+                            <a class="dropdown-item" href="#"><img src="img/usa.png" alt="USA flag">
+                                Англійська(США)</a>
+                        </div>
+                    </button>
+                </div>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn" data-toggle="modal" data-target="#registerForm">
+                    <i class="fas fa-user"></i> Реєстрація
+                </button>
+                <div class="modal" id="registerForm">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Реєстрація</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/login" method="post">
+                                    <div class="form-group">
+                                        <label>Ім'я:</label>
+                                        <input type="email" class="form-control" placeholder="Введіть ім'я"
+                                               name="fName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Прізівище:</label>
+                                        <input type="email" class="form-control" placeholder="Введіть прізвище"
+                                               name="lName">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Електронна пошта:</label>
+                                        <input type="email" class="form-control" placeholder="Введіть електронну пошту"
+                                               name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Пароль:</label>
+                                        <input type="password" class="form-control" placeholder="Введіть пвроль"
+                                               name="pass">
+                                    </div>
+                                    <div class="col-sm-6 offset-sm-3 submit-button">
+                                        <button type="submit" class="btn btn-block">Зареєструватися</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class=" modal-footer">
+                                <div class="col-sm-12">
+                                    <a href="" data-toggle="modal" data-target="#loginForm" data-dismiss="modal">Я вже
+                                        зареєстрований</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <button type="button" class="btn" data-toggle="modal" data-target="#loginForm">
+                    <i class="fas fa-sign-in-alt"></i> Вхід
+                </button>
+                <div class="modal" id="loginForm">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Вхід</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/login" method="post">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Введіть елуктронну пошту"
+                                               name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Введіть пароль"
+                                               name="pass">
+                                    </div>
+                                    <div class="col-sm-6 offset-sm-3 submit-button">
+                                        <button type="submit" class="btn btn-block">Увійти</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class=" modal-footer">
+                                <div class="col-sm-12">
+                                    У вас ще немає облікового запису? <a href="" data-toggle="modal"
+                                                                         data-target="#registerForm"
+                                                                         data-dismiss="modal">Зареєструватися</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" id="pageBody">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="list-group sticky-top">
+                <a href="#" class="list-group-item list-group-item-action"> Замовити ремонт </a>
+                <a href="#" class="list-group-item list-group-item-action"> Контакти </a>
+                <a href="#reviews" class="list-group-item list-group-item-action"> Відгуки </a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="col-md-12">
+                <textarea id="review-textarea" name="comment-content" placeholder="Type a new comment"></textarea>
+                <div class="col-md-4 offset-md-8">
+                    <a href="index222.html" class="btn btn-dark btn-block" role="button"> Залишити відгук</a>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-12" id="review">
+                <h5>Alfred</h5>
+                <p>Phasellus consectetuer vestibulum elit. Sed cursus turpis vitae tortor.</p>
+                <p id="reviewDateLink"><small>23.01.2016 4:23</small> | <a href="#">Відповісти</a></p>
+                <hr>
+            </div>
+            <div class="col-md-9 offset-md-3" >
+                <ul class="pagination" >
+                    <li class="pagination-previous disabled"><a href="#" >Previous</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="ellipsis"></li>
+                    <li><a href="#">13</a></li>
+                    <li><a href="#" >14</a></li>
+                    <li class="current">15</li>
+                    <li><a href="#">16</a></li>
+                    <li><a href="#">17</a></li>
+                    <li class="ellipsis"></li>
+                    <li><a href="#" >43</a></li>
+                    <li class="pagination-next "><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid" id="footer">
+    <p>
+        <script type="text/javascript">
+            var date = new Date();
+            document.write(date);
+        </script>
+    </p>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

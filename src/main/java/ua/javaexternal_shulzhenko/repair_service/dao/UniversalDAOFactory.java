@@ -48,4 +48,5 @@ public class UniversalDAOFactory implements DAO {
     public static UniversalDAOFactory getDaoFactory() {
         return DAO_FACTORY;
     }
+
 }

@@ -1,0 +1,305 @@
+[INFO ] 2020-04-23 00:01:09.140 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 00:01:30.238 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 00:26:12.273 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 00:30:18.759 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 01:09:44.551 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 01:10:02.133 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 01:11:24.263 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 01:11:41.290 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 01:38:05.074 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 01:38:23.727 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 02:05:56.791 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 02:06:15.310 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-23 02:28:16.077 ExceptionHandler:25 - Failed request (/RepairAgency/registration): javax.servlet.ServletException: File [&#47;WEB-INF&#47;jsp_pages&#47;snippets&#47;registration.jsp] not found
+org.apache.jasper.JasperException: javax.servlet.ServletException: File [&#47;WEB-INF&#47;jsp_pages&#47;snippets&#47;registration.jsp] not found
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:47) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: javax.servlet.ServletException: File [&#47;WEB-INF&#47;jsp_pages&#47;snippets&#47;registration.jsp] not found
+	at org.apache.jasper.servlet.JspServlet.handleMissingResource(JspServlet.java:407) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:374) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_c_005fwhen_005f0(core_005fpage_jsp.java:250) ~[?:?]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_c_005fchoose_005f0(core_005fpage_jsp.java:205) ~[?:?]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:155) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	... 40 more
+[INFO ] 2020-04-23 02:29:11.098 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 02:29:31.578 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 02:42:55.024 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 13:22:25.241 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 13:25:07.325 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 13:25:25.981 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 13:35:59.372 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 13:36:20.853 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 13:51:55.312 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 13:52:13.843 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 13:56:09.769 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 13:56:26.547 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 14:02:31.235 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:02:52.457 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 14:09:58.217 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:10:15.481 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 14:13:33.507 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:13:51.340 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 14:21:17.452 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:21:33.908 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-23 14:21:50.544 ExceptionHandler:25 - Failed request (/RepairAgency/login): User with this email don't exist
+ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException: User with this email don't exist
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:76) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-23 14:25:56.889 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:26:15.034 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 14:26:25.708 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 14:27:00.032 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:27:17.625 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 14:27:26.369 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 14:29:25.050 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[ERROR] 2020-04-23 14:29:34.508 ExceptionHandler:29 - Failed request (/RepairAgency/login): Cannot forward after response has been committed
+java.lang.IllegalStateException: Cannot forward after response has been committed
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:323) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:47) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:78) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[WARN ] 2020-04-23 14:29:46.119 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 14:31:29.049 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 14:31:45.850 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 14:31:54.438 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:08:23.509 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:08:47.195 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:09:01.804 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:10:23.313 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:10:41.954 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 16:11:20.033 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:11:39.785 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:12:00.845 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:13:27.142 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:13:44.450 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:13:55.318 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:16:30.843 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:16:47.148 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:16:59.322 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 16:18:04.143 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 16:19:25.123 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:22:40.526 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:22:57.189 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:23:06.199 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:25:17.472 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:25:34.401 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:25:44.265 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:29:40.462 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:29:57.241 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:30:05.963 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:41:14.165 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:41:32.047 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:41:43.741 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:42:23.462 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:42:40.923 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:42:50.260 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:49:04.867 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:49:23.884 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 16:49:31.532 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 16:50:24.375 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:50:42.190 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 16:53:38.026 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 16:53:56.061 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 17:04:47.717 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:05:06.999 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:05:19.820 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:06:59.074 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:07:16.744 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:07:26.198 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:10:27.484 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:10:45.304 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:10:52.801 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:12:19.553 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:12:36.131 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:12:45.796 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:15:28.735 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:15:47.201 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 17:16:09.934 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:16:31.934 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:18:16.758 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:20:04.577 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:20:22.530 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:20:32.969 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:21:10.711 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:21:29.943 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:21:39.733 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 17:25:34.415 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 17:25:53.924 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 17:26:03.119 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 18:50:28.126 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 18:50:54.323 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 18:51:54.780 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:07:23.488 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:07:44.997 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:07:56.083 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:13:16.946 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:16:24.966 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:16:36.934 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:20:01.425 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:20:19.097 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:20:26.923 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 19:20:46.676 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:22:52.896 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:23:11.196 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:23:22.233 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:26:46.228 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:27:02.516 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:27:12.291 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:41:26.990 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:41:46.120 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 19:41:46.822 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 19:42:38.001 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 19:42:49.411 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 19:43:18.366 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:03:11.179 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:03:30.416 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-23 20:03:40.199 ExceptionHandler:32 - Failed request (/RepairAgency/login): null
+java.lang.NullPointerException: null
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:65) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-23 20:04:53.754 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:05:11.125 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 20:06:58.088 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 20:07:49.973 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:08:07.724 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 20:08:12.590 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:08:31.484 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-23 20:08:36.450 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:09:50.331 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 20:10:00.852 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[INFO ] 2020-04-23 20:10:40.327 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-23 20:16:02.034 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-23 20:16:12.381 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 20:16:57.933 ExceptionHandler:26 - Failed request (/RepairAgency/login): User with this email don't exist
+[WARN ] 2020-04-23 20:17:53.216 ExceptionHandler:26 - Failed request (/RepairAgency/login): You entered wrong password
+[INFO ] 2020-04-23 20:18:11.910 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
