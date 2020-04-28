@@ -14,7 +14,6 @@ public class RepairAgencyApplicationListener implements ServletContextListener {
 
     private final static Logger LOGGER = LogManager.getLogger(RepairAgencyApplicationListener.class);
 
-
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         LOGGER.info("Webapp 'Repair Service' was started.");

@@ -1,7 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.services.verification;
 
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
-import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationExceptionType;
 import ua.javaexternal_shulzhenko.repair_service.models.User;
 import ua.javaexternal_shulzhenko.repair_service.services.UsersDBService;
 
@@ -12,10 +11,10 @@ public class UserVerifier {
             if (loginForm.getPassword() == user.getPassword()) {
                 return user;
             }else {
-                throw new VerificationException(VerificationExceptionType.PASS, "You have entered the wrong password");
+                throw new VerificationException(VerificationException.VerificationExceptionType.PASS);
             }
         }else {
-            throw new VerificationException(VerificationExceptionType.EMAIL, "User with this email doesn't exist");
+            throw new VerificationException(VerificationException.VerificationExceptionType.EMAIL);
         }
     }
 

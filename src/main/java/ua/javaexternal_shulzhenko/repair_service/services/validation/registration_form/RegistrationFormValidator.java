@@ -27,19 +27,19 @@ public class RegistrationFormValidator {
                     String regExp = mustConformAnnotation.regExp().getExpression();
                     String fieldValue = (String) field.get(registrationForm);
                     if (!checkRegExpCompliance(regExp, fieldValue)) {
-                        addErrorMessage(inconsistencies, field.getName());
+                       inconsistencies.put(field.getName(), "");
                     }
                 } else if (annotation instanceof Pass) {
                     pass = (String) field.get(registrationForm);
                 } else if (annotation instanceof PassConfirmation) {
                     String passConfirmation = (String) field.get(registrationForm);
                     if (!checkPasswordsCompliance(pass, passConfirmation)) {
-                        addErrorMessage(inconsistencies, field.getName());
+                        inconsistencies.put(field.getName(), "");
                     }
                 } else if (annotation instanceof Email) {
                     String email = (String) field.get(registrationForm);
                     if (!checkEmailIsFree(email)){
-                        addErrorMessage(inconsistencies, "notFreeEmail");
+                        inconsistencies.put("notFreeEmail", "");
                     }
                 }
             }
@@ -58,30 +58,5 @@ public class RegistrationFormValidator {
 
     private boolean checkEmailIsFree(String email) {
         return UsersDBService.isUserEmailFree(email);
-    }
-
-    private void addErrorMessage(Map<String, String> inconsistencies, String fieldName) {
-        switch (fieldName) {
-            case "firstName":
-                inconsistencies.put("firstName", "The name can't begin with a space or contain digits and signs."); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            case "lastName":
-                inconsistencies.put("lastName", "A surname can't begin with a space or contain digits and signs."); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            case "notFreeEmail":
-                inconsistencies.put("email", "A user with this email already exists."); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            case "email":
-                inconsistencies.put("email", "Email must conform: 'example@mail.com'"); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            case "password":
-                inconsistencies.put("pass", "The password length must be between 8 to 20. It can contain only latin letters and digits. It must contain at least one uppercase letter, lowercase letter and digit."); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            case "passwordConfirmation":
-                inconsistencies.put("passConfirmation", "Password confirmation is incorrect."); /////////I18N !!!!!!!!!!!!!!!!!!!!
-                break;
-            default:
-                break;
-        }
     }
 }

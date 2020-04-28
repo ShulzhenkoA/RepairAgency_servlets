@@ -166,16 +166,6 @@ a:hover {
   text-align: left;
 }
 
-
-.pagination::before, .pagination::after {
-  content: ' ';
-  display: table;
-}
-
-.pagination::after {
-  clear: both;
-}
-
 .pagination li {
   font-size: 12px;
   margin-right: 5px;
@@ -219,23 +209,6 @@ a:hover {
 .pagination .disabled a:hover{
   background: transparent;
   color: #cccccc;
-}
-
-.pagination .ellipsis::after {
-  content: '…';
-  padding: 3px 5px;
-}
-
-.pagination-previous a::before {
-  content: '«';
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.pagination-next a::after {
-  content: '»';
-  display: inline-block;
-  margin-left: 5px;
 }
 
 .list-group,

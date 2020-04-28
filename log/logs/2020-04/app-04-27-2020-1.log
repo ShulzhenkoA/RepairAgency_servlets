@@ -1,0 +1,1295 @@
+[INFO ] 2020-04-27 15:04:21.116 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 15:06:10.977 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 15:16:42.389 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:17:00.641 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:18:27.497 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:18:45.853 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:20:32.325 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:20:49.130 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:28:53.592 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:29:11.491 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:30:41.980 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:31:01.393 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:35:20.785 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:35:39.728 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:36:02.631 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:36:20.736 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:38:03.009 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:43:24.615 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 15:49:47.385 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 15:50:05.550 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 16:07:21.490 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:07:39.964 ExceptionHandler:29 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 16:12:46.871 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 16:13:52.801 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 16:20:37.574 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+[ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+[ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+[ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+[ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	... 31 more
+[INFO ] 2020-04-27 16:20:56.294 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 16:21:09.354 ExceptionHandler:26 - Attempt to log in using non-existing email: dfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:12.530 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:14.824 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:16.390 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:17.736 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:18.899 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:20.167 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:21.516 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:23.044 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:21:24.652 ExceptionHandler:26 - Attempt to log in using non-existing email: dfgsdfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 16:21:57.008 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 16:22:12.996 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 16:22:39.396 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:22:42.344 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 16:26:00.397 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 16:26:17.966 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 16:26:27.715 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:26:44.767 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:41.485 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:45.124 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:48.861 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:51.708 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:53.586 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:27:56.001 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:28:00.088 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:28:02.054 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 16:28:15.868 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:28:15.870 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:28:15.869 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:28:15.869 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Cannot get a connection, general error
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2048) ~[?:1.8.0_231]
+	at org.apache.commons.pool2.impl.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:590) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:432) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	... 30 more
+[INFO ] 2020-04-27 16:40:06.195 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 16:40:17.316 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:19.269 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:24.190 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:26.132 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:40.739 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:44.506 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:45.275 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:46.055 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:46.756 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:47.474 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:48.135 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:48.885 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:49.534 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:50.271 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:50.943 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:51.580 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:52.209 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:52.917 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:53.553 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:54.154 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:54.794 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:55.389 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:56.007 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:56.590 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:57.116 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:57.772 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:58.303 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:58.882 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:59.402 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:59.618 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:40:59.802 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:00.008 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:00.285 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:01.151 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:11.079 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:12.274 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:14.303 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:15.526 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:16.018 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:16.551 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:17.862 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:18.320 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:18.734 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:19.135 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:19.402 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:19.974 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:20.654 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:21.719 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 16:41:22.570 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 17:08:03.167 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 17:08:53.514 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 17:09:06.801 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:08.027 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:08.762 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:09.529 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:10.319 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:11.075 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:11.792 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:12.487 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:13.171 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:13.874 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:14.567 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:15.369 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:15.989 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:16.712 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:17.292 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:17.681 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:18.328 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:18.665 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:19.163 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:19.452 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:19.863 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:20.152 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:20.468 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:20.679 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:20.934 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:21.181 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:21.411 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:21.630 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:21.857 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:22.103 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:22.323 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:22.563 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:22.778 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:22.986 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:23.209 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:23.423 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:24.061 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:24.463 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:24.700 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:24.905 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:25.119 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:25.314 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:25.514 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:25.720 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:25.987 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:26.244 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:26.456 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:26.690 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:26.923 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:27.142 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:27.360 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:27.778 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:28.027 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:28.274 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:28.472 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:28.699 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:28.915 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:29.120 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-27 17:09:29.335 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 17:09:46.458 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 17:18:24.226 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 17:18:45.579 ExceptionHandler:26 - Attempt to log in using non-existing email: dfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 17:57:58.587 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 17:58:18.167 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 18:03:28.307 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 18:03:46.697 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 18:32:57.854 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 18:33:17.836 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-27 18:51:38.202 ExceptionHandler:35 - Failed request (/RepairAgency/language): An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:515) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:149) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	... 41 more
+Caused by: java.lang.NumberFormatException: For input string: "/RepairAgency"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043) ~[?:1.8.0_231]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[?:1.8.0_231]
+	at java.lang.Double.parseDouble(Double.java:538) ~[?:1.8.0_231]
+	at java.lang.Double.valueOf(Double.java:502) ~[?:1.8.0_231]
+	at org.apache.el.lang.ELArithmetic$DoubleDelegate.coerce(ELArithmetic.java:150) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.lang.ELArithmetic.coerce(ELArithmetic.java:385) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.lang.ELArithmetic.add(ELArithmetic.java:258) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.parser.AstPlus.getValue(AstPlus.java:40) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:190) ~[jasper-el.jar:9.0.33]
+	at org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate(PageContextImpl.java:701) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.common_005fblocks.header_jsp._jspService(header_jsp.java:151) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:149) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	... 41 more
+[ERROR] 2020-04-27 18:51:43.459 ExceptionHandler:35 - Failed request (/RepairAgency/language): An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/common_blocks/header.jsp] at line [20]
+
+17:                         <i class="fas fa-globe-americas"></i>
+18:                     </button>
+19:                     <div class="dropdown-menu">
+20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
+21:                                 src="static/img/ukr.png" alt="Ukraine flag">
+22:                             Україн�?ька
+23:                         </a>
+
+
+Stacktrace:
+	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:515) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:149) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	... 41 more
+Caused by: java.lang.NumberFormatException: For input string: "/RepairAgency"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043) ~[?:1.8.0_231]
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110) ~[?:1.8.0_231]
+	at java.lang.Double.parseDouble(Double.java:538) ~[?:1.8.0_231]
+	at java.lang.Double.valueOf(Double.java:502) ~[?:1.8.0_231]
+	at org.apache.el.lang.ELArithmetic$DoubleDelegate.coerce(ELArithmetic.java:150) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.lang.ELArithmetic.coerce(ELArithmetic.java:385) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.lang.ELArithmetic.add(ELArithmetic.java:258) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.parser.AstPlus.getValue(AstPlus.java:40) ~[jasper-el.jar:9.0.33]
+	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:190) ~[jasper-el.jar:9.0.33]
+	at org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate(PageContextImpl.java:701) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.common_005fblocks.header_jsp._jspService(header_jsp.java:151) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
+	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:149) ~[?:?]
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+	... 41 more
+[INFO ] 2020-04-27 18:54:44.153 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 18:55:04.768 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-27 18:56:31.829 ExceptionHandler:26 - Attempt to log in using non-existing email: 380937261803	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-27 19:36:06.185 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 20:07:18.739 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 20:56:29.787 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 20:56:45.766 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 22:24:35.267 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 22:24:56.985 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 22:25:05.623 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 22:25:29.668 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 22:28:57.024 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 22:29:14.232 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 22:32:56.363 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 22:33:16.262 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 22:35:09.236 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 22:35:26.966 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-27 23:56:37.548 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-27 23:57:02.787 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-27 23:57:17.983 ExceptionHandler:35 - Failed request (/RepairAgency/language): Filter execution threw an exception
+javax.servlet.ServletException: Filter execution threw an exception
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.lang.ExceptionInInitializerError
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	... 22 more
+Caused by: java.util.MissingResourceException: Can't find bundle for base name language, locale en
+	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1581) ~[?:1.8.0_231]
+	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1396) ~[?:1.8.0_231]
+	at java.util.ResourceBundle.getBundle(ResourceBundle.java:854) ~[?:1.8.0_231]
+	at ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService.<init>(LanguageResourceBundleService.java:13) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService.<clinit>(LanguageResourceBundleService.java:7) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	... 22 more
+[ERROR] 2020-04-27 23:57:53.652 ExceptionHandler:35 - Failed request (/RepairAgency/language): Filter execution threw an exception
+javax.servlet.ServletException: Filter execution threw an exception
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	... 22 more
+[ERROR] 2020-04-27 23:58:25.221 ExceptionHandler:35 - Failed request (/RepairAgency/language): Filter execution threw an exception
+javax.servlet.ServletException: Filter execution threw an exception
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.lang.NoClassDefFoundError: Could not initialize class ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	... 22 more

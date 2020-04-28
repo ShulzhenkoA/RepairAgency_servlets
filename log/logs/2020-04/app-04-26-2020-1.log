@@ -1,0 +1,518 @@
+[INFO ] 2020-04-26 02:02:13.851 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 02:06:22.196 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 02:06:54.034 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 02:07:44.094 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 02:07:58.551 ExceptionHandler:31 - Attempt to log in using non-existing email: email@email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 02:09:11.180 ExceptionHandler:35 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[ERROR] 2020-04-26 02:35:26.509 ExceptionHandler:48 - Failed request (/RepairAgency/registration): Name is null
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
+	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[WARN ] 2020-04-26 02:36:20.491 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 02:39:38.866 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 02:43:52.316 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 02:44:30.446 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 02:46:04.613 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 02:46:31.486 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 02:47:34.679 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 02:49:56.543 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 02:56:11.105 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 02:56:35.295 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 02:57:02.012 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 02:57:33.099 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 02:57:56.955 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 03:01:10.849 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 03:04:40.472 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 03:05:05.026 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 03:05:30.975 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 03:37:11.762 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 03:38:52.156 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 03:39:10.928 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 03:39:23.359 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 03:43:10.868 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 03:43:29.773 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 03:43:41.619 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 03:44:00.590 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 03:44:19.821 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 03:44:30.066 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 03:44:42.369 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 03:45:17.476 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 04:15:29.116 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 12:41:06.717 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-26 13:02:19.500 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Name is null
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
+	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:03:07.697 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Name is null
+java.lang.NullPointerException: Name is null
+	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
+	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-26 13:05:01.691 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:05:23.923 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-26 13:05:39.782 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:06:17.216 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:13:50.049 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:14:57.245 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:15:57.238 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-26 13:17:00.354 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:17:19.466 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-26 13:17:32.036 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:100) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-26 13:20:40.388 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:21:00.167 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-26 13:21:31.159 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[ERROR] 2020-04-26 13:22:08.117 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
+java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
+	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[WARN ] 2020-04-26 13:22:52.123 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 13:23:57.711 ExceptionHandler:31 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 13:25:52.421 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:26:11.524 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 13:28:01.602 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:28:22.529 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 13:46:28.978 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 13:46:49.307 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 13:59:31.671 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 14:00:08.805 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 14:00:24.973 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 14:00:40.752 ExceptionHandler:31 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:24:15.836 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:24:37.554 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:24:49.986 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:25:55.696 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:26:08.817 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:26:35.150 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:27:49.423 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:30:32.075 ExceptionHandler:54 - Attempt to log in using non-existing email: ewr	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363
+[WARN ] 2020-04-26 15:31:25.006 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363
+[WARN ] 2020-04-26 15:33:00.674 ExceptionHandler:54 - Attempt to log in using non-existing email: tito	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.18363
+[INFO ] 2020-04-26 15:39:39.956 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:39:58.047 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:40:56.073 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:42:05.264 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:42:22.304 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:42:41.344 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:44:14.445 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:44:34.233 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:44:52.069 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:45:05.008 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:45:32.349 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:45:35.329 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:45:39.340 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:46:20.395 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:47:08.547 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:49:24.085 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:49:33.194 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:50:24.931 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:50:44.826 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:51:02.230 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:51:28.944 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 15:52:58.498 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 15:53:18.182 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 15:53:34.369 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:53:46.396 ExceptionHandler:54 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:53:52.290 ExceptionHandler:54 - Attempt to log in using non-existing email: email	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 15:53:57.286 ExceptionHandler:57 - Wrong password log in attempt. User: petruk@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 16:16:35.666 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 16:16:55.103 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 16:17:34.937 ExceptionHandler:26 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[WARN ] 2020-04-26 16:37:06.842 ExceptionHandler:26 - Attempt to log in using non-existing email: gmail@jmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 16:37:29.524 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 17:32:17.090 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 17:32:37.340 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 17:35:47.195 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 17:37:12.627 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:15:11.935 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:15:28.694 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:20:07.945 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:20:28.099 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:24:30.315 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:24:48.162 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:27:01.548 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:27:19.909 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:35:10.029 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:35:31.268 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 18:38:49.157 ExceptionHandler:26 - Attempt to log in using non-existing email: emailtot	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 18:41:14.898 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:45:13.263 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:50:28.915 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:51:22.663 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:51:45.757 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:52:33.767 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 18:54:31.035 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 18:55:58.779 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 19:27:38.848 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:27:54.895 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 19:42:04.788 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:42:35.420 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 19:43:02.250 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:44:17.168 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 19:47:22.044 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:47:39.155 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[ERROR] 2020-04-26 19:48:58.396 ExceptionHandler:35 - Failed request (/RepairAgency/contacts): Cannot forward after response has been committed
+java.lang.IllegalStateException: Cannot forward after response has been committed
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:323) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:58) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:23) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+[INFO ] 2020-04-26 19:51:09.299 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:51:27.759 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 19:59:21.922 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 19:59:38.752 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 20:08:23.669 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 20:08:47.483 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[WARN ] 2020-04-26 20:10:46.268 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
+[INFO ] 2020-04-26 20:11:20.348 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
+[INFO ] 2020-04-26 20:11:35.934 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
+[INFO ] 2020-04-26 20:12:31.311 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed

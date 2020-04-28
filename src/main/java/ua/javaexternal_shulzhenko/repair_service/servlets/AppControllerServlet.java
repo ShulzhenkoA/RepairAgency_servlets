@@ -1,7 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.servlets;
 
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
-import ua.javaexternal_shulzhenko.repair_service.models.Role;
 import ua.javaexternal_shulzhenko.repair_service.models.User;
 import ua.javaexternal_shulzhenko.repair_service.services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier;
@@ -19,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 
 @WebServlet(urlPatterns = {"/reviews", "/home", "/personal_page", "/registration", "/login", "/contacts"})
 public class AppControllerServlet extends HttpServlet {
@@ -32,26 +32,25 @@ public class AppControllerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String servletPath = req.getServletPath();
 
-        if (req.getServletPath().equals("/reviews")) {
+        if (servletPath.equals("/reviews")) {
             req.setAttribute("aside_menu", "aside_menu.jsp");
             req.setAttribute("main_block", "reviews.jsp");
             int pageNum = extractPageNum(req);
             PaginationModel paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(), pageNum, 1000, 50);
             req.setAttribute("paginationModel", paginationModel);
-        } else if (req.getServletPath().equals("/home")) {
+            req.setAttribute("page", pageNum);
+        } else if (servletPath.equals("/home") || servletPath.equals("/contacts")) {
             req.setAttribute("aside_menu", "aside_menu.jsp");
             req.setAttribute("main_block", "home_common.jsp");
-        } else if (req.getServletPath().equals("/personal_page")) {
+        } else if (servletPath.equals("/personal_page")) {
             req.setAttribute("aside_menu", "aside_menu.jsp");
             req.setAttribute("main_block", "user_home.jsp");
-        } else if (req.getServletPath().equals("/login")) {
+        } else if (servletPath.equals("/login")) {
             req.setAttribute("main_block", "login_form.jsp");
-        } else if (req.getServletPath().equals("/registration")) {
+        } else if (servletPath.equals("/registration")) {
             req.setAttribute("main_block", "registration_form.jsp");
-        }else if(req.getServletPath().equals("/contacts")) {
-            req.setAttribute("aside_menu", "aside_menu.jsp");
-            req.setAttribute("main_block", "home_common.jsp");
         }
         req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
     }
@@ -76,9 +75,8 @@ public class AppControllerServlet extends HttpServlet {
                 session.setAttribute("userRole", user.getRole().name());
                 resp.sendRedirect(req.getContextPath() + "/personal_page");
             } catch (VerificationException exc) {
-                String email = req.getParameter("email");
-                req.setAttribute("prevEmail", email);
-                req.setAttribute("errorMessage", exc.getMessage());
+                req.setAttribute("prevEmail",req.getParameter("email"));
+                req.setAttribute(exc.getType().name(), "");
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 doGet(req, resp);
                 throw new VerificationException(exc.getType());

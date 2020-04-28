@@ -4,6 +4,7 @@ import ua.javaexternal_shulzhenko.repair_service.dao.result_handler.ResultHandle
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UniversalDAOFactory implements DAO {
@@ -14,15 +15,17 @@ public class UniversalDAOFactory implements DAO {
 
     @Override
     public  <T> T select(Connection connection, String sql, ResultHandler<T> resultSetHandler, Object... parameters) throws SQLException {
-        try(PreparedStatement ps = connection.prepareStatement(sql)) {
+        try(Connection currentConnection = connection; PreparedStatement ps = currentConnection.prepareStatement(sql)) {
             insertSQLParams(ps, parameters);
-            return resultSetHandler.handleResultSet(ps.executeQuery());
+            ResultSet resultSet = ps.executeQuery();
+            T entity = resultSetHandler.handleResultSet(resultSet);
+            return entity;
         }
     }
 
     @Override
     public void insert(Connection connection, String sql, Object... parameters) throws SQLException {
-        try(PreparedStatement ps = connection.prepareStatement(sql)) {
+        try(Connection currentConnection = connection; PreparedStatement ps = currentConnection.prepareStatement(sql)) {
             insertSQLParams(ps, parameters);
             ps.execute();
         }

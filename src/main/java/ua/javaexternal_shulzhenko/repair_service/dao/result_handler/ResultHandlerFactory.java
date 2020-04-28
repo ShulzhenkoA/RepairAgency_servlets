@@ -1,7 +1,5 @@
 package ua.javaexternal_shulzhenko.repair_service.dao.result_handler;
 
-import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
-import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationExceptionType;
 import ua.javaexternal_shulzhenko.repair_service.models.Order;
 import ua.javaexternal_shulzhenko.repair_service.models.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.Role;

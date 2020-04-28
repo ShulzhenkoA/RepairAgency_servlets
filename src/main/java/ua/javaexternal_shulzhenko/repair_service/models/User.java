@@ -10,8 +10,6 @@ public class User {
     private String language;
     private Role role;
 
-
-
     public int getId() {
         return id;
     }
