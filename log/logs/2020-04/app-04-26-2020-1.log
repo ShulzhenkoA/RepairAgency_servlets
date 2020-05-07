@@ -7,9 +7,9 @@
 [ERROR] 2020-04-26 02:35:26.509 ExceptionHandler:48 - Failed request (/RepairAgency/registration): Name is null
 java.lang.NullPointerException: Name is null
 	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.user.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -17,7 +17,7 @@ java.lang.NullPointerException: Name is null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -71,9 +71,9 @@ java.lang.NullPointerException: Name is null
 [ERROR] 2020-04-26 13:02:19.500 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Name is null
 java.lang.NullPointerException: Name is null
 	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.user.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -81,7 +81,7 @@ java.lang.NullPointerException: Name is null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -104,9 +104,9 @@ java.lang.NullPointerException: Name is null
 [ERROR] 2020-04-26 13:03:07.697 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Name is null
 java.lang.NullPointerException: Name is null
 	at java.lang.Enum.valueOf(Enum.java:236) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.models.Role.valueOf(Role.java:3) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.user.Role.valueOf(Role.java:3) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm.<init>(RegistrationForm.java:32) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:81) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -114,7 +114,7 @@ java.lang.NullPointerException: Name is null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -139,7 +139,7 @@ java.lang.NullPointerException: Name is null
 [ERROR] 2020-04-26 13:05:39.782 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -147,7 +147,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -170,7 +170,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:06:17.216 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -178,7 +178,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -201,7 +201,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:13:50.049 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -209,7 +209,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -232,7 +232,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:14:57.245 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -240,7 +240,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -263,7 +263,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:15:57.238 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:99) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -271,7 +271,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -296,7 +296,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:17:32.036 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:100) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:100) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -304,7 +304,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -329,7 +329,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:21:31.159 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -337,7 +337,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -360,7 +360,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 [ERROR] 2020-04-26 13:22:08.117 ExceptionHandler:49 - Failed request (/RepairAgency/registration): Cannot call sendRedirect() after the response has been committed
 java.lang.IllegalStateException: Cannot call sendRedirect() after the response has been committed
 	at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:101) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -368,7 +368,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:24) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:24) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -477,7 +477,7 @@ java.lang.IllegalStateException: Cannot call sendRedirect() after the response h
 java.lang.IllegalStateException: Cannot forward after response has been committed
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:323) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:58) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:58) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -485,7 +485,7 @@ java.lang.IllegalStateException: Cannot forward after response has been committe
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]

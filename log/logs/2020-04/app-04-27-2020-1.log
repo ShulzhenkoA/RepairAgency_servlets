@@ -25,9 +25,9 @@
 [INFO ] 2020-04-27 16:20:37.574 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -35,7 +35,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -59,8 +59,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -70,15 +70,15 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -86,7 +86,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -110,8 +110,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -121,14 +121,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 [ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -136,7 +136,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -160,8 +160,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -171,14 +171,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -186,7 +186,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -210,8 +210,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -221,15 +221,15 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -237,7 +237,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -261,8 +261,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -272,14 +272,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 [ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -287,7 +287,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -311,8 +311,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -322,15 +322,15 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:20:37.575 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -338,7 +338,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -362,8 +362,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -373,15 +373,15 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 [ERROR] 2020-04-27 16:20:37.576 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -389,7 +389,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -413,8 +413,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -424,15 +424,15 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 [ERROR] 2020-04-27 16:20:37.574 ExceptionHandler:35 - Failed request (/RepairAgency/registration): Can't get email from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get email from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.validation.registration_form.RegistrationFormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:54) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.checkEmailIsFree(RegistrationFormValidator.java:60) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator.validateRegistrationForm(RegistrationFormValidator.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:91) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -440,7 +440,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -464,8 +464,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -475,8 +475,8 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.isUserEmailFree(UsersDBService.java:51) ~[classes/:?]
 	... 31 more
 [INFO ] 2020-04-27 16:20:56.294 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [WARN ] 2020-04-27 16:21:09.354 ExceptionHandler:26 - Attempt to log in using non-existing email: dfg	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
@@ -508,9 +508,9 @@ Caused by: java.lang.InterruptedException
 [INFO ] 2020-04-27 16:28:15.868 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -518,7 +518,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -542,8 +542,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -553,14 +553,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:28:15.870 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -568,7 +568,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -592,8 +592,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -603,14 +603,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:28:15.869 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -618,7 +618,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -642,8 +642,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -653,14 +653,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:28:15.869 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -668,7 +668,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -692,8 +692,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -703,14 +703,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -718,7 +718,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -742,8 +742,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -753,14 +753,14 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [ERROR] 2020-04-27 16:28:15.868 ExceptionHandler:35 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot get a connection, general error
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot get a connection, general error
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.verification.UserVerifier.verify(UserVerifier.java:10) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:45) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator.verify(UserVerifier.java:10) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(AppControllerServlet.java:73) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -768,7 +768,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -792,8 +792,8 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 Caused by: java.sql.SQLException: Cannot get a connection, general error
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:148) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 Caused by: java.lang.InterruptedException
 	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014) ~[?:1.8.0_231]
@@ -803,8 +803,8 @@ Caused by: java.lang.InterruptedException
 	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:349) ~[commons-pool2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:29) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUserByEmail(UsersDBService.java:42) ~[classes/:?]
 	... 30 more
 [INFO ] 2020-04-27 16:40:06.195 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [WARN ] 2020-04-27 16:40:17.316 ExceptionHandler:26 - Attempt to log in using non-existing email: someemail	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.122 Safari/537.36
@@ -933,7 +933,7 @@ Caused by: java.lang.InterruptedException
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -945,7 +945,7 @@ org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/js
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -964,7 +964,7 @@ Stacktrace:
 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -972,7 +972,7 @@ Stacktrace:
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -1000,7 +1000,7 @@ Caused by: org.apache.jasper.JasperException: An exception occurred processing [
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -1057,7 +1057,7 @@ Caused by: java.lang.NumberFormatException: For input string: "/RepairAgency"
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -1069,7 +1069,7 @@ org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/js
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -1088,7 +1088,7 @@ Stacktrace:
 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:59) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -1096,7 +1096,7 @@ Stacktrace:
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -1124,7 +1124,7 @@ Caused by: org.apache.jasper.JasperException: An exception occurred processing [
 19:                     <div class="dropdown-menu">
 20:                         <a class="dropdown-item" href="${pageContext.request.contextPath + requestScope['javax.servlet.forward.servlet_path']}?lang=ukr"><img
 21:                                 src="static/img/ukr.png" alt="Ukraine flag">
-22:                             Україн�?ька
+22:                             Україн�?ька
 23:                         </a>
 
 
@@ -1197,7 +1197,7 @@ Caused by: java.lang.NumberFormatException: For input string: "/RepairAgency"
 javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -1219,7 +1219,7 @@ javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 Caused by: java.lang.ExceptionInInitializerError
-	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageHandleFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	... 22 more
@@ -1229,7 +1229,7 @@ Caused by: java.util.MissingResourceException: Can't find bundle for base name l
 	at java.util.ResourceBundle.getBundle(ResourceBundle.java:854) ~[?:1.8.0_231]
 	at ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService.<init>(LanguageResourceBundleService.java:13) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService.<clinit>(LanguageResourceBundleService.java:7) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageHandleFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	... 22 more
@@ -1237,7 +1237,7 @@ Caused by: java.util.MissingResourceException: Can't find bundle for base name l
 javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -1259,7 +1259,7 @@ javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 Caused by: java.lang.NoClassDefFoundError: Could not initialize class ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService
-	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageHandleFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	... 22 more
@@ -1267,7 +1267,7 @@ Caused by: java.lang.NoClassDefFoundError: Could not initialize class ua.javaext
 javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:200) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:21) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:21) [classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
@@ -1289,7 +1289,7 @@ javax.servlet.ServletException: Filter execution threw an exception
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 Caused by: java.lang.NoClassDefFoundError: Could not initialize class ua.javaexternal_shulzhenko.repair_service.utils.LanguageResourceBundleService
-	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.LanguageHandleFilter.doFilter(LanguageFilter.java:22) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	... 22 more

@@ -8,8 +8,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot create PoolableConnectionFactory (Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -17,7 +17,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -43,8 +43,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:669) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -61,8 +61,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
@@ -88,8 +88,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_231]
@@ -114,8 +114,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 [ERROR] 2020-04-18 02:28:47.501 ExceptionHandler:25 - Failed request (/RepairAgency/login): Can't get user from database because of: Cannot create PoolableConnectionFactory (Communications link failure
 
@@ -123,8 +123,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot create PoolableConnectionFactory (Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -132,7 +132,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -158,8 +158,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:669) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -176,8 +176,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
@@ -203,8 +203,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_231]
@@ -229,8 +229,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 [INFO ] 2020-04-18 02:30:51.264 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [INFO ] 2020-04-18 02:31:08.328 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
@@ -240,8 +240,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get user from database because of: Cannot create PoolableConnectionFactory (Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.)
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:44) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.LoginServlet.doPost(LoginServlet.java:27) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -249,7 +249,7 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -275,8 +275,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:669) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -293,8 +293,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
 
@@ -320,8 +320,8 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 Caused by: java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.connect0(Native Method) ~[?:1.8.0_231]
@@ -346,8 +346,8 @@ Caused by: java.net.ConnectException: Connection refused: connect
 	at org.apache.commons.dbcp2.BasicDataSource.createPoolableConnectionFactory(BasicDataSource.java:665) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.createDataSource(BasicDataSource.java:544) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.BasicDataSource.getConnection(BasicDataSource.java:753) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.utils.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool.getConnection(DBConnectionsPool.java:25) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUser(UserDBService.java:41) ~[classes/:?]
 	... 28 more
 [INFO ] 2020-04-18 02:42:04.502 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [INFO ] 2020-04-18 03:08:12.235 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
@@ -377,7 +377,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 [INFO ] 2020-04-18 03:39:03.341 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-18 03:39:14.815 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
 ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
-	at ua.javaexternal_shulzhenko.repair_service.servlets.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -385,7 +385,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]

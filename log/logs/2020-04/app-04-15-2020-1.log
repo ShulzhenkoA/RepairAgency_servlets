@@ -1,7 +1,7 @@
 [INFO ] 2020-04-15 19:14:33.896 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-15 19:14:56.564 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
 ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
-	at ua.javaexternal_shulzhenko.repair_service.servlets.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -9,7 +9,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -35,7 +35,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 [INFO ] 2020-04-15 19:31:30.357 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-15 19:53:11.904 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
 ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
-	at ua.javaexternal_shulzhenko.repair_service.servlets.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -43,7 +43,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -65,7 +65,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-04-15 19:59:29.322 ExceptionHandler:25 - Failed request (/RepairAgency/login): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.LoginServlet.doPost(LoginServlet.java:33) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.LoginServlet.doPost(LoginServlet.java:33) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -73,7 +73,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]

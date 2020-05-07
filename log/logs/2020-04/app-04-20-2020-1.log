@@ -17,7 +17,7 @@
 [INFO ] 2020-04-20 20:04:15.096 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-20 20:05:27.153 ExceptionHandler:25 - Failed request (/RepairAgency/login): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.AppControllerServlet.doPost(Servlet.java:48) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doPost(Servlet.java:48) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -25,7 +25,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]

@@ -3,8 +3,8 @@
 [INFO ] 2020-04-19 20:30:46.936 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-19 20:31:43.420 ExceptionHandler:25 - Failed request (/RepairAgency/registration): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -12,7 +12,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -34,8 +34,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-04-19 20:34:14.264 ExceptionHandler:25 - Failed request (/RepairAgency/registration): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -43,7 +43,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -65,8 +65,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-04-19 20:36:25.023 ExceptionHandler:25 - Failed request (/RepairAgency/registration): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -74,7 +74,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -96,8 +96,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-04-19 20:37:23.408 ExceptionHandler:25 - Failed request (/RepairAgency/registration): null
 java.lang.NullPointerException: null
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.extractUserFromRequest(RegistrationServlet.java:43) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.doPost(RegistrationServlet.java:26) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -105,7 +105,7 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -127,8 +127,8 @@ java.lang.NullPointerException: null
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-04-19 20:37:53.366 ExceptionHandler:25 - Failed request (/RepairAgency/registration): Can't add user to database because of: Column 'first_name' cannot be null
 ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't add user to database because of: Column 'first_name' cannot be null
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.addUser(UserDBService.java:26) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.servlets.RegistrationServlet.doPost(RegistrationServlet.java:27) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.addUser(UserDBService.java:26) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.RegistrationServlet.doPost(RegistrationServlet.java:27) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -136,7 +136,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionExceptio
 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandler.doFilter(ExceptionHandler.java:23) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandler.java:23) [classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
@@ -164,8 +164,8 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'first_name
 	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370) ~[mysql-connector-java-8.0.19.jar:8.0.19]
 	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:94) ~[commons-dbcp2-2.7.0.jar:2.7.0]
 	at org.apache.commons.dbcp2.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:94) ~[commons-dbcp2-2.7.0.jar:2.7.0]
-	at ua.javaexternal_shulzhenko.repair_service.dao.UniversalDAOFactory.insert(UniversalDAOFactory.java:27) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.services.UsersDBService.addUser(UserDBService.java:23) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.insert(UniversalDAOFactory.java:27) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.addUser(UserDBService.java:23) ~[classes/:?]
 	... 28 more
 [INFO ] 2020-04-19 20:39:44.120 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [INFO ] 2020-04-19 20:40:03.507 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.

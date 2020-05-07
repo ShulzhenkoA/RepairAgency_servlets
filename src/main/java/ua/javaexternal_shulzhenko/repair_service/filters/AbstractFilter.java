@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public abstract class AbstractFilter implements Filter {
 
-    protected static final Logger LOGGER = LogManager.getLogger(ExceptionHandler.class);
+    protected static final Logger LOGGER = LogManager.getLogger(ExceptionHandleFilter.class);
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {

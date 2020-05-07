@@ -8,24 +8,35 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error</location>
+    </error-page>
+
     <filter-mapping>
         <filter-name>ExceptionHandler</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
-        <filter-name>SessionHandler</filter-name>
+        <filter-name>SessionCreator</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
-        <filter-name>LanguageCookieCreator</filter-name>
+        <filter-name>LanguageHandler</filter-name>
         <url-pattern>/language</url-pattern>
     </filter-mapping>
 
     <filter-mapping>
-        <filter-name>LanguageChanger</filter-name>
-        <url-pattern>/language</url-pattern>
+        <filter-name>AuthorizationHandler</filter-name>
+        <url-pattern>/create_order</url-pattern>
+        <url-pattern>/user_home</url-pattern> <!-- Change it -->
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/registration</url-pattern>
+        <url-pattern>/admin_home</url-pattern>
+        <url-pattern>/man_mas_registration</url-pattern>
+        <url-pattern>/user_deleting</url-pattern>
     </filter-mapping>
 
     <session-config>
