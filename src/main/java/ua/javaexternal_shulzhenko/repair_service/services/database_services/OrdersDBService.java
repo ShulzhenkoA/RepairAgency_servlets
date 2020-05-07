@@ -1,6 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.services.database_services;
 
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
+import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.Queries;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultTemplate;
@@ -17,7 +18,7 @@ public class OrdersDBService {
 
     private static final UniversalDAOFactory DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
 
-    public static void addOrder(Order order){
+    public static void addOrder(Order order) {
         LinkedList<Object> orderFields = new LinkedList<>();
         extractOrderFields(order, orderFields);
         try {
@@ -39,7 +40,7 @@ public class OrdersDBService {
         objects.add(order.getStatus().name());
     }
 
-    public static Order getLastOrderForUser(int userId) {
+    public static Order getLastOrderForRegUser(int userId) {
         try {
             return (Order) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
                     Queries.SELECT_LAST_USER_ORDER.getQuery(), ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDER), userId);
@@ -48,46 +49,131 @@ public class OrdersDBService {
         }
     }
 
-    public static List<Order> getUserOrdersByStatusOffsetAmount(int userId, int offset, int amount, OrderStatus status){
+    public static List<Order> getOrdersByOffsetAmountStatus(User user, int offset, int amount, OrderStatus status) {
         try {
-            return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.SELECT_ORDERS_BY_STATUS_OFFSET_AMOUNT.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    userId, status.name(), offset, amount);
-        }catch (SQLException exc){
+            switch (user.getRole()) {
+                case CUSTOMER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            user.getId(), status.name(), offset, amount);
+                case MASTER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            user.getId(), status.name(), offset, amount);
+                case MANAGER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            status.name(), offset, amount);
+                default:
+                    throw new DataBaseInteractionException("Can't get orders from database for this user role.");
+            }
+        } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
         }
     }
 
-    public static int getUserOrdersAmountByStatus(int userId, OrderStatus status){
+    public static List<Order> getOrdersByOffsetAmountExcludeStatus(User user, int offset, int amount, OrderStatus status) {
         try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT), userId, status.name());
-        }catch (SQLException exc){
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static List<Order> getUserOrdersByOffsetAmountExcludeStatus(int userId, int offset, int amount, OrderStatus status){
-        try {
-            return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    userId, status.name(), offset, amount);
-        }catch (SQLException exc){
+            switch (user.getRole()) {
+                case CUSTOMER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            user.getId(), status.name(), offset, amount);
+                case MASTER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            user.getId(), status.name(), offset, amount);
+                case MANAGER:
+                    return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                            status.name(), offset, amount);
+                default:
+                    throw new DataBaseInteractionException("Can't get orders from database for this user role.");
+            }
+        } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
         }
     }
 
-    public static int getUserOrdersAmountByExcludeStatus(int userId, OrderStatus status){
+    public static int getOrdersAmountByStatus(User user, OrderStatus status) {
         try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT), userId, status.name());
-        }catch (SQLException exc){
+            switch (user.getRole()) {
+                case CUSTOMER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.CUSTOMER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            user.getId(), status.name());
+                case MASTER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MASTER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            user.getId(), status.name());
+                case MANAGER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MANAGER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            status.name());
+                default:
+                    throw new DataBaseInteractionException("Can't get orders amount from database for this user role.");
+            }
+        } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
         }
     }
+
+    public static int getOrdersAmountByExcludeStatus(User user, OrderStatus status) {
+        try {
+            switch (user.getRole()) {
+                case CUSTOMER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.CUSTOMER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            user.getId(), status.name());
+                case MASTER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MASTER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            user.getId(), status.name());
+                case MANAGER:
+                    return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                            Queries.MANAGER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
+                            ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                            status.name());
+                default:
+                    throw new DataBaseInteractionException("Can't get orders amount from database for this user role.");
+            }
+        } catch (SQLException exc) {
+            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
+        }
+    }
+
+    public static List<Order> getOrdersByAmountOffsetTwoStatuses(int offset, int amount, OrderStatus... statuses) {
+        try {
+            return (List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                    Queries.MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_STATUSES.getQuery(),
+                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
+                    statuses[0].name(), statuses[1].name(), offset, amount);
+        } catch (SQLException exc) {
+            throw new DataBaseInteractionException("Can't get orders from database of such statuses because of: " + exc.getMessage(), exc);
+        }
+    }
+
+    public static int getOrdersAmountByTwoStatuses(OrderStatus... statuses) {
+        try {
+            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                    Queries.MANAGER_SELECT_ORDERS_AMOUNT_BY_TWO_STATUSES.getQuery(),
+                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
+                    statuses[0].name(), statuses[1].name());
+        } catch (SQLException exc) {
+            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
+        }
+    }
+
 
 }

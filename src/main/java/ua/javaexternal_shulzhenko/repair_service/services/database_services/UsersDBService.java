@@ -49,6 +49,27 @@ public class UsersDBService {
         }
     }
 
+    public static List<User> getUsersByRoleOffsetAmount(Role role, int offset, int amount){
+        try {
+            return (List<User>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                    Queries.SELECT_USERS_BY_ROLE_OFFSET_AMOUNT.getQuery(),
+                    ResultHandlerFactory.HANDLER.get(ResultTemplate.USERS),
+                    role.name(), offset, amount);
+        } catch (SQLException exc) {
+            throw new DataBaseInteractionException("Can't get users from database because of: " + exc.getMessage(), exc);
+        }
+    }
+
+    public static int getUsersAmountByRole(Role role){
+        try {
+            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+                    Queries.SELECT_USERS_AMOUNT_BY_ROLE.getQuery(),
+                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT), role.name());
+        } catch (SQLException exc) {
+            throw new DataBaseInteractionException("Can't get users amount from database because of: " + exc.getMessage(), exc);
+        }
+    }
+
     public static User getUserByEmail(String email) {
         try {
             return (User) DAO_FACTORY.select(DBConnectionsPool.getConnection(), Queries.SELECT_USER_BY_EMAIL.getQuery(),

@@ -6,8 +6,8 @@ import java.util.List;
 public enum Role {
     ADMIN(Arrays.asList("/admin_home", "/man_mas_registration", "/user_deleting")),
     MANAGER(Arrays.asList("/personal_page")),
-    MASTER(Arrays.asList("/master_page")),
-    REGISTERED_USER(Arrays.asList("/user_home", "/user_order_history","/create_order")),
+    MASTER(Arrays.asList("/master_home", "/master_completed_orders")),
+    CUSTOMER(Arrays.asList("/customer_home", "/customer_order_history","/create_order")),
     UNKNOWN(Arrays.asList("/login", "/registration"));
 
     private List<String> urls;

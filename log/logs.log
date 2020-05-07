@@ -1,22 +1,504 @@
-[INFO ] 2020-05-07 00:58:08.904 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 00:58:54.229 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 02:15:23.020 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 02:16:25.580 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 02:49:03.129 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 02:49:25.626 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 02:56:33.292 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 02:56:53.820 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 02:59:39.164 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 03:01:10.358 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 03:07:55.423 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 03:08:19.851 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[WARN ] 2020-05-07 03:09:00.853 ExceptionHandleFilter:30 - Wrong password log in attempt. User: grisha@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
-[INFO ] 2020-05-07 03:13:34.409 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 12:23:31.122 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 12:54:15.395 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 12:58:46.382 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[ERROR] 2020-05-07 13:00:27.923 ExceptionHandleFilter:46 - Failed request (/RepairAgency/user_home): javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: Tag file directory [/WEB-INF/cust_tags.tld] does not start with "/WEB-INF/tags"
-org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: Tag file directory [/WEB-INF/cust_tags.tld] does not start with "/WEB-INF/tags"
+[INFO ] 2020-05-08 00:38:02.476 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 00:38:38.339 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 00:39:01.153 ExceptionHandleFilter:45 - Failed request (/RepairAgency/manager_home). Internal server error: 500 Can't get orders from database because of: Parameter index out of range (4 > number of parameters, which is 3).
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get orders from database because of: Parameter index out of range (4 > number of parameters, which is 3).
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByOffsetAmountStatus(OrdersDBService.java:74) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:108) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Parameter index out of range (4 > number of parameters, which is 3).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1372) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1385) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setObject(ClientPreparedStatement.java:1669) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.setObject(DelegatingPreparedStatement.java:519) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.setObject(DelegatingPreparedStatement.java:519) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.insertSQLParams(UniversalDAOFactory.java:52) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:18) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByOffsetAmountStatus(OrdersDBService.java:66) ~[classes/:?]
+	... 33 more
+[INFO ] 2020-05-08 00:44:24.811 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 00:44:46.582 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 00:53:03.037 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 00:53:22.005 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 00:58:02.881 ExceptionHandleFilter:45 - Failed request (/RepairAgency/order_history). Internal server error: 500 Can't get orders from database of such statuses because of: No value specified for parameter 4
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get orders from database of such statuses because of: No value specified for parameter 4
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:165) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:123) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: No value specified for parameter 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1020) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:160) ~[classes/:?]
+	... 33 more
+[ERROR] 2020-05-08 00:58:57.933 ExceptionHandleFilter:45 - Failed request (/RepairAgency/customers). Internal server error: 500 Can't get users amount from database because of: Table 'repair_agency.user' doesn't exist
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get users amount from database because of: Table 'repair_agency.user' doesn't exist
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRole(UsersDBService.java:58) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:131) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'repair_agency.user' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRole(UsersDBService.java:54) ~[classes/:?]
+	... 33 more
+[ERROR] 2020-05-08 00:59:01.847 ExceptionHandleFilter:45 - Failed request (/RepairAgency/masters). Internal server error: 500 Can't get users amount from database because of: Table 'repair_agency.user' doesn't exist
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get users amount from database because of: Table 'repair_agency.user' doesn't exist
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRole(UsersDBService.java:58) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:135) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'repair_agency.user' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRole(UsersDBService.java:54) ~[classes/:?]
+	... 33 more
+[INFO ] 2020-05-08 01:02:20.255 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:03:10.112 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 01:03:34.129 ExceptionHandleFilter:45 - Failed request (/RepairAgency/order_history). Internal server error: 500 Can't get orders from database of such statuses because of: No value specified for parameter 4
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get orders from database of such statuses because of: No value specified for parameter 4
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:167) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:123) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: No value specified for parameter 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1020) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:162) ~[classes/:?]
+	... 33 more
+[INFO ] 2020-05-08 01:06:59.941 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:07:19.712 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 01:08:24.183 ExceptionHandleFilter:45 - Failed request (/RepairAgency/order_history). Internal server error: 500 Can't get orders from database of such statuses because of: No value specified for parameter 4
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get orders from database of such statuses because of: No value specified for parameter 4
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:167) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:123) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: No value specified for parameter 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1020) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:19) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:162) ~[classes/:?]
+	... 33 more
+[ERROR] 2020-05-08 01:08:39.167 ExceptionHandleFilter:45 - Failed request (/RepairAgency/order_history). Internal server error: 500 Can't get orders from database of such statuses because of: No value specified for parameter 4
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get orders from database of such statuses because of: No value specified for parameter 4
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:167) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:123) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: No value specified for parameter 4
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1020) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:122) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:19) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService.getOrdersByAmountOffsetTwoStatuses(OrdersDBService.java:162) ~[classes/:?]
+	... 33 more
+[INFO ] 2020-05-08 01:15:16.634 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:15:35.342 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 01:24:24.014 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:24:47.844 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 01:30:18.867 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:30:42.675 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 01:32:20.166 ExceptionHandleFilter:45 - Failed request (/RepairAgency/customers). Internal server error: 500 Can't get users amount from database because of: Column 'amount' not found.
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get users amount from database because of: Column 'amount' not found.
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:59) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:132) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Column 'amount' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:807) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultHandlerFactory.lambda$static$5(ResultHandlerFactory.java:96) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:54) ~[classes/:?]
+	... 33 more
+[ERROR] 2020-05-08 01:32:34.760 ExceptionHandleFilter:45 - Failed request (/RepairAgency/customers). Internal server error: 500 Can't get users amount from database because of: Column 'amount' not found.
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get users amount from database because of: Column 'amount' not found.
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:59) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:132) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Column 'amount' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:807) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultHandlerFactory.lambda$static$5(ResultHandlerFactory.java:96) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:54) ~[classes/:?]
+	... 33 more
+[ERROR] 2020-05-08 01:32:35.800 ExceptionHandleFilter:45 - Failed request (/RepairAgency/masters). Internal server error: 500 Can't get users amount from database because of: Column 'amount' not found.
+ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException: Can't get users amount from database because of: Column 'amount' not found.
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:59) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:137) ~[classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
+	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
+Caused by: java.sql.SQLException: Column 'amount' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:548) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:807) ~[mysql-connector-java-8.0.19.jar:8.0.19]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at org.apache.commons.dbcp2.DelegatingResultSet.getInt(DelegatingResultSet.java:633) ~[commons-dbcp2-2.7.0.jar:2.7.0]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultHandlerFactory.lambda$static$5(ResultHandlerFactory.java:96) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory.select(UniversalDAOFactory.java:20) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService.getUsersAmountByRoleOffsetAmount(UsersDBService.java:54) ~[classes/:?]
+	... 33 more
+[INFO ] 2020-05-08 01:39:11.675 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:39:35.164 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 01:48:03.116 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:48:24.508 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 01:52:23.836 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 01:52:42.003 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[INFO ] 2020-05-08 02:04:20.615 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 02:04:42.847 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
+[ERROR] 2020-05-08 02:06:30.968 ExceptionHandleFilter:45 - Failed request (/RepairAgency/admin_home). Internal server error: 500 javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
+org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
@@ -31,7 +513,7 @@ org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet
 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:90) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:166) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -68,14 +550,14 @@ org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
-Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: Tag file directory [/WEB-INF/cust_tags.tld] does not start with "/WEB-INF/tags"
+Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:663) ~[jasper.jar:9.0.33]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:205) ~[?:?]
 	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: Tag file directory [/WEB-INF/cust_tags.tld] does not start with "/WEB-INF/tags"
+Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:413) ~[?:?]
 	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
@@ -89,148 +571,35 @@ Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: Ta
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: org.apache.jasper.JasperException: Tag file directory [/WEB-INF/cust_tags.tld] does not start with "/WEB-INF/tags"
-	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:55) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:294) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:81) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.ImplicitTagLibraryInfo.<init>(ImplicitTagLibraryInfo.java:86) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Parser.parseTaglibDirective(Parser.java:445) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Parser.parseDirective(Parser.java:489) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1445) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Parser.parse(Parser.java:144) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:244) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:105) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:206) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:386) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:400) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
-	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke2(core_005fpage_jsp.java:378) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:405) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp.access$1(core_005fpage_jsp.java:302) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke0(core_005fpage_jsp.java:344) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:399) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag.doTag(BlocksParentTag.java:13) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005fblocks_005f0(core_005fpage_jsp.java:275) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:175) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-[ERROR] 2020-05-07 13:01:29.186 ExceptionHandleFilter:46 - Failed request (/RepairAgency/user_home): javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/user_page.jsp (line: [21], column: [12]) Unable to find setter method for attribute: [loop_count_num]
-org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/user_page.jsp (line: [21], column: [12]) Unable to find setter method for attribute: [loop_count_num]
-	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:90) ~[classes/:?]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:21) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
-Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/user_page.jsp (line: [21], column: [12]) Unable to find setter method for attribute: [loop_count_num]
-	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:663) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:205) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/user_page.jsp (line: [21], column: [12]) Unable to find setter method for attribute: [loop_count_num]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:413) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp.access$1(core_005fpage_jsp.java:302) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke0(core_005fpage_jsp.java:344) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:399) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag.doTag(BlocksParentTag.java:13) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005fblocks_005f0(core_005fpage_jsp.java:275) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:175) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-Caused by: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/user_page.jsp (line: [21], column: [12]) Unable to find setter method for attribute: [loop_count_num]
+Caused by: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:115) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.evaluateAttribute(Generator.java:3015) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.generateSetters(Generator.java:3235) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.generateCustomDoTag(Generator.java:2663) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1905) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:871) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1927) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1927) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator$GenerateVisitor.visit(Generator.java:1927) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Root.accept(Node.java:470) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Generator.generate(Generator.java:3676) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:257) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1857) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:224) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:386) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346) ~[jasper.jar:9.0.33]
@@ -259,32 +628,8 @@ Caused by: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/use
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-[INFO ] 2020-05-07 13:21:49.162 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 13:22:07.391 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[ERROR] 2020-05-07 13:22:30.736 ExceptionHandleFilter:46 - Failed request (/RepairAgency/user_home): javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
-
-Stacktrace:
-org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
-
-Stacktrace:
+[ERROR] 2020-05-08 02:06:36.961 ExceptionHandleFilter:45 - Failed request (/RepairAgency/man_mas_registration). Internal server error: 500 javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
+org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
@@ -299,7 +644,7 @@ Stacktrace:
 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:90) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:166) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -336,36 +681,14 @@ Stacktrace:
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
-Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
-
-Stacktrace:
+Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:663) ~[jasper.jar:9.0.33]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:205) ~[?:?]
 	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
-
-Stacktrace:
+Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:413) ~[?:?]
 	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
@@ -379,20 +702,40 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
-
-Stacktrace:
-	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:515) ~[jasper.jar:9.0.33]
+Caused by: org.apache.jasper.JasperException: /WEB-INF/jsp_pages/main_blocks/admin_page.jsp (line: [15], column: [16]) According to the TLD or the tag file, attribute [loop_num] is mandatory for tag [user_info]
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:42) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:292) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:115) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:871) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:907) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1544) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2441) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2447) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Root.accept(Node.java:470) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2389) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1857) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:224) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:386) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:605) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:400) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
@@ -416,66 +759,14 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: java.lang.NumberFormatException: For input string: ""
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:592) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:615) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.tags.entity_num.EntityNumOnPage.doTag(EntityNumOnPage.java:20) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_other_005fcust_005fentity_002dpage_002dcounter_005f0(user_005fpage_jsp.java:460) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fforEach_005f0(user_005fpage_jsp.java:413) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fwhen_005f0(user_005fpage_jsp.java:366) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fchoose_005f0(user_005fpage_jsp.java:325) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspService(user_005fpage_jsp.java:173) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
-	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke2(core_005fpage_jsp.java:378) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:405) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp.access$1(core_005fpage_jsp.java:302) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke0(core_005fpage_jsp.java:344) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:399) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag.doTag(BlocksParentTag.java:13) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005fblocks_005f0(core_005fpage_jsp.java:275) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:175) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-[INFO ] 2020-05-07 13:24:37.669 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 13:24:53.068 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[ERROR] 2020-05-07 13:25:07.245 ExceptionHandleFilter:46 - Failed request (/RepairAgency/user_home): javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
+[ERROR] 2020-05-08 02:06:39.549 ExceptionHandleFilter:45 - Failed request (/RepairAgency/admin_home). Internal server error: 500 javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [WEB-INF/jsp_pages/core_page.jsp] at line [42]
 
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
+null
 
 Stacktrace:
-org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
+org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [WEB-INF/jsp_pages/core_page.jsp] at line [42]
 
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
+null
 
 Stacktrace:
 	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
@@ -492,7 +783,7 @@ Stacktrace:
 	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:90) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:166) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
@@ -529,16 +820,9 @@ Stacktrace:
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
-Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
+Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [WEB-INF/jsp_pages/core_page.jsp] at line [42]
 
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
+null
 
 Stacktrace:
 	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:663) ~[jasper.jar:9.0.33]
@@ -547,16 +831,9 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
+Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [WEB-INF/jsp_pages/core_page.jsp] at line [42]
 
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
+null
 
 Stacktrace:
 	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:413) ~[?:?]
@@ -572,20 +849,13 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
+Caused by: org.apache.jasper.JasperException: An exception occurred processing [WEB-INF/jsp_pages/core_page.jsp] at line [42]
 
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}" page_num="${param.page}"/>
-22: 
-23:             <cust:order order_obejct="${order}"/>
-24:             <br>
-
+null
 
 Stacktrace:
 	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:515) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:423) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
@@ -609,19 +879,9 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: java.lang.NumberFormatException: For input string: ""
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:592) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:615) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.tags.entity_num.EntityNumOnPage.doTag(EntityNumOnPage.java:20) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_other_005fcust_005fentity_002dpage_002dcounter_005f0(user_005fpage_jsp.java:460) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fforEach_005f0(user_005fpage_jsp.java:413) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fwhen_005f0(user_005fpage_jsp.java:366) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fchoose_005f0(user_005fpage_jsp.java:325) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspService(user_005fpage_jsp.java:173) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
+Caused by: org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.admin_005fpage_jsp
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:198) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:414) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
@@ -645,144 +905,13 @@ Caused by: java.lang.NumberFormatException: For input string: ""
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-[INFO ] 2020-05-07 13:26:34.108 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 13:26:50.793 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 13:29:11.943 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 13:29:31.062 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[INFO ] 2020-05-07 13:45:35.521 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
-[INFO ] 2020-05-07 13:45:52.474 RepairAgencyApplicationListener:26 - Webapp 'Repair Service' was started.
-[ERROR] 2020-05-07 13:46:41.038 ExceptionHandleFilter:46 - Failed request (/RepairAgency/user_home): javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}"
-22:                                             page_num="${param.page}" entities_page_amount="${orders.size}"/>
-23: 
-24:             <cust:order order_obejct="${order}"/>
-
-
-Stacktrace:
-org.apache.jasper.JasperException: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}"
-22:                                             page_num="${param.page}" entities_page_amount="${orders.size}"/>
-23: 
-24:             <cust:order order_obejct="${order}"/>
-
-
-Stacktrace:
-	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:639) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:500) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:459) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:384) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.servlet.AppControllerServlet.doGet(AppControllerServlet.java:90) ~[classes/:?]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-websocket.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:21) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.SessionCreateFilter.doFilter(SessionCreateFilter.java:22) ~[classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at ua.javaexternal_shulzhenko.repair_service.filters.ExceptionHandleFilter.doFilter(ExceptionHandleFilter.java:22) [classes/:?]
-	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) [classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.33]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.33]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.33]
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688) [catalina.jar:9.0.33]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.33]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.33]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.33]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.33]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.33]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594) [tomcat-coyote.jar:9.0.33]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.33]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_231]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_231]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
-Caused by: javax.servlet.ServletException: javax.servlet.jsp.JspException: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}"
-22:                                             page_num="${param.page}" entities_page_amount="${orders.size}"/>
-23: 
-24:             <cust:order order_obejct="${order}"/>
-
-
-Stacktrace:
-	at org.apache.jasper.runtime.PageContextImpl.handlePageException(PageContextImpl.java:663) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:205) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-Caused by: javax.servlet.jsp.JspException: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}"
-22:                                             page_num="${param.page}" entities_page_amount="${orders.size}"/>
-23: 
-24:             <cust:order order_obejct="${order}"/>
-
-
-Stacktrace:
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:413) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp.access$1(core_005fpage_jsp.java:302) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke0(core_005fpage_jsp.java:344) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:399) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag.doTag(BlocksParentTag.java:13) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005fblocks_005f0(core_005fpage_jsp.java:275) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:175) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-Caused by: org.apache.jasper.JasperException: An exception occurred processing [/WEB-INF/jsp_pages/main_blocks/user_page.jsp] at line [21]
-
-18: <c:choose>
-19:     <c:when test="${not empty orders}">
-20:         <c:forEach var="order" items="${orders}" varStatus="status">
-21:             <other_cust:entity-page-counter loop_count_num="${status.count}"
-22:                                             page_num="${param.page}" entities_page_amount="${orders.size}"/>
-23: 
-24:             <cust:order order_obejct="${order}"/>
-
-
-Stacktrace:
-	at org.apache.jasper.servlet.JspServletWrapper.handleJspException(JspServletWrapper.java:626) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:515) ~[jasper.jar:9.0.33]
+Caused by: java.lang.ClassNotFoundException: org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.admin_005fpage_jsp
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) ~[?:1.8.0_231]
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:128) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:59) ~[jasper.jar:9.0.33]
+	at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:159) ~[catalina.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:193) ~[jasper.jar:9.0.33]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:414) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
 	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
@@ -806,45 +935,4 @@ Stacktrace:
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
 	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
 	... 49 more
-Caused by: java.lang.NumberFormatException: For input string: "size"
-	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:580) ~[?:1.8.0_231]
-	at java.lang.Integer.parseInt(Integer.java:615) ~[?:1.8.0_231]
-	at javax.el.ListELResolver.coerce(ListELResolver.java:150) ~[el-api.jar:3.0.FR]
-	at javax.el.ListELResolver.getValue(ListELResolver.java:67) ~[el-api.jar:3.0.FR]
-	at org.apache.jasper.el.JasperELResolver.getValue(JasperELResolver.java:125) ~[jasper.jar:9.0.33]
-	at org.apache.el.parser.AstValue.getValue(AstValue.java:169) ~[jasper-el.jar:9.0.33]
-	at org.apache.el.ValueExpressionImpl.getValue(ValueExpressionImpl.java:190) ~[jasper-el.jar:9.0.33]
-	at org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate(PageContextImpl.java:701) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_other_005fcust_005fentity_002dpage_002dcounter_005f0(user_005fpage_jsp.java:461) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fforEach_005f0(user_005fpage_jsp.java:413) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fwhen_005f0(user_005fpage_jsp.java:366) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspx_meth_c_005fchoose_005f0(user_005fpage_jsp.java:325) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.main_005fblocks.user_005fpage_jsp._jspService(user_005fpage_jsp.java:173) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385) ~[jasper.jar:9.0.33]
-	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:712) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.doInclude(ApplicationDispatcher.java:580) ~[catalina.jar:9.0.33]
-	at org.apache.catalina.core.ApplicationDispatcher.include(ApplicationDispatcher.java:516) ~[catalina.jar:9.0.33]
-	at org.apache.jasper.runtime.JspRuntimeLibrary.include(JspRuntimeLibrary.java:955) ~[jasper.jar:9.0.33]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke2(core_005fpage_jsp.java:378) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:405) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.AbstractBlocksChildTag.doTag(AbstractBlocksChildTag.java:16) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005faside_002dmain_005f0(core_005fpage_jsp.java:315) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp.access$1(core_005fpage_jsp.java:302) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke0(core_005fpage_jsp.java:344) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp$Helper.invoke(core_005fpage_jsp.java:399) ~[?:?]
-	at ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag.doTag(BlocksParentTag.java:13) ~[classes/:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspx_meth_cust_005fblocks_005f0(core_005fpage_jsp.java:275) ~[?:?]
-	at org.apache.jsp.WEB_002dINF.jsp_005fpages.core_005fpage_jsp._jspService(core_005fpage_jsp.java:175) ~[?:?]
-	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:71) ~[jasper.jar:9.0.33]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
-	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:477) ~[jasper.jar:9.0.33]
-	... 49 more
-[INFO ] 2020-05-07 13:47:00.837 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed
+[INFO ] 2020-05-08 02:09:15.308 RepairAgencyApplicationListener:36 - Webapp 'Repair Service' was closed

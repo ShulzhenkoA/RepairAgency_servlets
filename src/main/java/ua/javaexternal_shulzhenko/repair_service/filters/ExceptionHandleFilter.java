@@ -33,21 +33,22 @@ public class ExceptionHandleFilter extends AbstractFilter {
                         break;
                 }
             } else if (exc instanceof NotFoundException){
+                LOGGER.error("Failed request (" + req.getRequestURI() + "). Page not found 404: " + exc.getMessage(), exc);
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                req.setAttribute("main_block", "error.jsp");
+                req.setAttribute("main_block", "404.jsp");
                 try {
                     req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
-                } catch (ServletException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (ServletException | IOException e) {
+                    e.printStackTrace();                                                            //////////////////////////////////////////////////////// handle
                 }
             } else{
-                LOGGER.error("Failed request (" + req.getRequestURI() + "): " + exc.getMessage(), exc);
+                LOGGER.error("Failed request (" + req.getRequestURI() + "). Internal server error: 500 " + exc.getMessage(), exc);
+                resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+                req.setAttribute("main_block", "500.jsp");
                 try {
-                    resp.getWriter().print("<h1>Somme error has been occurred<h2>");
-                } catch (IOException e) {
-                    e.printStackTrace();                                       ////////////////////////////////////////////////////////
+                    req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                } catch (IOException | ServletException e) {
+                    e.printStackTrace();                                                  //////////////////////////////////////////////////////// handle
                 }
             }
         }

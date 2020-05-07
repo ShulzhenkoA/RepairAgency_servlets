@@ -16,7 +16,6 @@ public class UniversalDAOFactory implements DAO {
     public <T> T select(Connection connection, String sql, ResultHandler<T> resultSetHandler, Object... parameters) throws SQLException {
         try (Connection currentConnection = connection; PreparedStatement ps = currentConnection.prepareStatement(sql)) {
             insertSQLParams(ps, parameters);
-            CallableStatement cs = currentConnection.prepareCall(sql);
             ResultSet resultSet = ps.executeQuery();
             return resultSetHandler.handleResultSet(resultSet);
         }

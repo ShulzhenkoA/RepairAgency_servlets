@@ -33,7 +33,7 @@ public class RegistrationForm implements Form {
         password = req.getParameter("pass");
         passwordConfirmation = req.getParameter("passConf");
         language = extractLanguage(req);
-        role = extractRole(req);                                  //Role.valueOf(req.getParameter("role"));
+        role = extractRole(req);
     }
 
     private String extractLanguage(HttpServletRequest req) {
