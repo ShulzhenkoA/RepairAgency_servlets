@@ -11,7 +11,7 @@ import ua.javaexternal_shulzhenko.repair_service.services.database_services.Orde
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.editing.UserEditor;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.UserEditor;
 import ua.javaexternal_shulzhenko.repair_service.services.pagination.PagePaginationHandler;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationModel;

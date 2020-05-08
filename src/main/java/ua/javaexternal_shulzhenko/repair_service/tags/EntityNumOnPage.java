@@ -1,4 +1,4 @@
-package ua.javaexternal_shulzhenko.repair_service.tags.entity_num;
+package ua.javaexternal_shulzhenko.repair_service.tags;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;

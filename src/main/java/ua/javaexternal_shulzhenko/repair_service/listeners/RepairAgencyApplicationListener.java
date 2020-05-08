@@ -2,7 +2,7 @@ package ua.javaexternal_shulzhenko.repair_service.listeners;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ua.javaexternal_shulzhenko.repair_service.services.proper_request.ProperRequestService;
+import ua.javaexternal_shulzhenko.repair_service.services.aside_menu.PathsWithAsideMenuService;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool;
 
 import javax.servlet.ServletContextEvent;
@@ -18,11 +18,8 @@ public class RepairAgencyApplicationListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        try {
-            ProperRequestService.initializeProperRequestService();
-        } catch (IOException exc) {
-            LOGGER.error("Can't initialize ProperRequest service: " ,exc);
-        }
+        PathsWithAsideMenuService.initializePathsWithAsideMenuService();
+
         LOGGER.info("Webapp 'Repair Service' was started.");
     }
 

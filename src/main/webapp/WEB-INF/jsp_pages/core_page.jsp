@@ -1,9 +1,7 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.services.aside_menu.PathsWithAsideMenuService" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib uri="/WEB-INF/cust_tags.tld" prefix="cust" %>
-
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>
@@ -27,13 +25,8 @@
 </header>
 
 <div class="container-fluid" id="pageBody">
-    <cust:blocks servletPath="${requestScope['javax.servlet.forward.servlet_path']}">
-        <cust:single-main>
-            <main class="col-sm-6 offset-sm-3">
-                <jsp:include page="main_blocks/${main_block}"/>
-            </main>
-        </cust:single-main>
-        <cust:aside-main>
+    <c:choose>
+        <c:when test="${PathsWithAsideMenuService.mustReflectAsideMenu(requestScope['javax.servlet.forward.servlet_path'])}">
             <div class="row">
                 <aside class="col-sm-3">
                     <jsp:include page="aside_blocks/${aside_menu}"/>
@@ -42,8 +35,13 @@
                     <jsp:include page="main_blocks/${main_block}"/>
                 </main>
             </div>
-        </cust:aside-main>
-    </cust:blocks>
+        </c:when>
+        <c:otherwise>
+            <main class="col-sm-6 offset-sm-3">
+                <jsp:include page="main_blocks/${main_block}"/>
+            </main>
+        </c:otherwise>
+    </c:choose>
 </div>
 
 <footer>

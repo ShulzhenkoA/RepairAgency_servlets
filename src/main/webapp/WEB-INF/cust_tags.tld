@@ -5,32 +5,8 @@
     <jsp-version>2.3</jsp-version>
     <short-name>cust_tags</short-name>
     <tag>
-        <name>blocks</name>
-        <tag-class>ua.javaexternal_shulzhenko.repair_service.tags.blocks.BlocksParentTag</tag-class>
-        <body-content>scriptless</body-content>
-        <attribute>
-            <name>servletPath</name>
-            <required>true</required>
-            <type>java.lang.String</type>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-    </tag>
-
-    <tag>
-        <name>single-main</name>
-        <tag-class>ua.javaexternal_shulzhenko.repair_service.tags.blocks.SingleMainBlock</tag-class>
-        <body-content>scriptless</body-content>
-    </tag>
-
-    <tag>
-        <name>aside-main</name>
-        <tag-class>ua.javaexternal_shulzhenko.repair_service.tags.blocks.AsideMainBlocks</tag-class>
-        <body-content>scriptless</body-content>
-    </tag>
-
-    <tag>
         <name>entity-page-counter</name>
-        <tag-class>ua.javaexternal_shulzhenko.repair_service.tags.entity_num.EntityNumOnPage</tag-class>
+        <tag-class>ua.javaexternal_shulzhenko.repair_service.tags.EntityNumOnPage</tag-class>
         <body-content>scriptless</body-content>
         <attribute>
             <name>loop_count_num</name>

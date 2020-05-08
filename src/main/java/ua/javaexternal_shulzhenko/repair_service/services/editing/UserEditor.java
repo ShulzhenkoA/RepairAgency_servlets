@@ -1,4 +1,4 @@
-package ua.javaexternal_shulzhenko.repair_service.services.database_services.editing;
+package ua.javaexternal_shulzhenko.repair_service.services.editing;
 
 import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;

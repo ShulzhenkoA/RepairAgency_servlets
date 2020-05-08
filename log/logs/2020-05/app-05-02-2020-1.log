@@ -166,7 +166,7 @@ java.io.FileNotFoundException: Paths.txt (The system cannot find the file specif
 	at java.io.FileInputStream.<init>(FileInputStream.java:138) ~[?:1.8.0_231]
 	at java.io.FileInputStream.<init>(FileInputStream.java:93) ~[?:1.8.0_231]
 	at java.io.FileReader.<init>(FileReader.java:58) ~[?:1.8.0_231]
-	at ua.javaexternal_shulzhenko.repair_service.services.proper_request.ProperRequestService.initializeProperRequestService(ProperRequestService.java:17) ~[classes/:?]
+	at ua.javaexternal_shulzhenko.repair_service.services.aside_menu.PathsWithAsideMenuService.initializeProperRequestService(ProperRequestService.java:17) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.listeners.RepairAgencyApplicationListener.contextInitialized(RepairAgencyApplicationListener.java:22) ~[classes/:?]
 	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4690) ~[catalina.jar:9.0.33]
 	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5151) ~[catalina.jar:9.0.33]
