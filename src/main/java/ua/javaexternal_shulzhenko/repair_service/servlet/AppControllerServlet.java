@@ -1,6 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.servlet;
 
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
+import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
 import ua.javaexternal_shulzhenko.repair_service.models.order.Order;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants;
@@ -10,6 +11,7 @@ import ua.javaexternal_shulzhenko.repair_service.services.database_services.Orde
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.editing.UserEditor;
 import ua.javaexternal_shulzhenko.repair_service.services.pagination.PagePaginationHandler;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationModel;
@@ -24,12 +26,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 @WebServlet(urlPatterns = {"/reviews", "/home", "/customer_home", "/customer_order_history",
         "/registration", "/login", "/contacts", "/leave_review",
         "/create_order", "/manager_home", "/error", "/logout",
-        "/admin_home", "/man_mas_registration", "/user_deleting", "/master_home",
+        "/admin_home", "/man_mas_registration", "/edit_user", "/delete_user", "/master_home",
         "/master_completed_orders", "/active_orders", "/completed_orders", "/order_history",
         "/customers", "/masters"})
 public class AppControllerServlet extends HttpServlet {
@@ -165,6 +167,11 @@ public class AppControllerServlet extends HttpServlet {
                 req.setAttribute("main_block", "admin_page.jsp");
                 req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
                 break;
+            case "/edit_user":
+                req.setAttribute("aside_menu", "aside_menu.jsp");
+                req.setAttribute("main_block", "user_editing_main_block.jsp");
+                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                break;
             case "/reviews":
                 req.setAttribute("aside_menu", "aside_menu.jsp");
                 req.setAttribute("main_block", "reviews.jsp");
@@ -211,14 +218,14 @@ public class AppControllerServlet extends HttpServlet {
         if (req.getServletPath().equals("/login")) {
             LoginForm loginForm = new LoginForm(req);
             try {
-                Map<String, String> inconsistencies = FormValidator.validateForm(loginForm);
+                Set<String> inconsistencies = FormValidator.validateForm(loginForm);
                 if (inconsistencies.isEmpty()) {
                     User user = UserAuthenticator.authenticate(loginForm);
                     addUserToSession(req, user);
                     String targetPath = defineTargetPathAfterLogin(req, user);
                     resp.sendRedirect(req.getContextPath() + targetPath);
                 } else {
-                    if (inconsistencies.get("email") != null) {
+                    if (inconsistencies.contains("email")) {
                         throw new VerificationException(VerificationException.VerificationExceptionType.EMAIL);
                     } else {
                         throw new VerificationException(VerificationException.VerificationExceptionType.PASS);
@@ -238,7 +245,7 @@ public class AppControllerServlet extends HttpServlet {
 
             try {
                 RegistrationForm registrationForm = new RegistrationForm(req);
-                Map<String, String> inconsistencies = FormValidator.validateForm(registrationForm);
+                Set<String> inconsistencies = FormValidator.validateForm(registrationForm);
                 if (inconsistencies.isEmpty()) {
                     UsersDBService.createUser(registrationForm);
                     req.setAttribute("userWasRegistered", "");
@@ -255,7 +262,7 @@ public class AppControllerServlet extends HttpServlet {
         } else if (req.getServletPath().equals("/create_order")) {
             try {
                 OrderForm orderForm = new OrderForm(req);
-                Map<String, String> inconsistencies = FormValidator.validateForm(orderForm);
+                Set<String> inconsistencies = FormValidator.validateForm(orderForm);
                 if (inconsistencies.isEmpty()) {
                     OrdersDBService.addOrder(new Order(orderForm));
                     Order order = OrdersDBService.getLastOrderForRegUser(orderForm.getUser().getId());
@@ -268,10 +275,30 @@ public class AppControllerServlet extends HttpServlet {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();                                //////////////////////////////////handle this exception !!!!!!!!!!!!!!!!!!!!!!!!!
             }
-        } else if (req.getServletPath().equals("/user_deleting")) {
-            int userId = Integer.parseInt(req.getParameter("userId"));
+        } else if (req.getServletPath().equals("/delete_user")) {
+            int userId = Integer.parseInt(req.getParameter("deleting_user_id"));
             UsersDBService.deleteUser(userId);
             resp.sendRedirect(req.getContextPath() + "/admin_home");
+        } else if (req.getServletPath().equals("/edit_user")){
+            UserEditingForm form = new UserEditingForm(req);
+            try {
+                Set<String> inconsistencies = FormValidator.validateForm(form);
+                if (inconsistencies.isEmpty()) {
+                    User user = UsersDBService.getUserByID(form.getId());
+                    new UserEditor(form, user).
+                            compareFirstName().
+                            compareLastName().
+                            compareEmail().
+                            compareRole().edit();
+                    resp.sendRedirect(req.getContextPath() + "/admin_home");
+                } else {
+                    req.setAttribute("inconsistencies", inconsistencies);
+                    req.setAttribute("prevForm", form);
+                    doGet(req, resp);
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
     }
 

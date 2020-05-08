@@ -92,7 +92,7 @@ hr {
     outline: none;
 }
 
-main #cancel-btn {
+main .cancel-btn {
     margin-left: 10px;
 }
 

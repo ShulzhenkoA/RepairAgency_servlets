@@ -31,7 +31,7 @@ public class UniversalDAOFactory implements DAO {
 
     @Override
     public void update(Connection connection, String sql, Object... parameters) throws SQLException {
-        try (Connection currentConnection = connection; PreparedStatement ps = currentConnection.prepareStatement(sql)) {
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
             insertSQLParams(ps, parameters);
             ps.executeUpdate();
         }

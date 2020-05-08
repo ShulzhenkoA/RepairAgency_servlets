@@ -13,7 +13,7 @@
             <form action="${pageContext.request.contextPath}/create_order" method="post">
                 <h3><fmt:message key="cra.repair_order.header"/></h3>
                 <div class="col-lg-12 form-group">
-                    <c:if test="${inconsistencies.carBrand ne null}">
+                    <c:if test="${inconsistencies.contains('carBrand')}">
                         <p class="formError">
                             Car Brand can`t be empty, start with slash or number, have less than 2 letters or digits,
                             can have only .- signs.
@@ -23,7 +23,7 @@
                            value="${prevForm.carBrand}">
                 </div>
                 <div class="col-lg-12 form-group">
-                    <c:if test="${inconsistencies.carModel ne null}">
+                    <c:if test="${inconsistencies.contains('carModel')}">
                         <p class="formError">
                             Car Model can`t be empty, start with slash, have less than 2 letters or digits, can have
                             only .- signs.
@@ -33,7 +33,7 @@
                            value="${prevForm.carModel}">
                 </div>
                 <div class="col-lg-5 form-group">
-                    <c:if test="${inconsistencies.carYear ne null}">
+                    <c:if test="${inconsistencies.contains('carYear')}">
                         <p class="formError">
                             Year 19xx or 20xx
                         </p>
@@ -42,7 +42,7 @@
                            name="car_year" value="${prevForm.carYear}">
                 </div>
                 <div class="col-lg-5 form-group">
-                    <c:if test="${inconsistencies.repairType ne null}">
+                    <c:if test="${inconsistencies.contains('repairType')}">
                         <p class="formError">
                             Choose repair type
                         </p>
@@ -87,7 +87,7 @@
                     </select>
                 </div>
                 <div class="col-lg-12 form-group">
-                    <c:if test="${inconsistencies.repairDescription ne null}">
+                    <c:if test="${inconsistencies.contains('repairDescription')}">
                         <p class="formError">
                             Enter your car breakdown description
                         </p>

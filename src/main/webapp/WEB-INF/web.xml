@@ -37,7 +37,8 @@
         <url-pattern>/master_completed_orders</url-pattern>
         <url-pattern>/admin_home</url-pattern>
         <url-pattern>/man_mas_registration</url-pattern>
-        <url-pattern>/user_deleting</url-pattern>
+        <url-pattern>/edit_user</url-pattern>
+        <url-pattern>/delete_user</url-pattern>
         <url-pattern>/login</url-pattern>
         <url-pattern>/registration</url-pattern>
     </filter-mapping>

@@ -30,7 +30,7 @@
                                 ${pageContext.request.contextPath}/registration
                             </c:otherwise>
                         </c:choose>" method="post">
-                        <c:if test="${inconsistencies.firstName ne null}">
+                        <c:if test="${inconsistencies.contains('firstName')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.f_name"/>
                             </p>
@@ -40,7 +40,7 @@
                                    placeholder="<fmt:message key="cra.reg_form.f_name_pl"/>" name="fName"
                                    value="${prevForm.firstName}">
                         </div>
-                        <c:if test="${inconsistencies.lastName ne null}">
+                        <c:if test="${inconsistencies.contains('lastName')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.l_name"/>
                             </p>
@@ -50,12 +50,12 @@
                                    placeholder="<fmt:message key="cra.reg_form.l_name_pl"/>" name="lName"
                                    value="${prevForm.lastName}">
                         </div>
-                        <c:if test="${inconsistencies.email ne null}">
+                        <c:if test="${inconsistencies.contains('email')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.email"/>
                             </p>
                         </c:if>
-                        <c:if test="${inconsistencies.notFreeEmail ne null}">
+                        <c:if test="${inconsistencies.contains('notFreeEmail')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.not_free_email"/>
                             </p>
@@ -65,7 +65,7 @@
                                    value="${prevForm.email}">
                         </div>
 
-                        <c:if test="${inconsistencies.password ne null}">
+                        <c:if test="${inconsistencies.contains('password')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.pass"/>
                             </p>
@@ -74,7 +74,7 @@
                             <input type="password" class="form-control" required
                                    placeholder="<fmt:message key="cra.reg_form.pass_pl"/>" name="pass">
                         </div>
-                        <c:if test="${inconsistencies.passwordConfirmation ne null}">
+                        <c:if test="${inconsistencies.contains('passwordConfirmation')}">
                             <p class="formError">
                                 <fmt:message key="cra.reg_form.inc.pass_conf"/>
                             </p>
@@ -84,25 +84,25 @@
                                    placeholder="<fmt:message key="cra.reg_form.pass_conf_pl"/>" name="passConf">
                         </div>
                         <c:choose>
-                            <c:when test="${user.role.name() eq 'ADMIN'}">
+                            <c:when test="${user.role.name() eq Role.ADMIN}">
                                 <div class="form-group reg_radio">
-                                    <c:if test="${inconsistencies.role ne null}">
+                                    <c:if test="${inconsistencies.contains('role')}">
                                         <p class="formError">
                                             <fmt:message key="cra.reg_form.inc.role"/>
                                         </p>
                                     </c:if>
                                     <div class="form-check-inline">
-                                        <input type="radio" class="form-check-input" name="role" value="MASTER"
+                                        <input type="radio" class="form-check-input" name="role" value="${Role.MASTER}"
                                             ${prevForm.role eq Role.MASTER ? 'checked' : ''}>Master
                                     </div>
                                     <div class="form-check-inline">
-                                        <input type="radio" class="form-check-input" name="role" value="MANAGER"
+                                        <input type="radio" class="form-check-input" name="role" value="${Role.MANAGER}"
                                             ${prevForm.role eq Role.MANAGER ? 'checked' : ''}>Manager
                                     </div>
                                 </div>
                             </c:when>
                             <c:otherwise>
-                                <input type="hidden" value="REGISTERED_USER" name="role">
+                                <input type="hidden" value="${Role.CUSTOMER}" name="role">
                             </c:otherwise>
                         </c:choose>
                         <div class="col-sm-6 offset-sm-3 submit-button">

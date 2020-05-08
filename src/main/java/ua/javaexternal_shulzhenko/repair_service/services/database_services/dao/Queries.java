@@ -6,12 +6,13 @@ public enum Queries {
             "VALUES(?, ?, ?, ?, ?, ?)"),
     INSERT_ORDER("CALL add_order(?, ?, ?, ?, ?, ?, ?, ?)"),
 
-    SELECT_USER_BY_NAME("SELECT * FROM users WHERE first_name = ? AND last_name = ?"),
-    SELECT_EMAIL("SELECT email FROM users WHERE email = ?"),
+    SELECT_USER_BY_ID("SELECT * FROM users WHERE id = ?"),
     SELECT_USER_BY_EMAIL("SELECT * FROM users WHERE email = ?"),
     SELECT_USERS_BY_ROLE("SELECT * FROM users WHERE role = ?"),
     SELECT_USERS_BY_ROLE_OFFSET_AMOUNT("SELECT * FROM users WHERE role = ? LIMIT ?, ?"),
     SELECT_USERS_AMOUNT_BY_ROLE("SELECT count(id) as amount FROM users WHERE role = ?"),
+
+    SELECT_EMAIL("SELECT email FROM users WHERE email = ?"),
 
     SELECT_LAST_USER_ORDER(
             "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
@@ -106,9 +107,13 @@ public enum Queries {
                     "LEFT JOIN users as master ON orders.master_id = master.id " +
                     "WHERE orders.status = ? OR orders.status = ? ORDER BY orders.id DESC LIMIT ?, ?"),
     MANAGER_SELECT_ORDERS_AMOUNT_BY_TWO_STATUSES(
-            "SELECT count(id) as amount FROM orders WHERE status = ? OR status = ?"),
+            "SELECT count(id) as amount FROM orders WHERE status IN (?, ?)"),
 
-    UPDATE_LANGUAGE("UPDATE users SET language = ? WHERE id = ?"),
+    UPDATE_USER_FIST_NAME("UPDATE users SET first_name = ? WHERE id = ?"),
+    UPDATE_USER_LAST_NAME("UPDATE users SET last_name = ? WHERE id = ?"),
+    UPDATE_USER_EMAIL("UPDATE users SET email = ? WHERE id = ?"),
+    UPDATE_USER_ROLE("UPDATE users SET role = ? WHERE id = ?"),
+    UPDATE_USER_LANGUAGE("UPDATE users SET language = ? WHERE id = ?"),
 
     DELETE_USER("DELETE FROM users WHERE id = ?"),
 
