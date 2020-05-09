@@ -64,22 +64,3 @@ DELIMITER //
         COMMIT;
     END //
 DELIMITER ;
-
-DELIMITER //
-CREATE PROCEDURE repair_agency.add_order(customer_id INT, creation_date TIMESTAMP, car_brand VARCHAR(32),
-                                         car_model VARCHAR(32), car_year VARCHAR(32), repair_type VARCHAR(32),
-                                         repair_description VARCHAR(4096), status VARCHAR(32))
-BEGIN
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
-        BEGIN
-            ROLLBACK;
-            RESIGNAL;
-        END;
-    START TRANSACTION;
-    INSERT INTO cars(brand, model, year)
-    VALUES(car_brand, car_model, car_year);
-    INSERT INTO orders (customer_id, creation_date, car_id, repair_type, repair_description, status)
-    VALUES (customer_id , creation_date, last_insert_id(), repair_type, repair_description, status);
-    COMMIT;
-END //
-DELIMITER ;

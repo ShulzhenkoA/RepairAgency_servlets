@@ -76,6 +76,8 @@ public class FormValidator {
         if (fieldValue != null) {
             if (fieldValue instanceof String) {
                 return ((String) fieldValue).trim().length() == 0;
+            } else if (fieldValue instanceof Integer) {
+                return ((Integer) fieldValue) > 0;
             } else {
                 return false;
             }

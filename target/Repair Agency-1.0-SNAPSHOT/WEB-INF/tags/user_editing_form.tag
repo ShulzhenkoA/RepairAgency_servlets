@@ -52,11 +52,11 @@
                     </div>
                     <div class="form-group reg_radio">
                         <div class="form-check-inline">
-                            <input type="radio" class="form-check-input" name="role" value="MASTER"
+                            <input type="radio" class="form-check-input" name="role" value="${Role.MASTER}"
                                 ${user_for_editing.role eq Role.MASTER ? 'checked' : ''}>Master
                         </div>
                         <div class="form-check-inline">
-                            <input type="radio" class="form-check-input" name="role" value="MANAGER"
+                            <input type="radio" class="form-check-input" name="role" value="${Role.MANAGER}"
                                 ${user_for_editing.role eq Role.MANAGER ? 'checked' : ''}>Manager
                         </div>
                     </div>
@@ -64,7 +64,14 @@
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn">Edit</button>
-                    <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                    <c:choose>
+                        <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/edit_user'}">
+                            <a href="${pageContext.request.contextPath}/admin_home" class="btn">Cancel</a>
+                        </c:when>
+                        <c:otherwise>
+                            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
             </form>
         </div>

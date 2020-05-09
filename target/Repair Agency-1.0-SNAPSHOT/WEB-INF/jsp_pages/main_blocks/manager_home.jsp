@@ -31,7 +31,7 @@
 <c:choose>
     <c:when test="${not empty orders}">
         <c:forEach var="order" items="${orders}" varStatus="status">
-            <cust:order loop_num="${status.count}" order_obejct="${order}"/>
+            <cust:order loop_num="${status.count}" order_object="${order}"/>
             <br>
         </c:forEach>
         <cust:pagination pagination_model="${pgModel}"/>

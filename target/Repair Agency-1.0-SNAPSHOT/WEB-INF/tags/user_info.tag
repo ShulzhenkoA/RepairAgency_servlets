@@ -15,20 +15,20 @@
 <fmt:setBundle basename="ra_language"/>
 
 <c:if test="${user_for_mapping ne null}">
-    <div class="col-md-12 rounded page-content">
+    <div class="${user.role eq Role.ADMIN ? 'col-md-12' : 'col-md-10 offset-md-1'} rounded page-content">
         <div class="row">
             <div class="col-md-1">
                 <cust:entity-page-counter loop_count_num="${loop_num}"
                                           page_num="${param.page}"
                                           entities_page_amount="${PaginationConstants.USERS_FOR_PAGE.amount}"/>
             </div>
-            <div class="col-md-2">
+            <div class="${user.role eq Role.ADMIN ? 'col-md-2' : 'col-md-3'}">
                     ${user_for_mapping.firstName}
             </div>
-            <div class="col-md-2">
+            <div class="${user.role eq Role.ADMIN ? 'col-md-2' : 'col-md-3'}">
                     ${user_for_mapping.lastName}
             </div>
-            <div class="col-md-2">
+            <div class="${user.role eq Role.ADMIN ? 'col-md-2' : 'col-md-3'}">
                     ${user_for_mapping.email}
             </div>
             <div class="col-md-2">

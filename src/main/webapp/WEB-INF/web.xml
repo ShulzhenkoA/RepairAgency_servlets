@@ -35,6 +35,7 @@
         <url-pattern>/customer_order_history</url-pattern>
         <url-pattern>/master_home</url-pattern>
         <url-pattern>/master_completed_orders</url-pattern>
+        <url-pattern>/edit_status</url-pattern>
         <url-pattern>/admin_home</url-pattern>
         <url-pattern>/man_mas_registration</url-pattern>
         <url-pattern>/edit_user</url-pattern>

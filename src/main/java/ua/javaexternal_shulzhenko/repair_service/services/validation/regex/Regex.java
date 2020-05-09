@@ -7,7 +7,8 @@ public enum  Regex {
     NAMES("^[\\p{L}](?=.*[\\p{L}])[- \\p{L}]{1,64}"),
     CAR_BRAND("^[\\p{L}](?=.*[\\d\\p{L}])[- .\\d\\p{L}]{1,64}"),
     CAR_MODEL("^[\\d\\p{L}](?=.*[\\d\\p{L}])[- .\\d\\p{L}]{1,64}"),
-    CAR_YEAR("^(19|20)\\d{2}");
+    CAR_YEAR("^(19|20)\\d{2}"),
+    PRICE("^\\d+(.\\d{1,2})?$");
 
     private String expression;
 

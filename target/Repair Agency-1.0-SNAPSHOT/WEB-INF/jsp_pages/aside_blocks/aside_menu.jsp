@@ -28,8 +28,6 @@
                 Pending orders</a>
             <a href="${pageContext.request.contextPath}/active_orders"
                class="list-group-item list-group-item-action">Active orders</a>
-            <a href="${pageContext.request.contextPath}/completed_orders"
-               class="list-group-item list-group-item-action">Completed orders</a>
             <a href="${pageContext.request.contextPath}/order_history"
                class="list-group-item list-group-item-action">Order history</a>
             <a href="${pageContext.request.contextPath}/customers"

@@ -80,7 +80,7 @@
                                         value="${RepairType.PAINTING_WORKS}">Painting works
                                 </option>
                                 <option ${prevForm.repairType eq RepairType.OTHER ? 'selected' : ''}
-                                        value="${RepairType.OTHER}">Other
+                                        value="${RepairType.  OTHER}">Other
                                 </option>
                             </c:otherwise>
                         </c:choose>
@@ -108,7 +108,7 @@
     </c:when>
     <c:otherwise>
         <h3>Order was successfully submitted</h3>
-        <cust:order loop_num="" order_obejct="${madeOrder}"/>
+        <cust:order loop_num="" order_object="${madeOrder}"/>
     </c:otherwise>
 </c:choose>
 

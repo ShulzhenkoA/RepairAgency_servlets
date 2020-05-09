@@ -1,17 +1,18 @@
-package ua.javaexternal_shulzhenko.repair_service.services.editing;
+package ua.javaexternal_shulzhenko.repair_service.services.editing.imp;
 
 import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.Editor;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserEditor {
+public class UserEditor implements Editor {
 
-    private UserEditingForm form;
-    private User user;
-    private List<String> edits;
+    private final UserEditingForm form;
+    private final User user;
+    private final List<UserEdits> edits;
 
     public UserEditor(UserEditingForm form, User user) {
         this.form = form;
@@ -21,33 +22,41 @@ public class UserEditor {
 
     public UserEditor compareFirstName(){
         if(!form.getFirstName().equals(user.getFirstName())){
-            edits.add("firstName");
+            edits.add(UserEdits.FIRST_NAME);
         }
         return this;
     }
 
     public UserEditor compareLastName(){
         if(!form.getLastName().equals(user.getLastName())){
-            edits.add("lastName");
+            edits.add(UserEdits.LAST_NAME);
         }
         return this;
     }
 
     public UserEditor compareEmail(){
         if(!form.getEmail().equals(user.getEmail())){
-            edits.add("email");
+            edits.add(UserEdits.EMAIL);
         }
         return this;
     }
 
     public UserEditor compareRole(){
         if(!form.getRole().equals(user.getRole())){
-            edits.add("role");
+            edits.add(UserEdits.ROLE);
         }
         return this;
     }
 
+    @Override
     public void edit(){
         UsersDBService.editUser(form, edits);
+    }
+
+    public enum UserEdits{
+        FIRST_NAME,
+        LAST_NAME,
+        EMAIL,
+        ROLE
     }
 }

@@ -1,7 +1,8 @@
 package ua.javaexternal_shulzhenko.repair_service.servlet;
 
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
-import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
+import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
+import ua.javaexternal_shulzhenko.repair_service.models.forms.*;
 import ua.javaexternal_shulzhenko.repair_service.models.order.Order;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants;
@@ -10,13 +11,12 @@ import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator;
-import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
-import ua.javaexternal_shulzhenko.repair_service.services.editing.UserEditor;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.EditingOrderValidator;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.imp.OrderEditor;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.imp.UserEditor;
 import ua.javaexternal_shulzhenko.repair_service.services.pagination.PagePaginationHandler;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.FormValidator;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationModel;
-import ua.javaexternal_shulzhenko.repair_service.models.forms.LoginForm;
-import ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,15 +25,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
 @WebServlet(urlPatterns = {"/reviews", "/home", "/customer_home", "/customer_order_history",
         "/registration", "/login", "/contacts", "/leave_review",
         "/create_order", "/manager_home", "/error", "/logout",
-        "/admin_home", "/man_mas_registration", "/edit_user", "/delete_user", "/master_home",
-        "/master_completed_orders", "/active_orders", "/completed_orders", "/order_history",
-        "/customers", "/masters"})
+        "/admin_home", "/man_mas_registration", "/edit_user", "/delete_user",
+        "/master_home", "/master_completed_orders", "/edit_status", "/active_orders", "/edit_order",
+        "/order_history", "/customers", "/masters"})
 public class AppControllerServlet extends HttpServlet {
 
     private PagePaginationHandler pagePaginationHandler;
@@ -50,11 +51,10 @@ public class AppControllerServlet extends HttpServlet {
         User user;
         int pageNum;
         int offset;
-        List<Order> orders;
+
         int entityAmount;
+        PageEntities<Order> orders;
         PaginationModel paginationModel;
-
-
         switch (servletPath) {
             case "/home":
             case "/contacts":
@@ -72,6 +72,81 @@ public class AppControllerServlet extends HttpServlet {
                 break;
             case "/customer_home":
             case "/customer_order_history":
+                req.setAttribute("aside_menu", "aside_menu.jsp");
+                req.setAttribute("main_block", "customer_master_page.jsp");
+                user = getUserFromSession(req);
+                pageNum = extractPageNum(req);
+                offset = computeOffset(pageNum);
+                if (servletPath.equals("/customer_home")) {
+                    orders = OrdersDBService.getCustomerOrdersByOffsetAmountTwoExcludeStatuses(user, offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
+                            OrderStatus.REJECTED, OrderStatus.ORDER_COMPLETED);
+                } else {
+                    orders = OrdersDBService.getCustomerOrdersByOffsetAmountTwoStatuses(user, offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
+                            OrderStatus.REJECTED, OrderStatus.ORDER_COMPLETED);
+                }
+                paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                        pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
+                req.setAttribute("orders", orders.getEntities());
+                req.setAttribute("pgModel", paginationModel);
+                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                break;
+            case "/manager_home":
+            case "/active_orders":
+            case "/order_history":
+            case "/customers":
+            case "/masters":
+                req.setAttribute("aside_menu", "aside_menu.jsp");
+                req.setAttribute("main_block", "manager_home.jsp");
+                pageNum = extractPageNum(req);
+                offset = computeOffset(pageNum);
+
+                if (servletPath.equals("/manager_home")) {
+                    orders = OrdersDBService.getManagerOrdersByOffsetAmountStatus(offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.PENDING);
+                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                            pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
+                    List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
+                    req.setAttribute("orders", orders.getEntities());
+                    req.setAttribute("masters", masters);
+                } else if (servletPath.equals("/active_orders")) {
+                    orders = OrdersDBService.getManagerOrdersByAmountOffsetMultipleExcludeStatuses(offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
+                            OrderStatus.PENDING, OrderStatus.REJECTED, OrderStatus.ORDER_COMPLETED);
+                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                            pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
+                    List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
+                    req.setAttribute("orders", orders.getEntities());
+                    req.setAttribute("masters", masters);
+                } else if (servletPath.equals("/order_history")) {
+                    orders = OrdersDBService.getManagerOrdersByOffsetAmountTwoStatuses(offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
+                            OrderStatus.ORDER_COMPLETED, OrderStatus.REJECTED);
+                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                            pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
+                    req.setAttribute("orders", orders.getEntities());
+                } else if (servletPath.equals("/customers")) {
+                    PageEntities<User> customers = UsersDBService.getUsersByRoleOffsetAmount(Role.CUSTOMER,
+                            offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
+                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                            pageNum, customers.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
+                    req.setAttribute("customers", customers.getEntities());
+                } else {
+                    PageEntities<User> masters = UsersDBService.getUsersByRoleOffsetAmount(Role.MASTER,
+                            offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
+                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                            pageNum, masters.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
+                    req.setAttribute("masters", masters.getEntities());
+                }
+                req.setAttribute("pgModel", paginationModel);
+                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                break;
+            case "/edit_order":
+                req.setAttribute("aside_menu", "aside_menu.jsp");
+                req.setAttribute("main_block", "order_editing_main_block.jsp");
+                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                break;
             case "/master_home":
             case "/master_completed_orders":
                 req.setAttribute("aside_menu", "aside_menu.jsp");
@@ -79,79 +154,18 @@ public class AppControllerServlet extends HttpServlet {
                 user = getUserFromSession(req);
                 pageNum = extractPageNum(req);
                 offset = computeOffset(pageNum);
-                if (servletPath.equals("/customer_home")) {
-                    orders = OrdersDBService.getOrdersByOffsetAmountExcludeStatus(user, offset,
-                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.ORDER_COMPLETED);
-                    entityAmount = OrdersDBService.getOrdersAmountByExcludeStatus(user, OrderStatus.ORDER_COMPLETED);
-                } else {
-                    orders = OrdersDBService.getOrdersByOffsetAmountStatus(user, offset,
-                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.ORDER_COMPLETED);
-                    entityAmount = OrdersDBService.getOrdersAmountByStatus(user, OrderStatus.ORDER_COMPLETED);
-                }
-
-                paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                        pageNum, entityAmount, PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                req.setAttribute("orders", orders);
-                req.setAttribute("pgModel", paginationModel);
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
-                break;
-            case "/manager_home":
-            case "/active_orders":
-            case "/completed_orders":
-            case "/order_history":
-            case "/customers":
-            case "/masters":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "manager_home.jsp");
-                user = getUserFromSession(req);
-                pageNum = extractPageNum(req);
-                offset = computeOffset(pageNum);
-
-                if (servletPath.equals("/manager_home")) {
-                    orders = OrdersDBService.getOrdersByOffsetAmountStatus(user, offset,
-                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.PENDING);
-                    entityAmount = OrdersDBService.getOrdersAmountByStatus(user, OrderStatus.PENDING);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                    req.setAttribute("orders", orders);
-                } else if (servletPath.equals("/active_orders")) {
-                    orders = OrdersDBService.getOrdersByOffsetAmountExcludeStatus(user, offset,
-                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.ORDER_COMPLETED);
-                    entityAmount = OrdersDBService.getOrdersAmountByExcludeStatus(user, OrderStatus.ORDER_COMPLETED);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                    req.setAttribute("orders", orders);
-                } else if (servletPath.equals("/completed_orders")) {
-                    orders = OrdersDBService.getOrdersByOffsetAmountStatus(user, offset,
-                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(), OrderStatus.ORDER_COMPLETED);
-                    entityAmount = OrdersDBService.getOrdersAmountByStatus(user, OrderStatus.ORDER_COMPLETED);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                    req.setAttribute("orders", orders);
-                } else if (servletPath.equals("/order_history")) {
-                    orders = OrdersDBService.getOrdersByAmountOffsetTwoStatuses(offset,
+                if (servletPath.equals("/master_home")) {
+                    orders = OrdersDBService.getMasterOrdersByOffsetAmountTwoExcludeStatuses(user, offset,
                             PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
-                            OrderStatus.ORDER_COMPLETED, OrderStatus.REJECTED);
-                    entityAmount = OrdersDBService.getOrdersAmountByTwoStatuses(
-                            OrderStatus.ORDER_COMPLETED, OrderStatus.REJECTED);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                    req.setAttribute("orders", orders);
-                } else if (servletPath.equals("/customers")) {
-                    List<User> customers = UsersDBService.getUsersByRoleOffsetAmount(Role.CUSTOMER,
-                            offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    entityAmount = UsersDBService.getUsersAmountByRole(Role.CUSTOMER);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    req.setAttribute("customers", customers);
+                            OrderStatus.REJECTED, OrderStatus.ORDER_COMPLETED);
                 } else {
-                    List<User> masters = UsersDBService.getUsersByRoleOffsetAmount(Role.MASTER,
-                            offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    entityAmount = UsersDBService.getUsersAmountByRole(Role.MASTER);
-                    paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
-                            pageNum, entityAmount, PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    req.setAttribute("masters", masters);
+                    orders = OrdersDBService.getMasterOrdersByOffsetAmountTwoStatuses(user, offset,
+                            PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
+                            OrderStatus.REJECTED, OrderStatus.ORDER_COMPLETED);
                 }
+                paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
+                        pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
+                req.setAttribute("orders", orders.getEntities());
                 req.setAttribute("pgModel", paginationModel);
                 req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
                 break;
@@ -279,7 +293,7 @@ public class AppControllerServlet extends HttpServlet {
             int userId = Integer.parseInt(req.getParameter("deleting_user_id"));
             UsersDBService.deleteUser(userId);
             resp.sendRedirect(req.getContextPath() + "/admin_home");
-        } else if (req.getServletPath().equals("/edit_user")){
+        } else if (req.getServletPath().equals("/edit_user")) {
             UserEditingForm form = new UserEditingForm(req);
             try {
                 Set<String> inconsistencies = FormValidator.validateForm(form);
@@ -299,6 +313,42 @@ public class AppControllerServlet extends HttpServlet {
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
+        } else if (req.getServletPath().equals("/edit_order")) {
+            OrderEditingForm form = new OrderEditingForm(req);
+            try {
+                Set<String> inconsistencies = FormValidator.validateForm(form);
+                EditingOrderValidator.checkIfNeedMasterForThisStatus(form, inconsistencies);
+                EditingOrderValidator.checkIfNeedPreviousPrice(form, inconsistencies);
+                if (inconsistencies.isEmpty()) {
+                    Order order = OrdersDBService.getOrderById(form.getId());
+                    new OrderEditor(form, order).
+                            comparePrice().
+                            compareMasters().
+                            compareStatus().
+                            compareManagerComment().edit();
+                    resp.sendRedirect(req.getContextPath() + "/manager_home");
+                } else {
+                    List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
+                    Order order = OrdersDBService.getOrderById(form.getId());
+                    req.setAttribute("curOrderStatus", order.getStatus());
+                    req.setAttribute("masters", masters);
+                    req.setAttribute("inconsistencies", inconsistencies);
+                    req.setAttribute("prevForm", form);
+                    doGet(req, resp);
+                }
+            } catch (IllegalAccessException exc) {
+                exc.printStackTrace();
+            }
+
+        } else if (req.getServletPath().equals("/edit_status")) {
+            String status = req.getParameter("status");
+            String orderID = req.getParameter("orderID");
+            if (status.equals(OrderStatus.REPAIR_WORK.name())) {
+                OrdersDBService.editOrderStatus(orderID, status);
+            } else if (status.equals(OrderStatus.REPAIR_COMPLETED.name())) {
+                OrdersDBService.editOrderStatusCompletionDate(orderID, status, LocalDateTime.now());
+            }
+            resp.sendRedirect(req.getContextPath() + "/master_home");
         }
     }
 

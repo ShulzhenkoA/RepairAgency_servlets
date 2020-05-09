@@ -1,6 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.services.database_services;
 
 import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
+import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
 import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.Queries;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory;
@@ -10,6 +11,7 @@ import ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionE
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.imp.UserEditor;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -61,12 +63,15 @@ public class UsersDBService {
         }
     }
 
-    public static List<User> getUsersByRoleOffsetAmount(Role role, int offset, int amount) {
+    public static PageEntities<User> getUsersByRoleOffsetAmount(Role role, int offset, int amount) {
         try {
-            return (List<User>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
+            PageEntities<User> users = new PageEntities<>();
+            users.setEntities((List<User>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
                     Queries.SELECT_USERS_BY_ROLE_OFFSET_AMOUNT.getQuery(),
                     ResultHandlerFactory.HANDLER.get(ResultTemplate.USERS),
-                    role.name(), offset, amount);
+                    role.name(), offset, amount));
+            users.setEntitiesTotalAmount(getUsersAmountByRole(role));
+            return users;
         } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't get users from database because of: " + exc.getMessage(), exc);
         }
@@ -108,32 +113,32 @@ public class UsersDBService {
         }
     }
 
-    public static  void editUser(UserEditingForm form, List<String> edits) {
+    public static void editUser(UserEditingForm form, List<UserEditor.UserEdits> edits) {
 
         Connection connection = null;
         try {
             connection = DBConnectionsPool.getConnection();
             connection.setAutoCommit(false);
-            for (String edit : edits) {
+            for (UserEditor.UserEdits edit : edits) {
                 switch (edit) {
-                    case "firstName":
+                    case FIRST_NAME:
                         DAO_FACTORY.update(connection, Queries.UPDATE_USER_FIST_NAME.getQuery(),
                                 form.getFirstName(), form.getId());
                         break;
-                    case "lastName":
+                    case LAST_NAME:
                         DAO_FACTORY.update(connection, Queries.UPDATE_USER_LAST_NAME.getQuery(),
                                 form.getLastName(), form.getId());
                         break;
-                    case "email":
+                    case EMAIL:
                         DAO_FACTORY.update(connection, Queries.UPDATE_USER_EMAIL.getQuery(),
                                 form.getEmail(), form.getId());
                         break;
-                    case "role":
+                    case ROLE:
                         DAO_FACTORY.update(connection, Queries.UPDATE_USER_ROLE.getQuery(),
                                 form.getRole().name(), form.getId());
                         break;
                     default:
-                        throw new SQLException("Can't edit such user data");
+                        throw new SQLException("Can't edit such user data: " + edit);
                 }
             }
             connection.commit();
@@ -146,7 +151,7 @@ public class UsersDBService {
                                 exc.getMessage() + rlb_exc.getMessage(), rlb_exc);
             }
             throw new DataBaseInteractionException("Can't edit user's data because of: " + exc.getMessage(), exc);
-        }finally {
+        } finally {
             try {
                 connection.close();
             } catch (SQLException cl_exc) {

@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 public class DBConnectionsPool {
 
-    private static BasicDataSource connectionsPool = new BasicDataSource();
+    private static final BasicDataSource connectionsPool = new BasicDataSource();
     static {
         ResourceBundle resourceBundle = ApplicationResourceBundle.resourceBundle;
         connectionsPool.setUrl(resourceBundle.getString("sr.db.url"));

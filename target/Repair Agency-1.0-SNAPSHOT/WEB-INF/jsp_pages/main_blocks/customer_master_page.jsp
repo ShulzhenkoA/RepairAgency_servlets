@@ -7,10 +7,10 @@
 <fmt:setBundle basename="ra_language"/>
 
 <c:choose>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/user_home'}">
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_home'}">
         <h4 class="up_h">Your current orders info:</h4>
     </c:when>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/user_order_history'}">
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_order_history'}">
         <h4 class="up_h">Your previous orders info:</h4>
     </c:when>
     <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_home'}">
@@ -24,7 +24,7 @@
 <c:choose>
     <c:when test="${not empty orders}">
         <c:forEach var="order" items="${orders}" varStatus="status">
-            <cust:order loop_num="${status.count}" order_obejct="${order}"/>
+            <cust:order loop_num="${status.count}" order_object="${order}"/>
             <br>
         </c:forEach>
         <cust:pagination pagination_model="${pgModel}"/>

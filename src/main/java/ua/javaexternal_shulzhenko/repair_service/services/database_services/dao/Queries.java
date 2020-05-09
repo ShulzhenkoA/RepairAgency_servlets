@@ -14,6 +14,15 @@ public enum Queries {
 
     SELECT_EMAIL("SELECT email FROM users WHERE email = ?"),
 
+    SELECT_ORDER_BY_ID("SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+            "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+            "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+            "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+            "FROM orders " +
+            "JOIN cars ON orders.car_id = cars.id " +
+            "JOIN users as customer ON orders.customer_id = customer.id " +
+            "LEFT JOIN users as master ON orders.master_id = master.id " +
+            "WHERE orders.id = ?"),
     SELECT_LAST_USER_ORDER(
             "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
             "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
@@ -44,10 +53,34 @@ public enum Queries {
                     "JOIN users as customer ON orders.customer_id = customer.id " +
                     "LEFT JOIN users as master ON orders.master_id = master.id " +
                     "WHERE orders.customer_id = ? AND orders.status != ? ORDER BY orders.id DESC LIMIT ?, ?"),
+    CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.customer_id = ? AND orders.status IN (?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
+    CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_EXCLUDE_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.customer_id = ? AND orders.status NOT IN (?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
     CUSTOMER_SELECT_ORDERS_AMOUNT_BY_STATUS(
             "SELECT count(id) as amount FROM orders WHERE customer_id = ? AND status = ?"),
     CUSTOMER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS(
             "SELECT count(id) as amount FROM orders WHERE customer_id = ? AND status != ?"),
+    CUSTOMER_SELECT_ORDERS_AMOUNT_BY_TWO_EXCLUDE_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE customer_id = ? AND status NOT IN (?, ?)"),
+    CUSTOMER_SELECT_ORDERS_AMOUNT_BY_TWO_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE customer_id = ? AND status IN (?, ?)"),
     MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS(
             "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
                     "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
@@ -68,10 +101,35 @@ public enum Queries {
                     "JOIN users as customer ON orders.customer_id = customer.id " +
                     "LEFT JOIN users as master ON orders.master_id = master.id " +
                     "WHERE orders.master_id = ? AND orders.status != ? ORDER BY orders.id DESC LIMIT ?, ?"),
+    MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.master_id = ? AND orders.status IN (?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
+    MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_EXCLUDE_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.master_id = ? AND orders.status NOT IN (?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
     MASTER_SELECT_ORDERS_AMOUNT_BY_STATUS(
             "SELECT count(id) as amount FROM orders WHERE master_id = ? AND status = ?"),
     MASTER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS(
             "SELECT count(id) as amount FROM orders WHERE master_id = ? AND status != ?"),
+    MASTER_SELECT_ORDERS_AMOUNT_BY_TWO_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE master_id = ? AND status IN (?, ?)"),
+    MASTER_SELECT_ORDERS_AMOUNT_BY_TWO_EXCLUDE_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE master_id = ? AND status NOT IN (?, ?)"),
+
     MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS(
             "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
                     "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
@@ -106,14 +164,44 @@ public enum Queries {
                     "JOIN users as customer ON orders.customer_id = customer.id " +
                     "LEFT JOIN users as master ON orders.master_id = master.id " +
                     "WHERE orders.status = ? OR orders.status = ? ORDER BY orders.id DESC LIMIT ?, ?"),
+    MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_TWO_EXCLUDE_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.status NOT IN (?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
+    MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_THREE_EXCLUDE_STATUSES(
+            "SELECT orders.id, orders.creation_date, customer.id as customer_id, customer.first_name as customer_f_name, " +
+                    "customer.last_name as customer_l_name, customer.email, cars.brand, cars.model, cars.year, " +
+                    "orders.repair_type, orders.repair_description, orders.price, master.id as master_id, master.first_name as master_f_name, " +
+                    "master.last_name as master_l_name, orders.repair_completion_date, orders.status, orders.manager_comment " +
+                    "FROM orders " +
+                    "JOIN cars ON orders.car_id = cars.id " +
+                    "JOIN users as customer ON orders.customer_id = customer.id " +
+                    "LEFT JOIN users as master ON orders.master_id = master.id " +
+                    "WHERE orders.status NOT IN (?, ?, ?) ORDER BY orders.id DESC LIMIT ?, ?"),
     MANAGER_SELECT_ORDERS_AMOUNT_BY_TWO_STATUSES(
             "SELECT count(id) as amount FROM orders WHERE status IN (?, ?)"),
+    MANAGER_SELECT_ORDERS_AMOUNT_BY_TWO_EXCLUDE_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE status NOT IN (?, ?)"),
+    MANAGER_SELECT_ORDERS_AMOUNT_BY_THREE_EXCLUDE_STATUSES(
+            "SELECT count(id) as amount FROM orders WHERE status NOT IN (?, ?, ?)"),
 
     UPDATE_USER_FIST_NAME("UPDATE users SET first_name = ? WHERE id = ?"),
     UPDATE_USER_LAST_NAME("UPDATE users SET last_name = ? WHERE id = ?"),
     UPDATE_USER_EMAIL("UPDATE users SET email = ? WHERE id = ?"),
     UPDATE_USER_ROLE("UPDATE users SET role = ? WHERE id = ?"),
     UPDATE_USER_LANGUAGE("UPDATE users SET language = ? WHERE id = ?"),
+
+    UPDATE_ORDER_PRICE("UPDATE orders SET price = ? WHERE id = ?"),
+    UPDATE_ORDER_MASTER("UPDATE orders SET master_id = ? WHERE id = ?"),
+    UPDATE_ORDER_STATUS("UPDATE orders SET status = ? WHERE id = ?"),
+    UPDATE_ORDER_MANAGER_COMMENT("UPDATE orders SET manager_comment = ? WHERE id = ?"),
+    UPDATE_ORDER_STATUS_COMPLETION_DATE("UPDATE orders SET status = ?, repair_completion_date = ? WHERE id = ?"),
 
     DELETE_USER("DELETE FROM users WHERE id = ?"),
 
