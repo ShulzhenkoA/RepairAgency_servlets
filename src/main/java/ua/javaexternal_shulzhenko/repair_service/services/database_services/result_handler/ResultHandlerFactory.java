@@ -17,9 +17,6 @@ public class ResultHandlerFactory {
 
     public final static HashMap<ResultTemplate, ResultHandler<?>> HANDLER = new HashMap();
 
-    private ResultHandlerFactory() {
-    }
-
     static {
 
         HANDLER.put(ResultTemplate.USER, resultSet -> {
@@ -126,5 +123,8 @@ public class ResultHandlerFactory {
                 return 0;
             }
         });
+    }
+
+    private ResultHandlerFactory() {
     }
 }

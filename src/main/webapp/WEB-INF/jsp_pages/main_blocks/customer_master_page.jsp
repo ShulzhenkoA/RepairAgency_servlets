@@ -32,10 +32,10 @@
     <c:otherwise>
         <div class="col-md-12 order rounded page-content">
             <c:choose>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/user_home'}">
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_home'}">
                     <h6>You haven't active orders. To create an order, click on the 'Make repair order' tab.</h6>
                 </c:when>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/user_order_history'}">
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_order_history'}">
                     <h6>You haven't previous orders.</h6>
                 </c:when>
                 <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_home'}">

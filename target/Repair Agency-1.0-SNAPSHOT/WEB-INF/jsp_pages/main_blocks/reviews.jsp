@@ -25,17 +25,17 @@
                         You can't leave empty review.
                     </p>
                 </c:if>
-                <form action="${pageContext.request.contextPath}/leave_review" method="post">
+                <form action="${pageContext.request.contextPath}/reviews" method="post">
                 <textarea id="review-textarea" class="form-control" name="reviewContent" required
                           placeholder="<fmt:message key="cra.reviews.comment_area_pl"/>"></textarea>
                     <input type="hidden" name="customerID" value="${user.id}">
                     <div class="col-md-4 offset-md-8">
-                        <button type="submit" class="btn btn-block"><fmt:message
-                                key="cra.reviews.leave_review_btn"/></button>
+                        <button type="submit" class="btn btn-block">
+                            <fmt:message key="cra.reviews.leave_review_btn"/></button>
                     </div>
                 </form>
             </c:if>
-            <c:if test="${reviewCreated ne null}">
+            <c:if test="${success ne null}">
                 Your review was successfully added.
             </c:if>
         </c:otherwise>

@@ -1,7 +1,5 @@
 package ua.javaexternal_shulzhenko.repair_service.constants;
 
-import java.util.*;
-
 public interface CRAPaths {
     String HOME = "/home";
     String REVIEWS = "/reviews";
@@ -9,8 +7,6 @@ public interface CRAPaths {
     String CUSTOMER_ORDER_HISTORY = "/customer_order_history";
     String REGISTRATION = "/registration";
     String LOGIN = "/login";
-    String CONTACTS = "/contacts";
-    String LEAVE_REVIEW = "/leave_review";
     String CREATE_ORDER = "/create_order";
     String MANAGER_HOME = "/manager_home";
     String LOGOUT = "/logout";
