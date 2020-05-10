@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.NotEmpty;
@@ -20,11 +21,11 @@ public class OrderEditingForm implements Form{
     private final String managerComment;
 
     public OrderEditingForm(HttpServletRequest req) {
-        id = Integer.parseInt(req.getParameter("editing_order_id"));
-        price = req.getParameter("price");
-        masterID = req.getParameter("masterID");
-        status = OrderStatus.valueOf(req.getParameter("status"));
-        managerComment = req.getParameter("managerComment");
+        id = Integer.parseInt(req.getParameter(Parameters.EDITING_ORDER_ID));
+        price = req.getParameter(Parameters.PRICE);
+        masterID = req.getParameter(Parameters.MASTER_ID);
+        status = OrderStatus.valueOf(req.getParameter(Parameters.STATUS));
+        managerComment = req.getParameter(Parameters.MANAGER_COMMENT);
     }
 
     public int getId() {

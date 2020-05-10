@@ -1,6 +1,5 @@
 package ua.javaexternal_shulzhenko.repair_service.tags;
 
-import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
@@ -14,14 +13,14 @@ public class EntityNumOnPage extends SimpleTagSupport {
     int entitiesPerPage;
 
     @Override
-    public void doTag() throws JspException, IOException {
+    public void doTag() throws IOException {
 
         getCounterFromAttr();
         getPageOffsetNumFromAttr();
         getEntitiesPerPageFromAttr();
 
         int entityNum = computeEntityNum();
-        if(entityNum > 0){
+        if (entityNum > 0) {
             getJspContext().getOut().print(entityNum);
         }
     }
@@ -47,7 +46,6 @@ public class EntityNumOnPage extends SimpleTagSupport {
     private int computeEntityNum() {
         return pageOffsetNum * entitiesPerPage + counter;
     }
-
 
     public void setLoop_count_num(String loop_count_num) {
         this.loop_count_num = loop_count_num;

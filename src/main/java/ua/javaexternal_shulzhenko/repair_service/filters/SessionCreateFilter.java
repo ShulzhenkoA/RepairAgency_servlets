@@ -1,5 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.filters;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
 import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 
@@ -28,7 +30,7 @@ public class SessionCreateFilter extends AbstractFilter {
                 setLanguage(defineLanguageForUser(req)).
                 setRole(Role.UNKNOWN).
                 build();
-        session.setAttribute("user", user);
+        session.setAttribute(Attributes.USER, user);
     }
 
     private String defineLanguageForUser(HttpServletRequest req) {
@@ -36,7 +38,7 @@ public class SessionCreateFilter extends AbstractFilter {
         if (language != null) {
             return language;
         } else {
-            return "en";
+            return CommonConstants.EN;
         }
     }
 
@@ -44,7 +46,7 @@ public class SessionCreateFilter extends AbstractFilter {
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("language")) {
+                if (cookie.getName().equals(Attributes.LANGUAGE)) {
                     return cookie.getValue();
                 }
             }

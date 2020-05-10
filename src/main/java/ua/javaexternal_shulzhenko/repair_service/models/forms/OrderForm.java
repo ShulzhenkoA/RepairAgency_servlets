@@ -1,5 +1,9 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
+import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.order.RepairType;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
@@ -8,6 +12,7 @@ import ua.javaexternal_shulzhenko.repair_service.services.validation.regex.Regex
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDateTime;
 
 public class OrderForm implements Form {
 
@@ -28,24 +33,30 @@ public class OrderForm implements Form {
     @NotEmpty
     private final String repairDescription;
 
+    private final LocalDateTime creationDate;
+
+    private final OrderStatus status;
+
     public OrderForm(HttpServletRequest req) {
         user = extractUser(req);
-        carBrand = req.getParameter("car_brand");
-        carModel = req.getParameter("car_model");
-        carYear = req.getParameter("car_year");
-        repairDescription = req.getParameter("repair_description");
+        carBrand = req.getParameter(Parameters.CAR_BRAND);
+        carModel = req.getParameter(Parameters.CAR_MODEL);
+        carYear = req.getParameter(Parameters.CAR_YEAR);
+        repairDescription = req.getParameter(Parameters.REPAIR_DESCRIPTION);
         repairType = extractRepairType(req);
+        creationDate = LocalDateTime.now();
+        status = OrderStatus.PENDING;
     }
 
     private User extractUser(HttpServletRequest req) {
         HttpSession session = req.getSession();
-        return (User) session.getAttribute("user");
+        return (User) session.getAttribute(Attributes.USER);
     }
 
     private RepairType extractRepairType(HttpServletRequest req) {
-        String repairType = req.getParameter("repair_type");
-        if (!repairType.equals("Repair type")) {
-            return RepairType.valueOf(req.getParameter("repair_type"));
+        String repairType = req.getParameter(Parameters.REPAIR_TYPE);
+        if (!repairType.equals(CommonConstants.REP_TYPE)) {
+            return RepairType.valueOf(req.getParameter(Parameters.REPAIR_TYPE));
         }
         return null;
     }
@@ -72,5 +83,13 @@ public class OrderForm implements Form {
 
     public String getRepairDescription() {
         return repairDescription;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
     }
 }

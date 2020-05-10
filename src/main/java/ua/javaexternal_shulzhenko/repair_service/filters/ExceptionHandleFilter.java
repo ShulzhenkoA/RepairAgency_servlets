@@ -1,8 +1,8 @@
 package ua.javaexternal_shulzhenko.repair_service.filters;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException;
+import ua.javaexternal_shulzhenko.repair_service.constants.CRA_JSPFiles;
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
+import ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException;
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
 
 import javax.servlet.*;
@@ -16,7 +16,7 @@ import java.io.IOException;
 public class ExceptionHandleFilter extends AbstractFilter {
 
     @Override
-    public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) {
+    public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) throws IOException, ServletException {
 
         try {
             filterChain.doFilter(req, resp);
@@ -24,32 +24,24 @@ public class ExceptionHandleFilter extends AbstractFilter {
             if (exc instanceof VerificationException) {
                 switch (((VerificationException) exc).getType()) {
                     case EMAIL:
-                        LOGGER.warn("Attempt to log in using non-existing email: " + req.getParameter("email") + "\t User-Agent: " + req.getHeader("User-Agent"));
+                        LOGGER.warn("Attempt to log in using non-existing email: " + req.getParameter(Parameters.EMAIL) + "\t User-Agent: " + req.getHeader(Parameters.USER_AGENT));
                         break;
                     case PASS:
-                        LOGGER.warn("Wrong password log in attempt. User: " + req.getParameter("email") + "\t User-Agent: " + req.getHeader("User-Agent"));
+                        LOGGER.warn("Wrong password log in attempt. User: " + req.getParameter(Parameters.EMAIL) + "\t User-Agent: " + req.getHeader(Parameters.USER_AGENT));
                         break;
                     default:
                         break;
                 }
-            } else if (exc instanceof NotFoundException){
-                LOGGER.error("Failed request (" + req.getRequestURI() + "). Page not found 404: " + exc.getMessage(), exc);
+            } else if (exc instanceof AuthorizationException){
+                LOGGER.info("Unauthorized request (" + req.getRequestURI() + ") User-Agent : " + req.getHeader(Parameters.USER_AGENT));
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-                req.setAttribute("main_block", "404.jsp");
-                try {
-                    req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
-                } catch (ServletException | IOException e) {
-                    e.printStackTrace();                                                            //////////////////////////////////////////////////////// handle
-                }
-            } else{
-                LOGGER.error("Failed request (" + req.getRequestURI() + "). Internal server error: 500 " + exc.getMessage(), exc);
+                setMainBlock(req, CRA_JSPFiles.PAGE404);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            } else {
+                LOGGER.error("Failed request (" + req.getRequestURI() + "). Internal server error: " + exc.getMessage(), exc);
                 resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-                req.setAttribute("main_block", "500.jsp");
-                try {
-                    req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
-                } catch (IOException | ServletException e) {
-                    e.printStackTrace();                                                  //////////////////////////////////////////////////////// handle
-                }
+                setMainBlock(req, CRA_JSPFiles.PAGE500);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
             }
         }
     }

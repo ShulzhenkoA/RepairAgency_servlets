@@ -10,7 +10,12 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/error</location>
+        <location>/error404</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error500</location>
     </error-page>
 
     <filter-mapping>
@@ -30,9 +35,19 @@
 
     <filter-mapping>
         <filter-name>AuthorizationHandler</filter-name>
-        <url-pattern>/create_order</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/registration</url-pattern>
+        <url-pattern>/logout</url-pattern>
         <url-pattern>/customer_home</url-pattern>
+        <url-pattern>/create_order</url-pattern>
         <url-pattern>/customer_order_history</url-pattern>
+        <url-pattern>/leave_review</url-pattern>
+        <url-pattern>/manager_home</url-pattern>
+        <url-pattern>/active_orders</url-pattern>
+        <url-pattern>/edit_order</url-pattern>
+        <url-pattern>/order_history</url-pattern>
+        <url-pattern>/customers</url-pattern>
+        <url-pattern>/masters</url-pattern>
         <url-pattern>/master_home</url-pattern>
         <url-pattern>/master_completed_orders</url-pattern>
         <url-pattern>/edit_status</url-pattern>
@@ -40,8 +55,8 @@
         <url-pattern>/man_mas_registration</url-pattern>
         <url-pattern>/edit_user</url-pattern>
         <url-pattern>/delete_user</url-pattern>
-        <url-pattern>/login</url-pattern>
-        <url-pattern>/registration</url-pattern>
+        <url-pattern>/error404</url-pattern>
+        <url-pattern>/error500</url-pattern>
     </filter-mapping>
 
     <session-config>

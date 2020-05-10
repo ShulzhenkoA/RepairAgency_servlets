@@ -1,5 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.services.validation;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
+import ua.javaexternal_shulzhenko.repair_service.exceptions.FormValidationException;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.Form;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.*;
@@ -12,42 +14,46 @@ import java.util.regex.Pattern;
 
 public class FormValidator {
 
-    public static Set<String> validateForm(Form form) throws IllegalAccessException {
+    public static Set<String> validateForm(Form form) {
         Field[] fields = form.getClass().getDeclaredFields();
         Set<String> inconsistencies = new HashSet<>();
         String pass = null;
         int id = 0;
         for (Field field : fields) {
             Annotation[] fieldAnnotations = field.getAnnotations();
-            field.setAccessible(true);                                            //////////////////////////////////////check if must set accessible false!!!?????;
-            for (Annotation annotation : fieldAnnotations) {
-                if (annotation instanceof MustConform) {
-                    MustConform mustConformAnnotation = (MustConform) annotation;
-                    String regExp = mustConformAnnotation.value().getExpression();
-                    String fieldValue = (String) field.get(form);
-                    if (!checkRegExpCompliance(regExp, fieldValue)) {
-                        inconsistencies.add(field.getName());
-                    }
-                } else if (annotation instanceof Email) {
-                    String email = (String) field.get(form);
-                    if (!checkEmailIsFree(email, id)) {
-                        inconsistencies.add("notFreeEmail");
-                    }
-                } else if (annotation instanceof Pass) {
-                    pass = (String) field.get(form);
-                } else if (annotation instanceof PassConfirmation) {
-                    String passConfirmation = (String) field.get(form);
-                    if (!checkPasswordsCompliance(pass, passConfirmation)) {
-                        inconsistencies.add(field.getName());
-                    }
-                } else if (annotation instanceof UserID) {
-                    id = field.getInt(form);
-                } else if (annotation instanceof NotEmpty) {
-                    Object fieldValue = field.get(form);
-                    if (checkEmpty(fieldValue)) {
-                        inconsistencies.add(field.getName());
+            field.setAccessible(true);
+            try{
+                for (Annotation annotation : fieldAnnotations) {
+                    if (annotation instanceof MustConform) {
+                        MustConform mustConformAnnotation = (MustConform) annotation;
+                        String regExp = mustConformAnnotation.value().getExpression();
+                        String fieldValue = (String) field.get(form);
+                        if (!checkRegExpCompliance(regExp, fieldValue)) {
+                            inconsistencies.add(field.getName());
+                        }
+                    } else if (annotation instanceof Email) {
+                        String email = (String) field.get(form);
+                        if (!checkEmailIsFree(email, id)) {
+                            inconsistencies.add(CommonConstants.NOT_FREE_EMAIL);
+                        }
+                    } else if (annotation instanceof Pass) {
+                        pass = (String) field.get(form);
+                    } else if (annotation instanceof PassConfirmation) {
+                        String passConfirmation = (String) field.get(form);
+                        if (!checkPasswordsCompliance(pass, passConfirmation)) {
+                            inconsistencies.add(field.getName());
+                        }
+                    } else if (annotation instanceof UserID) {
+                        id = field.getInt(form);
+                    } else if (annotation instanceof NotEmpty) {
+                        Object fieldValue = field.get(form);
+                        if (checkEmpty(fieldValue)) {
+                            inconsistencies.add(field.getName());
+                        }
                     }
                 }
+            }catch (IllegalAccessException exc){
+                throw new FormValidationException("Can't validate form because of: " + exc.getMessage(), exc);
             }
             field.setAccessible(false);
         }

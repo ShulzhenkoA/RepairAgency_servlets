@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.services.aside_menu;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
 import ua.javaexternal_shulzhenko.repair_service.services.resourses.ApplicationResourceBundle;
 
 import java.util.Arrays;
@@ -13,8 +14,8 @@ public class PathsWithAsideMenuService {
     }
 
     public static void initializePathsWithAsideMenuService() {
-        String pathsString = ApplicationResourceBundle.resourceBundle.getString("sr.pr_req.paths");
-        String[] paths = pathsString.split(";");
+        String pathsString = ApplicationResourceBundle.resourceBundle.getString("sr.aside_menu_req.paths");
+        String[] paths = pathsString.split(CommonConstants.SEMICOLON);
         APPLICATION_PATHS_WITH_ASIDE_MENU.addAll(Arrays.asList(paths));
     }
 

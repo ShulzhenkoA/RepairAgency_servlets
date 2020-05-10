@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.services.database_services;
 
+import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderEditingForm;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
@@ -23,7 +24,7 @@ public class OrdersDBService {
 
     private static final UniversalDAOFactory DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
 
-    public static void addOrder(Order order) {
+    public static void addOrder(OrderForm order) {
         LinkedList<Object> orderFields = new LinkedList<>();
         extractOrderFields(order, orderFields);
         try {
@@ -34,12 +35,12 @@ public class OrdersDBService {
         }
     }
 
-    private static void extractOrderFields(Order order, LinkedList<Object> objects) {
-        objects.add(order.getCustomer().getId());
-        objects.add(order.getDate());
+    private static void extractOrderFields(OrderForm order, LinkedList<Object> objects) {
+        objects.add(order.getUser().getId());
+        objects.add(order.getCreationDate());
         objects.add(order.getCarBrand());
         objects.add(order.getCarModel());
-        objects.add(order.getCarYearManufacture());
+        objects.add(order.getCarYear());
         objects.add(order.getRepairType().name());
         objects.add(order.getRepairDescription());
         objects.add(order.getStatus().name());
@@ -64,56 +65,6 @@ public class OrdersDBService {
         }
     }
 
-    public static PageEntities<Order> getCustomerOrdersByOffsetAmountStatus(User user, int offset, int amount, OrderStatus status) {
-        try {
-            PageEntities<Order> orders = new PageEntities<>();
-            orders.setEntities((List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    user.getId(), status.name(), offset, amount));
-            orders.setEntitiesTotalAmount(getCustomerOrdersAmountByStatus(user, status));
-            return orders;
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static int getCustomerOrdersAmountByStatus(User user, OrderStatus status) {
-        try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.CUSTOMER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
-                    user.getId(), status.name());
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static PageEntities<Order> getMasterOrdersByOffsetAmountStatus(User user, int offset, int amount, OrderStatus status) {
-        try {
-            PageEntities<Order> orders = new PageEntities<>();
-            orders.setEntities((List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    user.getId(), status.name(), offset, amount));
-            orders.setEntitiesTotalAmount(getMasterOrdersAmountByStatus(user, status));
-            return orders;
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static int getMasterOrdersAmountByStatus(User user, OrderStatus status) {
-        try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MASTER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
-                    user.getId(), status.name());
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
     public static PageEntities<Order> getManagerOrdersByOffsetAmountStatus(int offset, int amount, OrderStatus status) {
         try {
             PageEntities<Order> orders = new PageEntities<>();
@@ -132,83 +83,6 @@ public class OrdersDBService {
         try {
             return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
                     Queries.MANAGER_SELECT_ORDERS_AMOUNT_BY_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
-                    status.name());
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static PageEntities<Order> getCustomerOrdersByOffsetAmountExcludeStatus(
-            User user, int offset, int amount, OrderStatus status) {
-        try {
-            PageEntities<Order> orders = new PageEntities<>();
-            orders.setEntities((List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.CUSTOMER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    user.getId(), status.name(), offset, amount));
-            orders.setEntitiesTotalAmount(getCustomerOrdersAmountByExcludeStatus(user, status));
-            return orders;
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static int getCustomerOrdersAmountByExcludeStatus(User user, OrderStatus status) {
-        try {
-
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.CUSTOMER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
-                    user.getId(), status.name());
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static PageEntities<Order> getMasterOrdersByOffsetAmountExcludeStatus(User user, int offset, int amount, OrderStatus status) {
-        try {
-            PageEntities<Order> orders = new PageEntities<>();
-            orders.setEntities((List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MASTER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    user.getId(), status.name(), offset, amount));
-            orders.setEntitiesTotalAmount(getMasterOrdersAmountByExcludeStatus(user, status));
-            return orders;
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static int getMasterOrdersAmountByExcludeStatus(User user, OrderStatus status) {
-        try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MASTER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
-                    user.getId(), status.name());
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders amount from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static PageEntities<Order> getManagerOrdersByOffsetAmountExcludeStatus(int offset, int amount, OrderStatus status) {
-        try {
-            PageEntities<Order> orders = new PageEntities<>();
-            orders.setEntities((List<Order>) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MANAGER_SELECT_ORDERS_BY_OFFSET_AMOUNT_EXCLUDE_STATUS.getQuery(),
-                    ResultHandlerFactory.HANDLER.get(ResultTemplate.ORDERS),
-                    status.name(), offset, amount));
-            orders.setEntitiesTotalAmount(getManagerOrdersAmountByExcludeStatus(status));
-            return orders;
-        } catch (SQLException exc) {
-            throw new DataBaseInteractionException("Can't get orders from database because of: " + exc.getMessage(), exc);
-        }
-    }
-
-    public static int getManagerOrdersAmountByExcludeStatus(OrderStatus status) {
-        try {
-            return (Integer) DAO_FACTORY.select(DBConnectionsPool.getConnection(),
-                    Queries.MANAGER_SELECT_ORDERS_AMOUNT_BY_EXCLUDE_STATUS.getQuery(),
                     ResultHandlerFactory.HANDLER.get(ResultTemplate.AMOUNT),
                     status.name());
         } catch (SQLException exc) {

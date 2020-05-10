@@ -1,6 +1,10 @@
 package ua.javaexternal_shulzhenko.repair_service.filters;
 
-import ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException;
+import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
+import ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths;
+import ua.javaexternal_shulzhenko.repair_service.constants.CRA_JSPFiles;
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
+import ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.authorization.AuthorizationService;
 
@@ -16,18 +20,18 @@ public class AuthorizationHandleFilter extends AbstractFilter {
     @Override
     public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain filterChain) throws IOException, ServletException {
         String servletPath = req.getServletPath();
-        User user = (User) req.getSession().getAttribute("user");
+        User user = getUserFromSession(req);
         if (AuthorizationService.authorize(servletPath, user)) {
             filterChain.doFilter(req, resp);
-        } else if (req.getServletPath().equals("/login") || req.getServletPath().equals("/registration")) {
-            throw new NotFoundException(req.getServletPath() + " page not found");
-        } else {
-            if (req.getServletPath().equals("/leave_review")) {
-                req.getSession().setAttribute("review", req.getParameter("review"));
+        } else if (req.getServletPath().equals(CRAPaths.CUSTOMER_HOME) || req.getServletPath().equals(CRAPaths.MANAGER_HOME) ||
+                req.getServletPath().equals(CRAPaths.MASTER_HOME) || req.getServletPath().equals(CRAPaths.CREATE_ORDER)) {
+            if(req.getServletPath().equals(CRAPaths.CREATE_ORDER)){
+                req.getSession().setAttribute(Attributes.TO_CREATE_ORDER, req.getServletPath());
             }
-            req.setAttribute("main_block", "login_main_block.jsp");
-            req.getSession().setAttribute("previousBeforeLogin", req.getServletPath());
-            resp.sendRedirect(req.getContextPath() + "/login");
+            setMainBlock(req, CRA_JSPFiles.LOGIN_MAIN_BLOCK);
+            resp.sendRedirect(req.getContextPath() + CRAPaths.LOGIN);
+        } else {
+            throw new AuthorizationException(req.getServletPath() + " page not found");
         }
     }
 }

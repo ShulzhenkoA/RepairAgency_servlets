@@ -26,7 +26,8 @@
 
 <div class="container-fluid" id="pageBody">
     <c:choose>
-        <c:when test="${PathsWithAsideMenuService.mustReflectAsideMenu(requestScope['javax.servlet.forward.servlet_path'])}">
+        <c:when test="${PathsWithAsideMenuService.mustReflectAsideMenu(requestScope['javax.servlet.forward.servlet_path'])
+                        and main_block ne '404.jsp' and main_block ne '500.jsp'}">
             <div class="row">
                 <aside class="col-sm-3">
                     <jsp:include page="aside_blocks/${aside_menu}"/>

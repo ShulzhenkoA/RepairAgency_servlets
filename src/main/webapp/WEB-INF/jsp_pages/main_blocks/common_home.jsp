@@ -1,5 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>
@@ -8,33 +9,43 @@
 <div class="container" id="aboutUs">
     <div class="col-md-10 offset-md-1 rounded page-content">
         <div class="row">
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">1</span> <fmt:message key="cra.home_common.about_us.first"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">1</span> <fmt:message
+                    key="cra.home_common.about_us.first"/>
             </div>
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">6</span> <fmt:message key="cra.home_common.about_us.six"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">2</span> <fmt:message key="cra.home_common.about_us.second"/>
-            </div>
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">7</span> <fmt:message key="cra.home_common.about_us.seventh"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">6</span> <fmt:message
+                    key="cra.home_common.about_us.six"/>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">3</span> <fmt:message key="cra.home_common.about_us.third"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">2</span> <fmt:message
+                    key="cra.home_common.about_us.second"/>
             </div>
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">8</span> <fmt:message key="cra.home_common.about_us.eighth"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">4</span> <fmt:message key="cra.home_common.about_us.fourth"/>
-            </div>
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">9</span> <fmt:message key="cra.home_common.about_us.ninth"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">7</span> <fmt:message
+                    key="cra.home_common.about_us.seventh"/>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">5</span> <fmt:message key="cra.home_common.about_us.fifth"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">3</span> <fmt:message
+                    key="cra.home_common.about_us.third"/>
             </div>
-            <div class="col-md-6"><span class="badge badge-pill badge-dark">10</span> <fmt:message key="cra.home_common.about_us.tenth"/>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">8</span> <fmt:message
+                    key="cra.home_common.about_us.eighth"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">4</span> <fmt:message
+                    key="cra.home_common.about_us.fourth"/>
+            </div>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">9</span> <fmt:message
+                    key="cra.home_common.about_us.ninth"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">5</span> <fmt:message
+                    key="cra.home_common.about_us.fifth"/>
+            </div>
+            <div class="col-md-6"><span class="badge badge-pill badge-dark">10</span> <fmt:message
+                    key="cra.home_common.about_us.tenth"/>
             </div>
         </div>
     </div>
@@ -89,35 +100,15 @@
         <h2><fmt:message key="cra.home_common.reviews.header"/></h2>
     </div>
     <div class="row col-md-12">
-        <div class="card col-md-3">
-            <div class="card-body">
-                <h5>Юрій</h5>
-                <p>Some example text some example text. John Doe is an architect and engineer</p>
-                <p class="reviewsDate"><small>06.02.2016 11:02</small></p>
+        <c:forEach var="review" items="${reviews}">
+            <div class="card col-md-3">
+                <div class="card-body">
+                    <h5>${review.customer.firstName}</h5>
+                    <p>${review.reviewContent}</p>
+                    <p class="reviewsDate"><small>${review.dateTime}</small></p>
+                </div>
             </div>
-        </div>
-        <div class="card col-md-3">
-            <div class="card-body">
-                <h5>Катерина</h5>
-                <p>Some example text some example text. John Doe is an architect and engineer</p>
-                <p class="reviewsDate"><small>06.02.2016 11:02</small></p>
-            </div>
-        </div>
-
-        <div class="card col-md-3">
-            <div class="card-body">
-                <h5>Євгеній</h5>
-                <p>Some example text some example text. John Doe is an architect and engineer</p>
-                <p class="reviewsDate"><small>06.02.2016 11:02</small></p>
-            </div>
-        </div>
-        <div class="card col-md-3">
-            <div class="card-body">
-                <h5>Антон</h5>
-                <p>Some example text some example text. John Doe is an architect and engineer</p>
-                <p class="reviewsDate"><small>06.02.2016 11:02</small></p>
-            </div>
-        </div>
+        </c:forEach>
     </div>
     <div class="row col-md-12" id="reviewsLink">
         <div class="col-md-5 offset-md-7">

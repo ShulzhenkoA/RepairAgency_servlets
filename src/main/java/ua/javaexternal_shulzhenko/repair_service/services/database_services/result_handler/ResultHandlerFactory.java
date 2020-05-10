@@ -1,8 +1,10 @@
 package ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.DBColumns;
 import ua.javaexternal_shulzhenko.repair_service.models.order.Order;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.order.RepairType;
+import ua.javaexternal_shulzhenko.repair_service.models.review.Review;
 import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 
@@ -23,16 +25,16 @@ public class ResultHandlerFactory {
         HANDLER.put(ResultTemplate.USER, resultSet -> {
             if (resultSet.next()) {
                 User user = new User.UserBuilder().
-                        setId(resultSet.getInt("id")).
-                        setFirstName(resultSet.getString("first_name")).
-                        setLastName(resultSet.getString("last_name")).
-                        setEmail(resultSet.getString("email")).
-                        setPassword(resultSet.getInt("password")).
-                        setLanguage(resultSet.getString("language")).
-                        setRole(Role.valueOf(resultSet.getString("role"))).build();
+                        setId(resultSet.getInt(DBColumns.ID)).
+                        setFirstName(resultSet.getString(DBColumns.FIRST_NAME)).
+                        setLastName(resultSet.getString(DBColumns.LAST_NAME)).
+                        setEmail(resultSet.getString(DBColumns.EMAIL)).
+                        setPassword(resultSet.getInt(DBColumns.PASSWORD)).
+                        setLanguage(resultSet.getString(DBColumns.LANGUAGE)).
+                        setRole(Role.valueOf(resultSet.getString(DBColumns.ROLE))).build();
                 return user;
             } else {
-                return null;                                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Handle exception!!!!!!!!!!!!!!!!!!!!!
+                return null;
             }
         });
 
@@ -48,35 +50,35 @@ public class ResultHandlerFactory {
         HANDLER.put(ResultTemplate.ORDER, resultSet -> {
             if (resultSet.next()) {
                 Order order = new Order.OrderBuilder().
-                        setId(resultSet.getInt("id")).
+                        setId(resultSet.getInt(DBColumns.ID)).
                         setCustomer(new User.UserBuilder().
-                                setId(resultSet.getInt("customer_id")).
-                                setFirstName(resultSet.getString("customer_f_name")).
-                                setLastName(resultSet.getString("customer_l_name")).
-                                setEmail(resultSet.getString("email")).
+                                setId(resultSet.getInt(DBColumns.CUSTOMER_ID)).
+                                setFirstName(resultSet.getString(DBColumns.CUSTOMER_F_NAME)).
+                                setLastName(resultSet.getString(DBColumns.CUSTOMER_L_NAME)).
+                                setEmail(resultSet.getString(DBColumns.EMAIL)).
                                 build()).
-                        setDate(resultSet.getTimestamp("creation_date").toLocalDateTime()).
-                        setCarBrand(resultSet.getString("brand")).
-                        setCarModel(resultSet.getString("model")).
-                        setCarYearManufacture(resultSet.getString("year")).
-                        setRepairType(RepairType.valueOf(resultSet.getString("repair_type"))).
-                        setRepairDescription(resultSet.getString("repair_description")).
-                        setPrice(resultSet.getDouble("price")).
+                        setDate(resultSet.getTimestamp(DBColumns.CREATION_DATE).toLocalDateTime()).
+                        setCarBrand(resultSet.getString(DBColumns.BRAND)).
+                        setCarModel(resultSet.getString(DBColumns.MODEL)).
+                        setCarYearManufacture(resultSet.getString(DBColumns.YEAR)).
+                        setRepairType(RepairType.valueOf(resultSet.getString(DBColumns.REPAIR_TYPE))).
+                        setRepairDescription(resultSet.getString(DBColumns.REPAIR_DESCRIPTION)).
+                        setPrice(resultSet.getDouble(DBColumns.PRICE)).
                         setMaster(new User.UserBuilder().
-                                setId(resultSet.getInt("master_id")).
-                                setFirstName(resultSet.getString("master_f_name")).
-                                setLastName(resultSet.getString("master_l_name")).
+                                setId(resultSet.getInt(DBColumns.MASTER_ID)).
+                                setFirstName(resultSet.getString(DBColumns.MASTER_F_NAME)).
+                                setLastName(resultSet.getString(DBColumns.MASTER_L_NAME)).
                                 build()).
-                        setStatus(OrderStatus.valueOf(resultSet.getString("status"))).
-                        setManagerComment(resultSet.getString("manager_comment")).
+                        setStatus(OrderStatus.valueOf(resultSet.getString(DBColumns.STATUS))).
+                        setManagerComment(resultSet.getString(DBColumns.MANAGER_COMMENT)).
                         build();
-                Timestamp repairCompletion = resultSet.getTimestamp("repair_completion_date");
+                Timestamp repairCompletion = resultSet.getTimestamp(DBColumns.REPAIR_COMPLETION_DATE);
                 if (repairCompletion != null) {
                     order.setRepairCompletionDate(repairCompletion.toLocalDateTime());
                 }
                 return order;
             } else {
-                return null;                                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Handle exception!!!!!!!!!!!!!!!!!!!!!
+                return null;
             }
         });
 
@@ -89,13 +91,39 @@ public class ResultHandlerFactory {
             return list;
         });
 
+        HANDLER.put(ResultTemplate.REVIEW, resultSet -> {
+            if (resultSet.next()) {
+                Review review = new Review.ReviewBuilder().
+                        setId(resultSet.getInt(DBColumns.ID)).
+                        setCustomer(new User.UserBuilder().
+                                setId(resultSet.getInt(DBColumns.CUSTOMER_ID)).
+                                setFirstName(resultSet.getString(DBColumns.CUSTOMER_F_NAME)).
+                                build()).
+                        setDateTime(resultSet.getTimestamp(DBColumns.REVIEW_DATE).toLocalDateTime()).
+                        setReviewContent(resultSet.getString(DBColumns.REVIEW_CONTENT)).
+                        build();
+                return review;
+            } else {
+                return null;
+            }
+        });
+
+        HANDLER.put(ResultTemplate.REVIEWS, resultSet -> {
+            List<Review> list = new LinkedList<>();
+            Review review;
+            do {
+                review = (Review) HANDLER.get(ResultTemplate.REVIEW).handleResultSet(resultSet);
+            } while (review != null && list.add(review));
+            return list;
+        });
+
         HANDLER.put(ResultTemplate.EMAIL, resultSet -> !resultSet.next());
 
         HANDLER.put(ResultTemplate.AMOUNT, resultSet -> {
             if (resultSet.next()) {
-                return resultSet.getInt("amount");
+                return resultSet.getInt(DBColumns.AMOUNT);
             } else {
-                return null;                            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Handle exception!!!!!!!!!!!!!!!!!!!!!
+                return 0;
             }
         });
     }

@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.services.pagination;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.Page;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationModel;
 
@@ -37,19 +38,19 @@ public class PagePaginationHandler {
 
     private void formMiddlePaginationModel(String currentUri, int currentPageNum, int totalPages, List<Page> pages) {
         formLeftPaginationModel(currentUri, currentPageNum, currentPageNum + 2, pages);
-        createSinglePage(pages, "ellipsis", -1);
+        createSinglePage(pages, CommonConstants.ELLIPSIS, -1);
         createSinglePage(pages, currentUri, totalPages);
     }
 
     private void formLeftPaginationModel(String currentUri, int currentPageNum, int totalPages, List<Page> pages) {
         createSinglePage(pages, currentUri, 1);
-        createSinglePage(pages, "ellipsis", -1);
+        createSinglePage(pages, CommonConstants.ELLIPSIS, -1);
         createSidePages(pages, currentUri, currentPageNum, currentPageNum - 2, totalPages);
     }
 
     private void formRightPaginationModel(String currentUri, int currentPageNum, int totalPages, List<Page> pages) {
         createSidePages(pages, currentUri, currentPageNum, 1, currentPageNum + 2);
-        createSinglePage(pages, "ellipsis", -1);
+        createSinglePage(pages, CommonConstants.ELLIPSIS, -1);
         createSinglePage(pages, currentUri, totalPages);
     }
 
@@ -63,7 +64,7 @@ public class PagePaginationHandler {
 
     private String createNextUri(String currentUri, int currentPageNum, int totalEntities, int entitiesPageLimit) {
         if (totalEntities > currentPageNum * entitiesPageLimit) {
-            return currentUri + "?page=" + (currentPageNum + 1);
+            return currentUri + CommonConstants.PAGE_EQUAL + (currentPageNum + 1);
         } else {
             return null;
         }
@@ -71,7 +72,7 @@ public class PagePaginationHandler {
 
     private String setPageUri(String currentUri, int pageNum) {
         if (pageNum > 1) {
-            return currentUri + "?page=" + pageNum;
+            return currentUri + CommonConstants.PAGE_EQUAL + pageNum;
         } else {
             return currentUri;
         }
@@ -92,7 +93,7 @@ public class PagePaginationHandler {
     private void createSidePages(List<Page> pages, String currentUri, int currentPage, int startPage, int totalPages) {
         for (int i = startPage; i <= totalPages; i++) {
             if (i == currentPage) {
-                createSinglePage(pages, "current", i);
+                createSinglePage(pages, CommonConstants.CURRENT, i);
             } else {
                 createSinglePage(pages, currentUri, i);
             }

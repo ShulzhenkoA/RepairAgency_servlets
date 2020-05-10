@@ -16,6 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <span class="navbar-text"><fmt:message key="cra.header.site_title"/></span>
+
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <div class="dropdown dropleft">
@@ -24,12 +25,12 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/language?lang=uk&prevURL=${requestScope['javax.servlet.forward.request_uri']}${page ne null ? '&page='.concat(page) : ''}">
+                           href="${pageContext.request.contextPath}/language?lang=uk&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
                             <img src="${pageContext.request.contextPath}/static/img/ukr.png" alt="Ukraine flag">
                             <fmt:message key="cra.header.lang_uk"/>
                         </a>
                         <a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/language?lang=en&prevURL=${requestScope['javax.servlet.forward.request_uri']}${page ne null ? '&page='.concat(page) : ''}">
+                           href="${pageContext.request.contextPath}/language?lang=en&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
                             <img src="${pageContext.request.contextPath}/static/img/usa.png" alt="USA flag">
                             <fmt:message key="cra.header.lang_en"/>
                         </a>

@@ -1,14 +1,20 @@
 package ua.javaexternal_shulzhenko.repair_service.servlet;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
+import ua.javaexternal_shulzhenko.repair_service.constants.CRA_JSPFiles;
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
+import ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths;
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.*;
 import ua.javaexternal_shulzhenko.repair_service.models.order.Order;
 import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants;
+import ua.javaexternal_shulzhenko.repair_service.models.review.Review;
 import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.OrdersDBService;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.ReviewsDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.authentication.UserAuthenticator;
 import ua.javaexternal_shulzhenko.repair_service.services.editing.EditingOrderValidator;
@@ -29,12 +35,12 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
-@WebServlet(urlPatterns = {"/reviews", "/home", "/customer_home", "/customer_order_history",
-        "/registration", "/login", "/contacts", "/leave_review",
-        "/create_order", "/manager_home", "/error", "/logout",
-        "/admin_home", "/man_mas_registration", "/edit_user", "/delete_user",
-        "/master_home", "/master_completed_orders", "/edit_status", "/active_orders", "/edit_order",
-        "/order_history", "/customers", "/masters"})
+@WebServlet(urlPatterns = {CRAPaths.HOME, CRAPaths.REVIEWS, CRAPaths.CUSTOMER_HOME, CRAPaths.CUSTOMER_ORDER_HISTORY,
+        CRAPaths.REGISTRATION, CRAPaths.LOGIN, CRAPaths.CONTACTS, CRAPaths.LEAVE_REVIEW,
+        CRAPaths.CREATE_ORDER, CRAPaths.MANAGER_HOME, CRAPaths.LOGOUT,
+        CRAPaths.ADMIN_HOME, CRAPaths.MAN_MAS_REGISTRATION, CRAPaths.EDIT_USER, CRAPaths.DELETE_USER,
+        CRAPaths.MASTER_HOME, CRAPaths.MASTER_COMPLETED_ORDERS, CRAPaths.EDIT_STATUS, CRAPaths.ACTIVE_ORDERS, CRAPaths.EDIT_ORDER,
+        CRAPaths.ORDER_HISTORY, CRAPaths.CUSTOMERS, CRAPaths.MASTERS, CRAPaths.ERROR404, CRAPaths.ERROR500})
 public class AppControllerServlet extends HttpServlet {
 
     private PagePaginationHandler pagePaginationHandler;
@@ -51,29 +57,31 @@ public class AppControllerServlet extends HttpServlet {
         User user;
         int pageNum;
         int offset;
-
-        int entityAmount;
         PageEntities<Order> orders;
         PaginationModel paginationModel;
+        PageEntities<Review> reviews;
         switch (servletPath) {
             case "/home":
             case "/contacts":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "common_home.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                pageNum = extractPageNum(req);
+                offset = computeOffset(pageNum);
+                reviews = ReviewsDBService.getReviewsByOffsetAmount(offset,
+                        PaginationConstants.REVIEWS_FOR_HOME.getAmount());
+                req.setAttribute(Attributes.REVIEWS, reviews.getEntities());
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.COMMON_HOME);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/login":
-                req.setAttribute("main_block", "login_main_block.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.LOGIN_MAIN_BLOCK);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/logout":
                 req.getSession().invalidate();
-                resp.sendRedirect(req.getContextPath() + "/home");
+                resp.sendRedirect(req.getContextPath() + CRAPaths.HOME);
                 break;
             case "/customer_home":
             case "/customer_order_history":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "customer_master_page.jsp");
                 user = getUserFromSession(req);
                 pageNum = extractPageNum(req);
                 offset = computeOffset(pageNum);
@@ -88,17 +96,17 @@ public class AppControllerServlet extends HttpServlet {
                 }
                 paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                         pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                req.setAttribute("orders", orders.getEntities());
-                req.setAttribute("pgModel", paginationModel);
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ORDERS, orders.getEntities());
+                req.setAttribute(Attributes.PG_MODEL, paginationModel);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/manager_home":
             case "/active_orders":
             case "/order_history":
             case "/customers":
             case "/masters":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "manager_home.jsp");
                 pageNum = extractPageNum(req);
                 offset = computeOffset(pageNum);
 
@@ -108,8 +116,8 @@ public class AppControllerServlet extends HttpServlet {
                     paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                             pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
                     List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
-                    req.setAttribute("orders", orders.getEntities());
-                    req.setAttribute("masters", masters);
+                    req.setAttribute(Attributes.ORDERS, orders.getEntities());
+                    req.setAttribute(Attributes.MASTERS, masters);
                 } else if (servletPath.equals("/active_orders")) {
                     orders = OrdersDBService.getManagerOrdersByAmountOffsetMultipleExcludeStatuses(offset,
                             PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
@@ -117,40 +125,40 @@ public class AppControllerServlet extends HttpServlet {
                     paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                             pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
                     List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
-                    req.setAttribute("orders", orders.getEntities());
-                    req.setAttribute("masters", masters);
+                    req.setAttribute(Attributes.ORDERS, orders.getEntities());
+                    req.setAttribute(Attributes.MASTERS, masters);
                 } else if (servletPath.equals("/order_history")) {
                     orders = OrdersDBService.getManagerOrdersByOffsetAmountTwoStatuses(offset,
                             PaginationConstants.ORDERS_FOR_PAGE.getAmount(),
                             OrderStatus.ORDER_COMPLETED, OrderStatus.REJECTED);
                     paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                             pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                    req.setAttribute("orders", orders.getEntities());
+                    req.setAttribute(Attributes.ORDERS, orders.getEntities());
                 } else if (servletPath.equals("/customers")) {
                     PageEntities<User> customers = UsersDBService.getUsersByRoleOffsetAmount(Role.CUSTOMER,
                             offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
                     paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                             pageNum, customers.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    req.setAttribute("customers", customers.getEntities());
+                    req.setAttribute(Attributes.CUSTOMERS, customers.getEntities());
                 } else {
                     PageEntities<User> masters = UsersDBService.getUsersByRoleOffsetAmount(Role.MASTER,
                             offset, PaginationConstants.USERS_FOR_PAGE.getAmount());
                     paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                             pageNum, masters.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
-                    req.setAttribute("masters", masters.getEntities());
+                    req.setAttribute(Attributes.MASTERS, masters.getEntities());
                 }
-                req.setAttribute("pgModel", paginationModel);
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.PG_MODEL, paginationModel);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/edit_order":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "order_editing_main_block.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ORDER_EDITING_MAIN_BLOCK);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/master_home":
             case "/master_completed_orders":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "customer_master_page.jsp");
                 user = getUserFromSession(req);
                 pageNum = extractPageNum(req);
                 offset = computeOffset(pageNum);
@@ -165,48 +173,60 @@ public class AppControllerServlet extends HttpServlet {
                 }
                 paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(),
                         pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
-                req.setAttribute("orders", orders.getEntities());
-                req.setAttribute("pgModel", paginationModel);
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ORDERS, orders.getEntities());
+                req.setAttribute(Attributes.PG_MODEL, paginationModel);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/admin_home":
             case "/man_mas_registration":
                 if (servletPath.equals("/admin_home")) {
                     List<User> managers = UsersDBService.getUsersByRole(Role.MANAGER);
                     List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
-                    req.setAttribute("managers", managers);
-                    req.setAttribute("masters", masters);
+                    req.setAttribute(Attributes.MANAGERS, managers);
+                    req.setAttribute(Attributes.MASTERS, masters);
                 }
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "admin_page.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ADMIN_PAGE);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/edit_user":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "user_editing_main_block.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.USER_EDITING_MAIN_BLOCK);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/reviews":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "reviews.jsp");
+            case "/leave_review":
                 pageNum = extractPageNum(req);
-                paginationModel = pagePaginationHandler.createPaginationModel(req.getRequestURI(), pageNum, 1000, 50);
-                req.setAttribute("paginationModel", paginationModel);
-                req.setAttribute("page", pageNum);
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                offset = computeOffset(pageNum);
+                reviews = ReviewsDBService.getReviewsByOffsetAmount(
+                        offset, PaginationConstants.REVIEWS_FOR_REVIEW.getAmount());
+                paginationModel = pagePaginationHandler.createPaginationModel(
+                        req.getRequestURI(), pageNum,
+                        reviews.getEntitiesTotalAmount(), PaginationConstants.REVIEWS_FOR_REVIEW.getAmount());
+                req.setAttribute(Attributes.REVIEWS, reviews.getEntities());
+                req.setAttribute(Attributes.PG_MODEL, paginationModel);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.REVIEWS);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/create_order":
-                req.setAttribute("aside_menu", "aside_menu.jsp");
-                req.setAttribute("main_block", "order_form.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ORDER_FORM);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             case "/registration":
-                req.setAttribute("main_block", "registration_main_block.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.REGISTRATION_MAIN_BLOCK);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
-            case "/error":
-                req.setAttribute("main_block", "404.jsp");
-                req.getRequestDispatcher("WEB-INF/jsp_pages/core_page.jsp").forward(req, resp);
+            case "/error404":
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.PAGE404);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+                break;
+            case "/error500":
+                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.PAGE500);
+                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
                 break;
             default:
                 resp.getWriter().print("THIS PATH DON'T PROCESS");
@@ -215,7 +235,7 @@ public class AppControllerServlet extends HttpServlet {
     }
 
     private int extractPageNum(HttpServletRequest req) {
-        String page = req.getParameter("page");
+        String page = req.getParameter(Parameters.PAGE);
         if (page != null) {
             return Integer.parseInt(page);
         } else {
@@ -239,7 +259,7 @@ public class AppControllerServlet extends HttpServlet {
                     String targetPath = defineTargetPathAfterLogin(req, user);
                     resp.sendRedirect(req.getContextPath() + targetPath);
                 } else {
-                    if (inconsistencies.contains("email")) {
+                    if (inconsistencies.contains(Parameters.EMAIL)) {
                         throw new VerificationException(VerificationException.VerificationExceptionType.EMAIL);
                     } else {
                         throw new VerificationException(VerificationException.VerificationExceptionType.PASS);
@@ -247,138 +267,133 @@ public class AppControllerServlet extends HttpServlet {
                 }
             } catch (VerificationException exc) {
                 req.setAttribute(exc.getType().name(), "");
-                req.setAttribute("prevForm", loginForm);
+                req.setAttribute(Attributes.PREV_FORM, loginForm);
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 doGet(req, resp);
                 throw new VerificationException(exc.getType());
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();                                     //////////////////////////////////handle this exception !!!!!!!!!!!!!!!!!!!!!!!!!
             }
 
         } else if (req.getServletPath().equals("/registration") || req.getServletPath().equals("/man_mas_registration")) {
-
-            try {
-                RegistrationForm registrationForm = new RegistrationForm(req);
-                Set<String> inconsistencies = FormValidator.validateForm(registrationForm);
-                if (inconsistencies.isEmpty()) {
-                    UsersDBService.createUser(registrationForm);
-                    req.setAttribute("userWasRegistered", "");
-                } else {
-                    req.setAttribute("inconsistencies", inconsistencies);
-                    req.setAttribute("prevForm", registrationForm);
-                    resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();                                     /////////////////////////////////handle this exception !!!!!!!!!!!!!!!!!!!!!!!!!
+            RegistrationForm registrationForm = new RegistrationForm(req);
+            Set<String> inconsistencies = FormValidator.validateForm(registrationForm);
+            if (inconsistencies.isEmpty()) {
+                UsersDBService.createUser(registrationForm);
+                req.setAttribute(Attributes.SUCCESS, "");
+            } else {
+                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+                req.setAttribute(Attributes.PREV_FORM, registrationForm);
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             }
             doGet(req, resp);
 
         } else if (req.getServletPath().equals("/create_order")) {
-            try {
-                OrderForm orderForm = new OrderForm(req);
-                Set<String> inconsistencies = FormValidator.validateForm(orderForm);
-                if (inconsistencies.isEmpty()) {
-                    OrdersDBService.addOrder(new Order(orderForm));
-                    Order order = OrdersDBService.getLastOrderForRegUser(orderForm.getUser().getId());
-                    req.setAttribute("madeOrder", order);
-                } else {
-                    req.setAttribute("inconsistencies", inconsistencies);
-                    req.setAttribute("prevForm", orderForm);
-                }
-                doGet(req, resp);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();                                //////////////////////////////////handle this exception !!!!!!!!!!!!!!!!!!!!!!!!!
+            OrderForm orderForm = new OrderForm(req);
+            Set<String> inconsistencies = FormValidator.validateForm(orderForm);
+            if (inconsistencies.isEmpty()) {
+                OrdersDBService.addOrder(orderForm);
+                Order order = OrdersDBService.getLastOrderForRegUser(orderForm.getUser().getId());
+                req.setAttribute(Attributes.MADE_ORDER, order);
+            } else {
+                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+                req.setAttribute(Attributes.PREV_FORM, orderForm);
             }
+            doGet(req, resp);
+
         } else if (req.getServletPath().equals("/delete_user")) {
-            int userId = Integer.parseInt(req.getParameter("deleting_user_id"));
+            int userId = Integer.parseInt(req.getParameter(Parameters.DELETING_USER_ID));
             UsersDBService.deleteUser(userId);
-            resp.sendRedirect(req.getContextPath() + "/admin_home");
+            resp.sendRedirect(req.getContextPath() + CRAPaths.ADMIN_HOME);
         } else if (req.getServletPath().equals("/edit_user")) {
             UserEditingForm form = new UserEditingForm(req);
-            try {
-                Set<String> inconsistencies = FormValidator.validateForm(form);
-                if (inconsistencies.isEmpty()) {
-                    User user = UsersDBService.getUserByID(form.getId());
-                    new UserEditor(form, user).
-                            compareFirstName().
-                            compareLastName().
-                            compareEmail().
-                            compareRole().edit();
-                    resp.sendRedirect(req.getContextPath() + "/admin_home");
-                } else {
-                    req.setAttribute("inconsistencies", inconsistencies);
-                    req.setAttribute("prevForm", form);
-                    doGet(req, resp);
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
+            Set<String> inconsistencies = FormValidator.validateForm(form);
+            if (inconsistencies.isEmpty()) {
+                User user = UsersDBService.getUserByID(form.getId());
+                new UserEditor(form, user).
+                        compareFirstName().
+                        compareLastName().
+                        compareEmail().
+                        compareRole().edit();
+                resp.sendRedirect(req.getContextPath() + CRAPaths.ADMIN_HOME);
+            } else {
+                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+                req.setAttribute(Attributes.PREV_FORM, form);
+                doGet(req, resp);
             }
+
         } else if (req.getServletPath().equals("/edit_order")) {
             OrderEditingForm form = new OrderEditingForm(req);
-            try {
-                Set<String> inconsistencies = FormValidator.validateForm(form);
-                EditingOrderValidator.checkIfNeedMasterForThisStatus(form, inconsistencies);
-                EditingOrderValidator.checkIfNeedPreviousPrice(form, inconsistencies);
-                if (inconsistencies.isEmpty()) {
-                    Order order = OrdersDBService.getOrderById(form.getId());
-                    new OrderEditor(form, order).
-                            comparePrice().
-                            compareMasters().
-                            compareStatus().
-                            compareManagerComment().edit();
-                    resp.sendRedirect(req.getContextPath() + "/manager_home");
-                } else {
-                    List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
-                    Order order = OrdersDBService.getOrderById(form.getId());
-                    req.setAttribute("curOrderStatus", order.getStatus());
-                    req.setAttribute("masters", masters);
-                    req.setAttribute("inconsistencies", inconsistencies);
-                    req.setAttribute("prevForm", form);
-                    doGet(req, resp);
-                }
-            } catch (IllegalAccessException exc) {
-                exc.printStackTrace();
+            Set<String> inconsistencies = FormValidator.validateForm(form);
+            EditingOrderValidator.checkIfNeedMasterForThisStatus(form, inconsistencies);
+            EditingOrderValidator.checkIfNeedPreviousPrice(form, inconsistencies);
+            if (inconsistencies.isEmpty()) {
+                Order order = OrdersDBService.getOrderById(form.getId());
+                new OrderEditor(form, order).
+                        comparePrice().
+                        compareMasters().
+                        compareStatus().
+                        compareManagerComment().edit();
+                resp.sendRedirect(req.getContextPath() + CRAPaths.MANAGER_HOME);
+            } else {
+                List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
+                Order order = OrdersDBService.getOrderById(form.getId());
+                req.setAttribute(Attributes.CUR_ORDER_STATUS, order.getStatus());
+                req.setAttribute(Attributes.MASTERS, masters);
+                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+                req.setAttribute(Attributes.PREV_FORM, form);
+                doGet(req, resp);
             }
 
         } else if (req.getServletPath().equals("/edit_status")) {
-            String status = req.getParameter("status");
-            String orderID = req.getParameter("orderID");
+            String status = req.getParameter(Parameters.STATUS);
+            String orderID = req.getParameter(Parameters.ORDER_ID);
             if (status.equals(OrderStatus.REPAIR_WORK.name())) {
                 OrdersDBService.editOrderStatus(orderID, status);
             } else if (status.equals(OrderStatus.REPAIR_COMPLETED.name())) {
                 OrdersDBService.editOrderStatusCompletionDate(orderID, status, LocalDateTime.now());
             }
-            resp.sendRedirect(req.getContextPath() + "/master_home");
+            resp.sendRedirect(req.getContextPath() + CRAPaths.MASTER_HOME);
+        } else if (req.getServletPath().equals("/leave_review")) {
+            ReviewForm form = new ReviewForm(req);
+            Set<String> inconsistencies = FormValidator.validateForm(form);
+            if (inconsistencies.isEmpty()) {
+                ReviewsDBService.addReview(form);
+                req.setAttribute(Attributes.SUCCESS, "");
+            } else {
+                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+                req.setAttribute(Attributes.PREV_FORM, form);
+            }
+            doGet(req, resp);
         }
     }
 
     private String defineTargetPathAfterLogin(HttpServletRequest req, User user) {
-        String path = (String) req.getSession().getAttribute("previousBeforeLogin");
-        if (path != null) {
-            return path;
-        } else {
-            switch (user.getRole()) {
-                case CUSTOMER:
-                    return "/customer_home";
-                case ADMIN:
-                    return "/admin_home";
-                case MANAGER:
-                    return "/manager_home";
-                case MASTER:
-                    return "/master_home";
-                default:
-                    return "/home";
-            }
+        switch (user.getRole()) {
+            case CUSTOMER:
+                String path = (String) req.getSession().getAttribute(Attributes.TO_CREATE_ORDER);
+                if (path != null) {
+                    return path;
+                } else {
+                    return CRAPaths.CUSTOMER_HOME;
+                }
+            case ADMIN:
+                return CRAPaths.ADMIN_HOME;
+            case MANAGER:
+                return CRAPaths.MANAGER_HOME;
+            case MASTER:
+                return CRAPaths.MASTER_HOME;
+            default:
+                return CRAPaths.HOME;
         }
+
     }
 
     private void addUserToSession(HttpServletRequest req, User user) {
         HttpSession session = req.getSession();
-        session.setAttribute("user", user);
+        session.setAttribute(Attributes.USER, user);
     }
 
     private User getUserFromSession(HttpServletRequest req) {
         HttpSession session = req.getSession();
-        return (User) session.getAttribute("user");
+        return (User) session.getAttribute(Attributes.USER);
     }
 }

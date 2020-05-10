@@ -8,7 +8,7 @@
 
 
 <c:choose>
-    <c:when test="${userWasRegistered eq null}">
+    <c:when test="${success eq null}">
         <div class="modal-dialog ${requestScope['javax.servlet.forward.servlet_path'] eq '/registration' ? '' : ' modal-dialog-centered'}">
             <div class="modal-content">
                 <div class="modal-header">

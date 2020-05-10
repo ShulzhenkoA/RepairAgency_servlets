@@ -1,9 +1,11 @@
 package ua.javaexternal_shulzhenko.repair_service.models.pagination;
 
-public final class Page {
+import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
 
-    private String pageUri;
-    private int pageNum;
+public class Page {
+
+    private final String pageUri;
+    private final int pageNum;
 
     public Page(String pageUri, int pageNum) {
         this.pageUri = pageUri;
@@ -19,10 +21,10 @@ public final class Page {
     }
 
     public boolean isEllipsis() {
-        return pageUri.contains("ellipsis");
+        return pageUri.contains(CommonConstants.ELLIPSIS);
     }
 
     public boolean isCurrent() {
-        return pageUri.contains("current");
+        return pageUri.contains(CommonConstants.CURRENT);
     }
 }

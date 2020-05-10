@@ -201,7 +201,11 @@ main #scc_reg{
     padding-right: 0;
 }
 
-#reviewDateLink {
+.red-mess {
+    color: red;
+}
+
+#reviewDate{
     padding-top: 10px;
 }
 

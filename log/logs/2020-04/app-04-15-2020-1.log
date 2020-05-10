@@ -1,6 +1,6 @@
 [INFO ] 2020-04-15 19:14:33.896 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-15 19:14:56.564 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: http://localhost:8080/RepairAgency/exc_servlet was not found
 	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]
@@ -34,7 +34,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://l
 [INFO ] 2020-04-15 19:16:44.429 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [INFO ] 2020-04-15 19:31:30.357 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-15 19:53:11.904 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: http://localhost:8080/RepairAgency/exc_servlet was not found
 	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]

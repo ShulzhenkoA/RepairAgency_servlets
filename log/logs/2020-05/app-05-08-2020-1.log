@@ -2393,7 +2393,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 [INFO ] 2020-05-08 21:32:01.669 RepairAgencyApplicationListener:23 - Webapp 'Repair Service' was started.
 [WARN ] 2020-05-08 21:33:02.121 ExceptionHandleFilter:30 - Wrong password log in attempt. User: petia@gmail.com	 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0
 [ERROR] 2020-05-08 21:34:04.003 ExceptionHandleFilter:36 - Failed request (/RepairAgency/login). Page not found 404: /login page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /login page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
@@ -2424,7 +2424,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login p
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-05-08 21:34:28.159 ExceptionHandleFilter:36 - Failed request (/RepairAgency/registration). Page not found 404: /registration page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /registration page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /registration page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
@@ -2455,7 +2455,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /registr
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-05-08 21:34:31.043 ExceptionHandleFilter:36 - Failed request (/RepairAgency/registration). Page not found 404: /registration page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /registration page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /registration page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
@@ -2488,7 +2488,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /registr
 [INFO ] 2020-05-08 21:34:49.519 RepairAgencyApplicationListener:33 - Webapp 'Repair Service' was closed
 [INFO ] 2020-05-08 21:35:07.753 RepairAgencyApplicationListener:23 - Webapp 'Repair Service' was started.
 [ERROR] 2020-05-08 21:35:32.884 ExceptionHandleFilter:36 - Failed request (/RepairAgency/login). Page not found 404: /login page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /login page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
@@ -2519,7 +2519,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login p
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-05-08 21:36:08.761 ExceptionHandleFilter:36 - Failed request (/RepairAgency/login). Page not found 404: /login page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /login page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]
@@ -2550,7 +2550,7 @@ ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login p
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.33]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_231]
 [ERROR] 2020-05-08 21:36:57.001 ExceptionHandleFilter:36 - Failed request (/RepairAgency/login). Page not found 404: /login page not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: /login page not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: /login page not found
 	at ua.javaexternal_shulzhenko.repair_service.filters.AuthorizationHandleFilter.doFilter(AuthorizationHandleFilter.java:23) ~[classes/:?]
 	at ua.javaexternal_shulzhenko.repair_service.filters.AbstractFilter.doFilter(AbstractFilter.java:21) ~[classes/:?]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[catalina.jar:9.0.33]

@@ -6,5 +6,7 @@ public enum ResultTemplate {
     ORDER,
     ORDERS,
     EMAIL,
-    AMOUNT
+    AMOUNT,
+    REVIEW,
+    REVIEWS
 }

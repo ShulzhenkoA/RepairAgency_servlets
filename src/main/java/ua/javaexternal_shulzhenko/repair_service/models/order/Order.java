@@ -1,6 +1,5 @@
 package ua.javaexternal_shulzhenko.repair_service.models.order;
 
-import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 
 import java.time.LocalDateTime;
@@ -22,17 +21,6 @@ public class Order {
     private String managerComment;
 
     private Order(){}
-
-    public Order(OrderForm form) {
-        customer = form.getUser();
-        date = LocalDateTime.now();
-        carBrand = form.getCarBrand();
-        carModel = form.getCarModel();
-        carYearManufacture = form.getCarYear();
-        repairType = form.getRepairType();
-        repairDescription = form.getRepairDescription();
-        status = OrderStatus.PENDING;
-    }
 
     public int getId() {
         return id;

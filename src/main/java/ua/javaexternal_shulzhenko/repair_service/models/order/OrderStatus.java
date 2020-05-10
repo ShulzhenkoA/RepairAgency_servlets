@@ -1,7 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.models.order;
 
 public enum OrderStatus {
-
     PENDING,
     REJECTED,
     CAR_WAITING,

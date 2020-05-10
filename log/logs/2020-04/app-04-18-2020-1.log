@@ -376,7 +376,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 [INFO ] 2020-04-18 03:38:46.990 RepairAgencyApplicationListener:30 - Webapp 'Repair Service' was closed
 [INFO ] 2020-04-18 03:39:03.341 RepairAgencyApplicationListener:20 - Webapp 'Repair Service' was started.
 [ERROR] 2020-04-18 03:39:14.815 ExceptionHandler:25 - Failed request (/RepairAgency/exc_servlet): http://localhost:8080/RepairAgency/exc_servlet was not found
-ua.javaexternal_shulzhenko.repair_service.exceptions.NotFoundException: http://localhost:8080/RepairAgency/exc_servlet was not found
+ua.javaexternal_shulzhenko.repair_service.exceptions.AuthorizationException: http://localhost:8080/RepairAgency/exc_servlet was not found
 	at ua.javaexternal_shulzhenko.repair_service.servlet.ExceptionServlet.doGet(ExceptionServlet.java:14) ~[classes/:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[servlet-api.jar:?]
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[servlet-api.jar:?]

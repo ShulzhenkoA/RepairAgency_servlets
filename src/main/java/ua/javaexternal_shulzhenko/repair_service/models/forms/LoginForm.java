@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.regex.Regex;
 
@@ -13,8 +14,8 @@ public class LoginForm implements Form {
     private final String password;
 
     public LoginForm(HttpServletRequest req) {
-        email = req.getParameter("email");
-        password = req.getParameter("pass");
+        email = req.getParameter(Parameters.EMAIL);
+        password = req.getParameter(Parameters.PASS);
     }
 
     public String getEmail() {

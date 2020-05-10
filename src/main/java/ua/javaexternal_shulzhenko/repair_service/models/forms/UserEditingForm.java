@@ -1,5 +1,6 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
 import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.Email;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
@@ -24,11 +25,11 @@ public class UserEditingForm implements Form {
     private final Role role;
 
     public UserEditingForm(HttpServletRequest req) {
-        id = Integer.parseInt(req.getParameter("editing_user_id"));
-        firstName = req.getParameter("fName");
-        lastName = req.getParameter("lName");
-        email = req.getParameter("email");
-        role = Role.valueOf(req.getParameter("role"));
+        id = Integer.parseInt(req.getParameter(Parameters.EDITING_USER_ID));
+        firstName = req.getParameter(Parameters.F_NAME);
+        lastName = req.getParameter(Parameters.L_NAME);
+        email = req.getParameter(Parameters.EMAIL);
+        role = Role.valueOf(req.getParameter(Parameters.ROLE));
     }
 
     public int getId() { return id; }
