@@ -265,8 +265,8 @@ public class OrdersDBService {
     }
 
     public static void editOrderStatus(String orderID, String status) {
-        try {
-            DAO_FACTORY.update(DBConnectionsPool.getConnection(), Queries.UPDATE_ORDER_STATUS.getQuery(),
+        try(Connection connection = DBConnectionsPool.getConnection()) {
+            DAO_FACTORY.update(connection, Queries.UPDATE_ORDER_STATUS.getQuery(),
                     status, orderID);
         } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't edit order status because of: ");
@@ -274,8 +274,8 @@ public class OrdersDBService {
     }
 
     public static void editOrderStatusCompletionDate(String orderID, String status, LocalDateTime date) {
-        try {
-            DAO_FACTORY.update(DBConnectionsPool.getConnection(), Queries.UPDATE_ORDER_STATUS_COMPLETION_DATE.getQuery(),
+        try (Connection connection = DBConnectionsPool.getConnection()){
+            DAO_FACTORY.update(connection, Queries.UPDATE_ORDER_STATUS_COMPLETION_DATE.getQuery(),
                     status, date, orderID);
         } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't edit order status and date because of: ");
@@ -306,7 +306,7 @@ public class OrdersDBService {
                                 form.getManagerComment(), form.getId());
                         break;
                     default:
-                        throw new SQLException("Can't edit such user data: " + edit);
+                        throw new SQLException("Can't edit such order data: " + edit);
                 }
             }
             connection.commit();
@@ -315,10 +315,10 @@ public class OrdersDBService {
                 connection.rollback();
             } catch (SQLException rlb_exc) {
                 throw new DataBaseInteractionException(
-                        "Can't edit user's data and Can't rollback editing because of: " +
+                        "Can't edit order and can't rollback editing because of: " +
                                 exc.getMessage() + rlb_exc.getMessage(), rlb_exc);
             }
-            throw new DataBaseInteractionException("Can't edit user's data because of: " + exc.getMessage(), exc);
+            throw new DataBaseInteractionException("Can't edit order because of: " + exc.getMessage(), exc);
         } finally {
             try {
                 connection.close();

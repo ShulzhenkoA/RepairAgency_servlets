@@ -1,25 +1,26 @@
 <%@ tag pageEncoding="UTF-8" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>
 
-<div class="modal-dialog${requestScope['javax.servlet.forward.servlet_path'] eq '/login' ? '' : ' modal-dialog-centered'}">
+<div class="modal-dialog${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.LOGIN ? '' : ' modal-dialog-centered'}">
     <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title"><fmt:message key="cra.login_form.header"/></h4>
         </div>
         <div class="modal-body">
             <p class="formError">
-                <c:if test="${EMAIL ne null}">
+                <c:if test="${inconsistencies.contains('EMAIL')}">
                     <fmt:message key="cra.login_form.error_msg.email"/>
                 </c:if>
-                <c:if test="${PASS ne null}">
+                <c:if test="${inconsistencies.contains('PASS')}">
                     <fmt:message key="cra.login_form.error_msg.pass"/>
                 </c:if>
             </p>
-            <form action="${pageContext.request.contextPath}/login" method="post">
+            <form action="${pageContext.request.contextPath}${CRAPaths.LOGIN}" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" required placeholder="E-mail" name="email"
                            value="${prevForm.email}">
@@ -36,8 +37,8 @@
         <div class=" modal-footer">
             <div class="col-sm-12"><fmt:message key="cra.login_form.not_reg"/>
                 <a <c:choose>
-                    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/login'}">
-                        href="${pageContext.request.contextPath}/registration"
+                    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.LOGIN}">
+                        href="${pageContext.request.contextPath}${CRAPaths.REGISTRATION}"
                     </c:when>
                     <c:otherwise>
                         href="" data-toggle="modal" data-target="#registerForm" data-dismiss="modal"

@@ -1,5 +1,6 @@
 <%@ tag pageEncoding="UTF-8" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
@@ -9,25 +10,27 @@
 
 <c:choose>
     <c:when test="${success eq null}">
-        <div class="modal-dialog ${requestScope['javax.servlet.forward.servlet_path'] eq '/registration' ? '' : ' modal-dialog-centered'}">
+        <div class="modal-dialog ${requestScope['javax.servlet.forward.servlet_path'] eq
+        CRAPaths.REGISTRATION or requestScope['javax.servlet.forward.servlet_path'] eq
+        CRAPaths.MAN_MAS_REGISTRATION ? '' : ' modal-dialog-centered'}">
             <div class="modal-content">
                 <div class="modal-header">
                     <c:choose>
                         <c:when test="${user.role.name() eq Role.ADMIN}">
-                            <h4 class="modal-title">New manager/master registration</h4>
+                            <h4 class="modal-title"><fmt:message key="cra.reg_form.header.new_man"/></h4>
                         </c:when>
                         <c:otherwise>
-                            <h4 class="modal-title"><fmt:message key="cra.reg_form.header"/></h4>
+                            <h4 class="modal-title"><fmt:message key="cra.reg_form.header.sign"/></h4>
                         </c:otherwise>
                     </c:choose>
                 </div>
                 <div class="modal-body">
                     <form action="<c:choose>
                             <c:when test="${user.role.name() eq Role.ADMIN}">
-                                ${pageContext.request.contextPath}/man_mas_registration
+                                ${pageContext.request.contextPath}${CRAPaths.MAN_MAS_REGISTRATION}
                             </c:when>
                             <c:otherwise>
-                                ${pageContext.request.contextPath}/registration
+                                ${pageContext.request.contextPath}${CRAPaths.REGISTRATION}
                             </c:otherwise>
                         </c:choose>" method="post">
                         <c:if test="${inconsistencies.contains('firstName')}">
@@ -93,11 +96,11 @@
                                     </c:if>
                                     <div class="form-check-inline">
                                         <input type="radio" class="form-check-input" name="role" value="${Role.MASTER}"
-                                            ${prevForm.role eq Role.MASTER ? 'checked' : ''}>Master
+                                            ${prevForm.role eq Role.MASTER ? 'checked' : ''}><fmt:message key="cra.reg_form.master"/>
                                     </div>
                                     <div class="form-check-inline">
                                         <input type="radio" class="form-check-input" name="role" value="${Role.MANAGER}"
-                                            ${prevForm.role eq Role.MANAGER ? 'checked' : ''}>Manager
+                                            ${prevForm.role eq Role.MANAGER ? 'checked' : ''}><fmt:message key="cra.reg_form.manager"/>
                                     </div>
                                 </div>
                             </c:when>
@@ -116,7 +119,7 @@
                         <div class="col-sm-12">
                             <a <c:choose>
                                 <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/registration'}">
-                                    href="${pageContext.request.contextPath}/login"
+                                    href="${pageContext.request.contextPath}${CRAPaths.LOGIN}"
                                 </c:when>
                                 <c:otherwise>
                                     href="" data-toggle="modal" data-target="#loginForm" data-dismiss="modal"
@@ -131,11 +134,11 @@
     <c:otherwise>
         <div id="scc_reg" class="col-md-12" >
             <c:if test="${param.role eq Role.CUSTOMER}">
-                <h3>You have successfully registered</h3>
-                <a href="${pageContext.request.contextPath}/login">Go to the login page</a>
+                <h3><fmt:message key="cra.reg_form.success.com"/></h3>
+                <a href="${pageContext.request.contextPath}${CRAPaths.LOGIN}"><fmt:message key="cra.reg_form.success.go_to"/></a>
             </c:if>
-            <c:if test="${param.role eq Role.MASTER}"><h3>The master's account has been successfully registered</h3></c:if>
-            <c:if test="${param.role eq Role.MANAGER}"><h3>The manager's account has been successfully registered</h3></c:if>
+            <c:if test="${param.role eq Role.MASTER}"><h3><fmt:message key="cra.reg_form.success.mas"/></h3></c:if>
+            <c:if test="${param.role eq Role.MANAGER}"><h3><fmt:message key="cra.reg_form.success.man"/></h3></c:if>
         </div>
     </c:otherwise>
 </c:choose>

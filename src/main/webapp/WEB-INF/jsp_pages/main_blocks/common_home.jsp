@@ -1,6 +1,8 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="/WEB-INF/cust_tags.tld" prefix="cust"%>
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>
@@ -105,15 +107,16 @@
                 <div class="card-body">
                     <h5>${review.customer.firstName}</h5>
                     <p>${review.reviewContent}</p>
-                    <p class="reviewsDate"><small>${review.dateTime}</small></p>
+                    <p class="reviewsDate">
+                        <small><cust:date-formatter localDateTime="${review.dateTime}" pattern="yyyy-MM-dd"/></small></p>
                 </div>
             </div>
         </c:forEach>
     </div>
     <div class="row col-md-12" id="reviewsLink">
         <div class="col-md-5 offset-md-7">
-            <a href="${pageContext.request.contextPath}/reviews"><fmt:message
-                    key="cra.home_common.reviews.view_all"/></a>
+            <a href="${pageContext.request.contextPath}${CRAPaths.REVIEWS}">
+                <fmt:message key="cra.home_common.reviews.view_all"/></a>
         </div>
     </div>
 </div>

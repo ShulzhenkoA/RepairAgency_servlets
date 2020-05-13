@@ -13,7 +13,6 @@ public enum Queries {
             "FROM reviews JOIN users as customer ON reviews.customer_id = customer.id ORDER BY id DESC LIMIT ?, ?"),
     SELECT_REVIEW_AMOUNT("SELECT count(id) as amount FROM reviews"),
 
-
     SELECT_USER_BY_ID("SELECT * FROM users WHERE id = ?"),
     SELECT_USER_BY_EMAIL("SELECT * FROM users WHERE email = ?"),
     SELECT_USERS_BY_ROLE("SELECT * FROM users WHERE role = ?"),

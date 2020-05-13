@@ -6,5 +6,5 @@
 
 
 <div class="col-md-10 offset-md-1 rounded">
-    <h1>PAGE NOT FOUND</h1>
+    <h1><fmt:message key="cra.404.page_not_found"/></h1>
 </div>

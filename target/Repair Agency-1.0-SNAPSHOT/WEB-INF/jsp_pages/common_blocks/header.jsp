@@ -1,14 +1,15 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.models.user.Role"%>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="cust" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.models.user.Role"%>
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>
 
 <nav class="navbar navbar-expand-sm navbar-dark">
-    <a class="navbar-brand" href="${pageContext.request.contextPath}/home">
+    <a class="navbar-brand" href="${pageContext.request.contextPath}${CRAPaths.HOME}">
         <img src="${pageContext.request.contextPath}/static/img/logo.png" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -25,12 +26,12 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/language?lang=uk&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
+                           href="${pageContext.request.contextPath}${CRAPaths.LANGUAGE}?lang=uk&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
                             <img src="${pageContext.request.contextPath}/static/img/ukr.png" alt="Ukraine flag">
                             <fmt:message key="cra.header.lang_uk"/>
                         </a>
                         <a class="dropdown-item"
-                           href="${pageContext.request.contextPath}/language?lang=en&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
+                           href="${pageContext.request.contextPath}${CRAPaths.LANGUAGE}?lang=en&prevURL=${requestScope['javax.servlet.forward.request_uri']}${param.page ne null ? '&page='.concat(param.page) : ''}">
                             <img src="${pageContext.request.contextPath}/static/img/usa.png" alt="USA flag">
                             <fmt:message key="cra.header.lang_en"/>
                         </a>
@@ -41,8 +42,8 @@
                 <c:when test="${user.role ne Role.UNKNOWN}">
                     <cust:info_logout/>
                 </c:when>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] ne '/login' and
-                               requestScope['javax.servlet.forward.servlet_path'] ne '/registration'}">
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] ne CRAPaths.LOGIN and
+                               requestScope['javax.servlet.forward.servlet_path'] ne CRAPaths.REGISTRATION}">
                     <li class="nav-item">
                         <button type="button" class="btn" data-toggle="modal" data-target="#registerForm">
                             <i class="fas fa-user"></i> <fmt:message key="cra.header.registration"/>

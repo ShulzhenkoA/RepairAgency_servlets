@@ -6,5 +6,5 @@
 
 
 <div class="col-md-10 offset-md-1 rounded">
-    <h1>SERVER TEMPORARILY IS UNAVAILABLE</h1>
+    <h1><fmt:message key="cra.500.server_is_unavailable"/></h1>
 </div>

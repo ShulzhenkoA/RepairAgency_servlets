@@ -3,7 +3,7 @@ package ua.javaexternal_shulzhenko.repair_service.tags;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
-public class EntityNumOnPage extends SimpleTagSupport {
+public final class EntityNumOnPage extends SimpleTagSupport {
 
     private String loop_count_num;
     private String page_num;

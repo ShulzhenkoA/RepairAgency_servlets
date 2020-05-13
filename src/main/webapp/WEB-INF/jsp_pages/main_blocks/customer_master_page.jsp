@@ -1,4 +1,5 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="cust" %>
@@ -7,17 +8,17 @@
 <fmt:setBundle basename="ra_language"/>
 
 <c:choose>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_home'}">
-        <h4 class="up_h">Your current orders info:</h4>
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.CUSTOMER_HOME}">
+        <h4 class="up_h"><fmt:message key="cra.customer_page.header.current_ord"/></h4>
     </c:when>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_order_history'}">
-        <h4 class="up_h">Your previous orders info:</h4>
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.CUSTOMER_ORDER_HISTORY}">
+        <h4 class="up_h"><fmt:message key="cra.customer_page.header.prev_ord"/></h4>
     </c:when>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_home'}">
-        <h4 class="up_h">Active orders that you have in progress:</h4>
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.MASTER_HOME}">
+        <h4 class="up_h"><fmt:message key="cra.master_page.header.act_ord"/></h4>
     </c:when>
-    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_completed_orders'}">
-        <h4 class="up_h">Your completed orders info:</h4>
+    <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.MASTER_COMPLETED_ORDERS}">
+        <h4 class="up_h"><fmt:message key="cra.master_page.header.comp_ord"/></h4>
     </c:when>
 </c:choose>
 
@@ -32,17 +33,17 @@
     <c:otherwise>
         <div class="col-md-12 order rounded page-content">
             <c:choose>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_home'}">
-                    <h6>You haven't active orders. To create an order, click on the 'Make repair order' tab.</h6>
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.CUSTOMER_HOME}">
+                    <h6><fmt:message key="cra.customer_page.ord.abs_act_ord"/></h6>
                 </c:when>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/customer_order_history'}">
-                    <h6>You haven't previous orders.</h6>
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.CUSTOMER_ORDER_HISTORY}">
+                    <h6><fmt:message key="cra.customer_page.ord.abs_prev_ord"/></h6>
                 </c:when>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_home'}">
-                    <h6>You haven't active orders.</h6>
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.MASTER_HOME}">
+                    <h6><fmt:message key="cra.master_page.ord.abs_act_ord"/></h6>
                 </c:when>
-                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq '/master_completed_orders'}">
-                    <h6>You haven't completed orders.</h6>
+                <c:when test="${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.MASTER_COMPLETED_ORDERS}">
+                    <h6><fmt:message key="cra.master_page.ord.abs_prev_ord"/></h6>
                 </c:when>
             </c:choose>
         </div>

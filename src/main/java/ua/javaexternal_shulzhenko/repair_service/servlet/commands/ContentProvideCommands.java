@@ -17,18 +17,38 @@ import ua.javaexternal_shulzhenko.repair_service.services.database_services.Revi
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.UsersDBService;
 import ua.javaexternal_shulzhenko.repair_service.services.pagination.PagePaginationHandler;
 
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GetRequestsHandleCommands {
+public class ContentProvideCommands {
 
     public static final Map<String, RequestHandler> COMMANDS = new HashMap<>();
     private static final PagePaginationHandler pagePaginationHandler = new PagePaginationHandler();
 
     static {
+
+        COMMANDS.put(CRAPaths.LOGIN, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.LOGIN_MAIN_BLOCK));
+
+        COMMANDS.put(CRAPaths.REGISTRATION, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.REGISTRATION_MAIN_BLOCK));
+
+        COMMANDS.put(CRAPaths.EDIT_USER, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.USER_EDITING_MAIN_BLOCK));
+
+        COMMANDS.put(CRAPaths.EDIT_ORDER, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.ORDER_EDITING_MAIN_BLOCK));
+
+        COMMANDS.put(CRAPaths.CREATE_ORDER, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.ORDER_FORM));
+
+        COMMANDS.put(CRAPaths.ERROR404, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.PAGE404));
+
+        COMMANDS.put(CRAPaths.ERROR500, (req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.PAGE500));
+
+        COMMANDS.put(CRAPaths.MAN_MAS_REGISTRATION,(req, resp) -> dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.ADMIN_PAGE));
 
         COMMANDS.put(CRAPaths.HOME, (req, resp) -> {
             int pageNum = extractPageNum(req);
@@ -36,19 +56,7 @@ public class GetRequestsHandleCommands {
             PageEntities<Review> reviews = ReviewsDBService.getReviewsByOffsetAmount(offset,
                     PaginationConstants.REVIEWS_FOR_HOME.getAmount());
             req.setAttribute(Attributes.REVIEWS, reviews.getEntities());
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.COMMON_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.LOGIN, (req, resp) -> {
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.LOGIN_MAIN_BLOCK);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.REGISTRATION, (req, resp) -> {
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.REGISTRATION_MAIN_BLOCK);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.COMMON_HOME);
         });
 
         COMMANDS.put(CRAPaths.LOGOUT, (req, resp) -> {
@@ -67,9 +75,7 @@ public class GetRequestsHandleCommands {
                     pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
         });
 
         COMMANDS.put(CRAPaths.CUSTOMER_ORDER_HISTORY,(req, resp) -> {
@@ -83,9 +89,7 @@ public class GetRequestsHandleCommands {
                     pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
         });
 
         COMMANDS.put(CRAPaths.MANAGER_HOME,(req, resp) -> {
@@ -99,9 +103,7 @@ public class GetRequestsHandleCommands {
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.MASTERS, masters);
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.MANAGER_HOME);
         });
 
         COMMANDS.put(CRAPaths.ACTIVE_ORDERS,(req, resp) -> {
@@ -116,9 +118,7 @@ public class GetRequestsHandleCommands {
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.MASTERS, masters);
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.MANAGER_HOME);
         });
 
         COMMANDS.put(CRAPaths.ORDER_HISTORY,(req, resp) -> {
@@ -131,9 +131,7 @@ public class GetRequestsHandleCommands {
                     pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.MANAGER_HOME);
         });
 
         COMMANDS.put(CRAPaths.CUSTOMERS,(req, resp) -> {
@@ -145,9 +143,7 @@ public class GetRequestsHandleCommands {
                     pageNum, customers.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.CUSTOMERS, customers.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.MANAGER_HOME);
 
         });
 
@@ -160,9 +156,7 @@ public class GetRequestsHandleCommands {
                     pageNum, masters.getEntitiesTotalAmount(), PaginationConstants.USERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.MASTERS, masters.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.MANAGER_HOME);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.MANAGER_HOME);
         });
 
         COMMANDS.put(CRAPaths.MASTER_HOME,(req, resp) -> {
@@ -176,9 +170,7 @@ public class GetRequestsHandleCommands {
                     pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
         });
 
         COMMANDS.put(CRAPaths.MASTER_COMPLETED_ORDERS,(req, resp) -> {
@@ -192,10 +184,7 @@ public class GetRequestsHandleCommands {
                     pageNum, orders.getEntitiesTotalAmount(), PaginationConstants.ORDERS_FOR_PAGE.getAmount());
             req.setAttribute(Attributes.ORDERS, orders.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.CUSTOMER_MASTER_PAGE);
         });
 
         COMMANDS.put(CRAPaths.ADMIN_HOME,(req, resp) -> {
@@ -203,15 +192,7 @@ public class GetRequestsHandleCommands {
             List<User> masters = UsersDBService.getUsersByRole(Role.MASTER);
             req.setAttribute(Attributes.MANAGERS, managers);
             req.setAttribute(Attributes.MASTERS, masters);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ADMIN_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.MAN_MAS_REGISTRATION,(req, resp) -> {
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ADMIN_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.ADMIN_PAGE);
         });
 
         COMMANDS.put(CRAPaths.REVIEWS,(req, resp) -> {
@@ -224,29 +205,16 @@ public class GetRequestsHandleCommands {
                     reviews.getEntitiesTotalAmount(), PaginationConstants.REVIEWS_FOR_REVIEW.getAmount());
             req.setAttribute(Attributes.REVIEWS, reviews.getEntities());
             req.setAttribute(Attributes.PG_MODEL, paginationModel);
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.REVIEWS);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.CREATE_ORDER,(req, resp) -> {
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ORDER_FORM);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.ERROR404,(req, resp) -> {
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.PAGE404);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
-        });
-
-        COMMANDS.put(CRAPaths.ERROR500,(req, resp) -> {
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.PAGE500);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            dispatchToCorePageWithBlock(req, resp, CRA_JSPFiles.REVIEWS);
         });
     }
 
-    private GetRequestsHandleCommands() {
+    private ContentProvideCommands() {}
+
+    private static void dispatchToCorePageWithBlock(HttpServletRequest req, HttpServletResponse resp, String block)
+            throws ServletException, IOException {
+        req.setAttribute(Attributes.MAIN_BLOCK, block);
+        req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
     }
 
     private static int extractPageNum(HttpServletRequest req) {

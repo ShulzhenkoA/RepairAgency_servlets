@@ -380,3 +380,7 @@ main #scc_reg{
     font-family: "Roboto";
     color: #eae6da;
 }
+
+#footer span{
+    margin-right: 15px;
+}

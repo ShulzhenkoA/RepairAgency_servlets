@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS repair_agency;
-CREATE DATABASE repair_agency CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE repair_agency CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_cs;
 
 CREATE TABLE repair_agency.users
 (
@@ -64,3 +64,5 @@ DELIMITER //
         COMMIT;
     END //
 DELIMITER ;
+
+INSERT INTO repair_agency.users (first_name, last_name, email, password, language, role) VALUES ('Admin', 'Admin', 'admin@mail.com', -904517469, 'en', 'ADMIN');

@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.services.aside_menu.PathsWithAsideMenuService" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.ResourcesWithAsideMenu" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/bootstrap.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/all.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/main.css">
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/img/favicon.ico">
 </head>
 <body>
 
@@ -26,11 +26,11 @@
 
 <div class="container-fluid" id="pageBody">
     <c:choose>
-        <c:when test="${PathsWithAsideMenuService.mustReflectAsideMenu(requestScope['javax.servlet.forward.servlet_path'])
+        <c:when test="${ResourcesWithAsideMenu.RESOURCES.contains(requestScope['javax.servlet.forward.servlet_path'])
                         and main_block ne '404.jsp' and main_block ne '500.jsp'}">
             <div class="row">
                 <aside class="col-sm-3">
-                    <jsp:include page="aside_blocks/${aside_menu}"/>
+                    <jsp:include page="aside_blocks/aside_menu.jsp"/>
                 </aside>
                 <main class="col-sm-9">
                     <jsp:include page="main_blocks/${main_block}"/>

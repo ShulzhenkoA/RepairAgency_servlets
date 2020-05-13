@@ -1,6 +1,7 @@
 <%@ tag pageEncoding="UTF-8"%>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ attribute name="loop_num" required="true"
               type="java.lang.Integer" %>
 <%@ attribute name="user_for_mapping" required="true"
@@ -38,36 +39,37 @@
                 <div class="col-md-3">
 
                     <button type="button" class="btn" data-toggle="modal" data-target="#editModal${user_for_mapping.id}">
-                        Edit user
+                        <fmt:message key="cra.user_info.edit_user"/>
                     </button>
                     <div class="modal fade" id="editModal${user_for_mapping.id}">
                         <cust_form:user_editing_form user_for_editing="${user_for_mapping}"/>
                     </div>
 
                     <button type="button" class="btn" data-toggle="modal" data-target="#delModal${user_for_mapping.id}">
-                        Delete user
+                        <fmt:message key="cra.user_info.delete_user"/>
                     </button>
                     <div class="modal fade" id="delModal${user_for_mapping.id}">
                         <div class="modal-dialog modal-dialog-centered modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">
-                                        User Deleting
+                                        <fmt:message key="cra.user_info.us_deleting"/>
                                     </h5>
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    Are you sure you want to delete
-                                    the ${fn:substring(user_for_mapping.firstName,0,1)}. ${user_for_mapping.lastName} ?
+                                    <fmt:message key="cra.user_info.sure"/>
+                                    ${fn:substring(user_for_mapping.firstName,0,1)}. ${user_for_mapping.lastName} ?
                                 </div>
                                 <div class="modal-footer">
-                                    <form action="${pageContext.request.contextPath}/delete_user" method="post">
+                                    <form action="${pageContext.request.contextPath}${CRAPaths.DELETE_USER}" method="post">
                                         <div class="col-sm-6 offset-sm-3 submit-button">
                                             <input type="hidden" name="deleting_user_id" value="${user_for_mapping.id}">
-                                            <button type="submit" class="btn">Yes</button>
+                                            <button type="submit" class="btn"><fmt:message key="cra.user_info.yes"/></button>
                                         </div>
                                     </form>
-                                    <button type="button" class="btn cancel-btn" data-dismiss="modal">Cancel</button>
+                                    <button type="button" class="btn cancel-btn"
+                                            data-dismiss="modal"><fmt:message key="cra.user_info.cancel"/></button>
                                 </div>
                             </div>
                         </div>

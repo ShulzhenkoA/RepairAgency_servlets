@@ -21,7 +21,7 @@
                         <li class="current">${page.pageNum}</li>
                     </c:when>
                     <c:when test="${page.ellipsis}">
-                        <li> ...</li>
+                        <li>...</li>
                     </c:when>
                     <c:otherwise>
                         <li><a href="${page.pageUri}">${page.pageNum}</a></li>

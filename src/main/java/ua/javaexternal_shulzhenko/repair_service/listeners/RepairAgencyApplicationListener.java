@@ -2,13 +2,11 @@ package ua.javaexternal_shulzhenko.repair_service.listeners;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import ua.javaexternal_shulzhenko.repair_service.services.aside_menu.PathsWithAsideMenuService;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.io.IOException;
 import java.sql.SQLException;
 
 @WebListener
@@ -18,8 +16,6 @@ public class RepairAgencyApplicationListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        PathsWithAsideMenuService.initializePathsWithAsideMenuService();
-
         LOGGER.info("Webapp 'Repair Service' was started.");
     }
 

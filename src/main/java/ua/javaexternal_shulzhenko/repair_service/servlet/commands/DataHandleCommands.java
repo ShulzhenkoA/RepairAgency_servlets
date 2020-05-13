@@ -2,7 +2,6 @@ package ua.javaexternal_shulzhenko.repair_service.servlet.commands;
 
 import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
 import ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths;
-import ua.javaexternal_shulzhenko.repair_service.constants.CRA_JSPFiles;
 import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
 import ua.javaexternal_shulzhenko.repair_service.exceptions.VerificationException;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.*;
@@ -28,14 +27,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class PostRequestHandleCommands {
+public class DataHandleCommands {
     public static final Map<String, RequestHandler> COMMANDS = new HashMap<>();
 
     static {
         COMMANDS.put(CRAPaths.LOGIN, (req, resp) -> {
             LoginForm loginForm = new LoginForm(req);
+            Set<String> inconsistencies = FormValidator.validateForm(loginForm);
             try {
-                Set<String> inconsistencies = FormValidator.validateForm(loginForm);
                 if (inconsistencies.isEmpty()) {
                     User user = UserAuthenticator.authenticate(loginForm);
                     addUserToSession(req, user);
@@ -49,11 +48,9 @@ public class PostRequestHandleCommands {
                     }
                 }
             } catch (VerificationException exc) {
-                req.setAttribute(exc.getType().name(), "");
-                req.setAttribute(Attributes.PREV_FORM, loginForm);
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.LOGIN_MAIN_BLOCK);
-                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+                inconsistencies.add(exc.getType().name());
+                setDataForBadRequest(req, resp, inconsistencies, loginForm);
+                ContentProvideCommands.COMMANDS.get(CRAPaths.LOGIN).handleRequest(req, resp);
                 throw new VerificationException(exc.getType());
             }
         });
@@ -65,12 +62,9 @@ public class PostRequestHandleCommands {
                 UsersDBService.createUser(registrationForm);
                 req.setAttribute(Attributes.SUCCESS, "");
             } else {
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, registrationForm);
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                setDataForBadRequest(req, resp, inconsistencies, registrationForm);
             }
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.REGISTRATION_MAIN_BLOCK);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            ContentProvideCommands.COMMANDS.get(CRAPaths.REGISTRATION).handleRequest(req, resp);
         });
 
         COMMANDS.put(CRAPaths.MAN_MAS_REGISTRATION, (req, resp) -> {
@@ -80,13 +74,9 @@ public class PostRequestHandleCommands {
                 UsersDBService.createUser(registrationForm);
                 req.setAttribute(Attributes.SUCCESS, "");
             } else {
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, registrationForm);
-                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                setDataForBadRequest(req, resp, inconsistencies, registrationForm);
             }
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ADMIN_PAGE);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            ContentProvideCommands.COMMANDS.get(CRAPaths.MAN_MAS_REGISTRATION).handleRequest(req, resp);
         });
 
         COMMANDS.put(CRAPaths.CREATE_ORDER, (req, resp) -> {
@@ -97,12 +87,9 @@ public class PostRequestHandleCommands {
                 Order order = OrdersDBService.getLastOrderForRegUser(orderForm.getUser().getId());
                 req.setAttribute(Attributes.MADE_ORDER, order);
             } else {
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, orderForm);
+                setDataForBadRequest(req, resp, inconsistencies, orderForm);
             }
-            req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-            req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ORDER_FORM);
-            req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+            ContentProvideCommands.COMMANDS.get(CRAPaths.CREATE_ORDER).handleRequest(req, resp);
         });
 
         COMMANDS.put(CRAPaths.DELETE_USER, (req, resp) -> {
@@ -123,11 +110,8 @@ public class PostRequestHandleCommands {
                         compareRole().edit();
                 resp.sendRedirect(req.getContextPath() + CRAPaths.ADMIN_HOME);
             } else {
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, form);
-                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.USER_EDITING_MAIN_BLOCK);
-                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+                setDataForBadRequest(req, resp, inconsistencies, form);
+                ContentProvideCommands.COMMANDS.get(CRAPaths.EDIT_USER).handleRequest(req, resp);
             }
         });
 
@@ -149,11 +133,8 @@ public class PostRequestHandleCommands {
                 Order order = OrdersDBService.getOrderById(form.getId());
                 req.setAttribute(Attributes.CUR_ORDER_STATUS, order.getStatus());
                 req.setAttribute(Attributes.MASTERS, masters);
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, form);
-                req.setAttribute(Attributes.ASIDE_MENU, CRA_JSPFiles.ASIDE_MENU);
-                req.setAttribute(Attributes.MAIN_BLOCK, CRA_JSPFiles.ORDER_EDITING_MAIN_BLOCK);
-                req.getRequestDispatcher(CRA_JSPFiles.CORE_PAGE).forward(req, resp);
+                setDataForBadRequest(req, resp, inconsistencies, form);
+                ContentProvideCommands.COMMANDS.get(CRAPaths.EDIT_ORDER).handleRequest(req, resp);
             }
         });
 
@@ -175,11 +156,19 @@ public class PostRequestHandleCommands {
                 ReviewsDBService.addReview(form);
                 req.setAttribute(Attributes.SUCCESS, "");
             } else {
-                req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
-                req.setAttribute(Attributes.PREV_FORM, form);
+                setDataForBadRequest(req, resp, inconsistencies, form);
             }
-            GetRequestsHandleCommands.COMMANDS.get(CRAPaths.REVIEWS).handleRequest(req, resp);
+            ContentProvideCommands.COMMANDS.get(CRAPaths.REVIEWS).handleRequest(req, resp);
         });
+    }
+
+    private DataHandleCommands() {
+    }
+
+    private static void setDataForBadRequest(HttpServletRequest req, HttpServletResponse resp, Set<String> inconsistencies, Form form) {
+        req.setAttribute(Attributes.INCONSISTENCIES, inconsistencies);
+        req.setAttribute(Attributes.PREV_FORM, form);
+        resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
     }
 
     private static String defineTargetPathAfterLogin(HttpServletRequest req, User user) {
@@ -200,7 +189,6 @@ public class PostRequestHandleCommands {
             default:
                 return CRAPaths.HOME;
         }
-
     }
 
     private static void addUserToSession(HttpServletRequest req, User user) {
