@@ -55,7 +55,7 @@ public class OrderForm implements Form {
 
     private RepairType extractRepairType(HttpServletRequest req) {
         String repairType = req.getParameter(Parameters.REPAIR_TYPE);
-        if (!repairType.equals(CommonConstants.REP_TYPE)) {
+        if (repairType != null && !repairType.equals(CommonConstants.REP_TYPE)) {
             return RepairType.valueOf(req.getParameter(Parameters.REPAIR_TYPE));
         }
         return null;

@@ -1,6 +1,5 @@
 package ua.javaexternal_shulzhenko.repair_service.tags;
 
-import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
@@ -12,7 +11,7 @@ public class DateFormatter extends SimpleTagSupport {
     private String pattern;
 
     @Override
-    public void doTag() throws JspException, IOException {
+    public void doTag() throws IOException {
         String formattedDateTime = localDateTime.format(DateTimeFormatter.ofPattern(pattern));
         JspWriter writer = getJspContext().getOut();
         writer.print(formattedDateTime);

@@ -25,11 +25,27 @@ public class UserEditingForm implements Form {
     private final Role role;
 
     public UserEditingForm(HttpServletRequest req) {
-        id = Integer.parseInt(req.getParameter(Parameters.EDITING_USER_ID));
+        id = extractId(req);
         firstName = req.getParameter(Parameters.F_NAME);
         lastName = req.getParameter(Parameters.L_NAME);
         email = req.getParameter(Parameters.EMAIL);
-        role = Role.valueOf(req.getParameter(Parameters.ROLE));
+        role = extractRole(req);
+    }
+
+    private int extractId(HttpServletRequest req) {
+        String id = req.getParameter(Parameters.EDITING_USER_ID);
+        if(id != null){
+            return Integer.parseInt(id);
+        }
+        return 0;
+    }
+
+    private Role extractRole(HttpServletRequest req) {
+        String role = req.getParameter(Parameters.ROLE);
+        if(role != null){
+            return Role.valueOf(role);
+        }
+        return null;
     }
 
     public int getId() { return id; }

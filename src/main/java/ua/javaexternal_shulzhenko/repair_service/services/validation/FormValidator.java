@@ -61,11 +61,17 @@ public class FormValidator {
     }
 
     private static boolean checkRegExpCompliance(String regExp, String fieldValue) {
-        return Pattern.matches(regExp, fieldValue);
+        if(fieldValue != null){
+            return Pattern.matches(regExp, fieldValue);
+        }
+        return false;
     }
 
     private static boolean checkPasswordsCompliance(String pass, String passConfirmation) {
-        return pass.equals(passConfirmation);
+        if(pass != null){
+            return pass.equals(passConfirmation);
+        }
+        return false;
     }
 
     private static boolean checkEmailIsFree(String email, int id) {

@@ -24,6 +24,7 @@ public class RegistrationForm implements Form {
     private final String password;
     @PassConfirmation
     private final String passwordConfirmation;
+    @NotEmpty
     private final String language;
     @NotEmpty
     private final Role role;
