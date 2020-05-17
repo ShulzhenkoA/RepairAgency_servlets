@@ -1,5 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.models.user;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.Role;
+
 public class User {
 
     private int id;
@@ -99,5 +101,18 @@ public class User {
             user.role = role;
             return user;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password=" + password +
+                ", language='" + language + '\'' +
+                ", role=" + role +
+                '}';
     }
 }

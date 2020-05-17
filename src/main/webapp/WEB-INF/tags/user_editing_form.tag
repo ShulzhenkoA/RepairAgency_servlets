@@ -1,5 +1,5 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ attribute name="user_for_editing"
               type="java.lang.Object" %>

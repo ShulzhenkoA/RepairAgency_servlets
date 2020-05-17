@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="cust" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.models.order.RepairType" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.RepairType" %>
 
 <fmt:setLocale value="${user.language}"/>
 <fmt:setBundle basename="ra_language"/>

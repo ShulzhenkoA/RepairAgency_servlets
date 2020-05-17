@@ -3,7 +3,6 @@ package ua.javaexternal_shulzhenko.repair_service.services.validation.regex;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-
 import java.util.regex.Pattern;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,7 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
 import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
-import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
+import ua.javaexternal_shulzhenko.repair_service.constants.Role;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.Email;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.NotEmpty;

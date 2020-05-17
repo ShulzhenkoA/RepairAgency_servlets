@@ -1,6 +1,6 @@
 <%@ tag pageEncoding="UTF-8"%>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.PaginationConstants" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ attribute name="loop_num" required="true"
               type="java.lang.Integer" %>

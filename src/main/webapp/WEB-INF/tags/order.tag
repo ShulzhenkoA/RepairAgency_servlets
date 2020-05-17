@@ -1,9 +1,9 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationConstants" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.PaginationConstants" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.order.RepairType" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.RepairType" %>
 <%@ attribute name="loop_num" required="true"
               type="java.lang.String" %>
 <%@ attribute name="order_object" required="true"

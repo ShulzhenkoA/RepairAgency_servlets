@@ -2,7 +2,7 @@ package ua.javaexternal_shulzhenko.repair_service.services.editing;
 
 import ua.javaexternal_shulzhenko.repair_service.constants.CommonConstants;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderEditingForm;
-import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
+import ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus;
 
 import java.util.Set;
 

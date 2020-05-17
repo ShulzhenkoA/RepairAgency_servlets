@@ -2,16 +2,17 @@ package ua.javaexternal_shulzhenko.repair_service.services.database_services;
 
 import ua.javaexternal_shulzhenko.repair_service.models.forms.UserEditingForm;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
-import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.Queries;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultTemplate;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultHandlerFactory;
+import ua.javaexternal_shulzhenko.repair_service.constants.Role;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.DAO;
+import ua.javaexternal_shulzhenko.repair_service.constants.Queries;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.impl.UniversalDAOFactory;
+import ua.javaexternal_shulzhenko.repair_service.constants.ResultTemplate;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.impl.ResultHandlerFactory;
 import ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.RegistrationForm;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool;
-import ua.javaexternal_shulzhenko.repair_service.services.editing.imp.UserEditor;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.impl.UserEditor;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,9 +20,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-public class UsersDBService {
+public final class UsersDBService {
 
-    private static final UniversalDAOFactory DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
+    private static final DAO DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
 
     public static void createUser(RegistrationForm registrationForm) {
         LinkedList<Object> formFields = new LinkedList<>();
@@ -142,7 +143,7 @@ public class UsersDBService {
                 }
             }
             connection.commit();
-        } catch (SQLException exc) {
+        } catch (Throwable exc) {
             try {
                 connection.rollback();
             } catch (SQLException rlb_exc) {
@@ -162,7 +163,7 @@ public class UsersDBService {
 
     public static void deleteUser(int userId) {
         try {
-            DAO_FACTORY.delete(DBConnectionsPool.getConnection(), Queries.DELETE_USER.getQuery(), userId);
+            DAO_FACTORY.delete(DBConnectionsPool.getConnection(), Queries.DELETE_USER_BY_ID.getQuery(), userId);
         } catch (SQLException exc) {
             throw new DataBaseInteractionException("Can't delete user from database because of: " + exc.getMessage(), exc);
         }

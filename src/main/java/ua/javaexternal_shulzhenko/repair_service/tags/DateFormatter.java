@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DateFormatter extends SimpleTagSupport {
+public final class DateFormatter extends SimpleTagSupport {
     private LocalDateTime localDateTime;
     private String pattern;
 

@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class DBConnectionsPool {
+public final class DBConnectionsPool {
 
     private static final BasicDataSource connectionsPool = new BasicDataSource();
     static {

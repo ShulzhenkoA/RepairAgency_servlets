@@ -3,16 +3,17 @@ package ua.javaexternal_shulzhenko.repair_service.services.database_services;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderForm;
 import ua.javaexternal_shulzhenko.repair_service.models.pagination.PageEntities;
 import ua.javaexternal_shulzhenko.repair_service.models.forms.OrderEditingForm;
-import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
+import ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.Queries;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.UniversalDAOFactory;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultTemplate;
-import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.ResultHandlerFactory;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.DAO;
+import ua.javaexternal_shulzhenko.repair_service.constants.Queries;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.dao.impl.UniversalDAOFactory;
+import ua.javaexternal_shulzhenko.repair_service.constants.ResultTemplate;
+import ua.javaexternal_shulzhenko.repair_service.services.database_services.result_handler.impl.ResultHandlerFactory;
 import ua.javaexternal_shulzhenko.repair_service.exceptions.DataBaseInteractionException;
 import ua.javaexternal_shulzhenko.repair_service.models.order.Order;
 import ua.javaexternal_shulzhenko.repair_service.services.database_services.connection.DBConnectionsPool;
-import ua.javaexternal_shulzhenko.repair_service.services.editing.imp.OrderEditor;
+import ua.javaexternal_shulzhenko.repair_service.services.editing.impl.OrderEditor;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,9 +21,9 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
-public class OrdersDBService {
+public final class OrdersDBService {
 
-    private static final UniversalDAOFactory DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
+    private static final DAO DAO_FACTORY = UniversalDAOFactory.getDaoFactory();
 
     public static void addOrder(OrderForm order) {
         LinkedList<Object> orderFields = new LinkedList<>();
@@ -289,7 +290,7 @@ public class OrdersDBService {
             connection.setAutoCommit(false);
             for (OrderEditor.OrderEdits edit : edits) {
                 switch (edit) {
-                    case EDIT_PRICE:
+                    case PRICE:
                         DAO_FACTORY.update(connection, Queries.UPDATE_ORDER_PRICE.getQuery(),
                                 form.getPrice(), form.getId());
                         break;
@@ -310,7 +311,7 @@ public class OrdersDBService {
                 }
             }
             connection.commit();
-        } catch (SQLException exc) {
+        } catch (Throwable exc) {
             try {
                 connection.rollback();
             } catch (SQLException rlb_exc) {

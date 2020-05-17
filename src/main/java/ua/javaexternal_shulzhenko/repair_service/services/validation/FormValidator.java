@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-public class FormValidator {
+public final class FormValidator {
 
     public static Set<String> validateForm(Form form) {
         Field[] fields = form.getClass().getDeclaredFields();

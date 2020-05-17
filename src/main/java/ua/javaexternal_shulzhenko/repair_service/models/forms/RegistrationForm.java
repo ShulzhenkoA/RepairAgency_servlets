@@ -2,7 +2,7 @@ package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
 import ua.javaexternal_shulzhenko.repair_service.constants.Attributes;
 import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
-import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
+import ua.javaexternal_shulzhenko.repair_service.constants.Role;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.*;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.regex.Regex;

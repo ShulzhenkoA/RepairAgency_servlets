@@ -1,5 +1,7 @@
 package ua.javaexternal_shulzhenko.repair_service.models.order;
 
+import ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus;
+import ua.javaexternal_shulzhenko.repair_service.constants.RepairType;
 import ua.javaexternal_shulzhenko.repair_service.models.user.User;
 
 import java.time.LocalDateTime;

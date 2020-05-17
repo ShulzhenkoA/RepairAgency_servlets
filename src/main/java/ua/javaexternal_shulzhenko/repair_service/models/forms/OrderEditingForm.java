@@ -1,14 +1,12 @@
 package ua.javaexternal_shulzhenko.repair_service.models.forms;
 
 import ua.javaexternal_shulzhenko.repair_service.constants.Parameters;
-import ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus;
-import ua.javaexternal_shulzhenko.repair_service.models.user.Role;
+import ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.MustConform;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.annotations.NotEmpty;
 import ua.javaexternal_shulzhenko.repair_service.services.validation.regex.Regex;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Set;
 
 public class OrderEditingForm implements Form{
 

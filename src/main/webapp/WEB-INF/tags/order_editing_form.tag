@@ -1,6 +1,6 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.order.OrderStatus" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus" %>
+<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
 <%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ attribute name="order_for_editing"
               type="java.lang.Object" %>

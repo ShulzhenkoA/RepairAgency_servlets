@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.models.user.Role" %>
+<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
 <%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
