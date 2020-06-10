@@ -1,11 +1,11 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
+<%@ page import="ua.javaexternal_shulzhenko.car_repair_agency.constants.CRAPaths" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="/WEB-INF/cust_tags.tld" prefix="cust"%>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <h3><fmt:message key="cra.home_common.about_us.header"/>:</h3>
 <div class="container" id="aboutUs">

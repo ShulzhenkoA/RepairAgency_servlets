@@ -2,10 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ attribute name="pagination_model" required="true"
-              type="ua.javaexternal_shulzhenko.repair_service.models.pagination.PaginationModel" %>
+              type="ua.javaexternal_shulzhenko.car_repair_agency.models.pagination.PaginationModel" %>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <c:if test="${pagination_model ne null}">
     <div class="col-md-9 offset-md-3 pagination">

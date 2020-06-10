@@ -185,6 +185,12 @@ main #scc_reg{
     text-align: center;
 }
 
+main #userInfo .col-md-1,
+main #userInfo .col-md-2,
+main #userInfo .col-md-3 {
+    overflow: auto;
+}
+
 .page-content {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -210,7 +216,7 @@ main #scc_reg{
 }
 
 #pageBody {
-    min-height: 450px;
+    min-height: 250px;
 }
 
 .list-group,
@@ -235,7 +241,7 @@ main #scc_reg{
 
 #pageBody .col-sm-3 {
     background-color: #cccccc;
-    min-height: 450px;
+    min-height: 250px;
 }
 
 .card {

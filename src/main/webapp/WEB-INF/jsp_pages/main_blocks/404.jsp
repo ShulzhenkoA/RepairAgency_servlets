@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 
 <div class="col-md-10 offset-md-1 rounded">

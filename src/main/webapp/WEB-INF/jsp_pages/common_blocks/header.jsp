@@ -1,12 +1,12 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.Role"%>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths"%>
+<%@ page import="ua.javaexternal_shulzhenko.car_repair_agency.constants.Role"%>
+<%@ page import="ua.javaexternal_shulzhenko.car_repair_agency.constants.CRAPaths"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="cust" %>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand" href="${pageContext.request.contextPath}${CRAPaths.HOME}">

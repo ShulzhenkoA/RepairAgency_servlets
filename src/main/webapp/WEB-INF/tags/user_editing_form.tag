@@ -1,13 +1,13 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.CRAPaths" %>
 <%@ attribute name="user_for_editing"
               type="java.lang.Object" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <c:if test="${user_for_editing ne null}">
     <div class="modal-dialog ${requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.EDIT_USER ? '' : ' modal-dialog-centered'}">

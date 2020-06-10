@@ -1,13 +1,13 @@
 <%@ tag pageEncoding="UTF-8" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.PaginationConstants" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.OrderStatus" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.RepairType" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.PaginationConstants" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.OrderStatus" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.CRAPaths" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.RepairType" %>
 <%@ attribute name="loop_num" required="true"
               type="java.lang.String" %>
 <%@ attribute name="order_object" required="true"
-              type="ua.javaexternal_shulzhenko.repair_service.models.order.Order" %>
+              type="ua.javaexternal_shulzhenko.car_repair_agency.models.order.Order" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="/WEB-INF/cust_tags.tld" prefix="cust" %>
@@ -15,7 +15,7 @@
 
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <c:if test="${order_object ne null}">
     <div class="${(user.role eq Role.MANAGER and (requestScope['javax.servlet.forward.servlet_path'] eq CRAPaths.MANAGER_HOME or

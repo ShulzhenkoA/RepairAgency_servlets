@@ -1,11 +1,11 @@
 <%@ tag pageEncoding="UTF-8"%>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.PaginationConstants" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.Role" %>
-<%@ tag import="ua.javaexternal_shulzhenko.repair_service.constants.CRAPaths" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.PaginationConstants" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.Role" %>
+<%@ tag import="ua.javaexternal_shulzhenko.car_repair_agency.constants.CRAPaths" %>
 <%@ attribute name="loop_num" required="true"
               type="java.lang.Integer" %>
 <%@ attribute name="user_for_mapping" required="true"
-              type="ua.javaexternal_shulzhenko.repair_service.models.user.User" %>
+              type="ua.javaexternal_shulzhenko.car_repair_agency.models.user.User" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -13,10 +13,10 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="cust_form"%>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <c:if test="${user_for_mapping ne null}">
-    <div class="${user.role eq Role.ADMIN ? 'col-md-12' : 'col-md-10 offset-md-1'} rounded page-content">
+    <div id="userInfo" class="${user.role eq Role.ADMIN ? 'col-md-12' : 'col-md-10 offset-md-1'} rounded page-content">
         <div class="row">
             <div class="col-md-1">
                 <cust:entity-page-counter loop_count_num="${loop_num}"

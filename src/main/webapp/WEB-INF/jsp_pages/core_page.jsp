@@ -1,10 +1,10 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
-<%@ page import="ua.javaexternal_shulzhenko.repair_service.constants.ResourcesWithAsideMenu" %>
+<%@ page import="ua.javaexternal_shulzhenko.car_repair_agency.constants.ResourcesWithAsideMenu" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <fmt:setLocale value="${user.language}"/>
-<fmt:setBundle basename="ra_language"/>
+<fmt:setBundle basename="cra_language"/>
 
 <!DOCTYPE html>
 <html lang="en">
