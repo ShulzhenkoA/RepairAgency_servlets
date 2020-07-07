@@ -15,7 +15,7 @@ ___
 2. Install Maven at least version 3. Set environment variables for Maven.  
 3. Install MySQl at least version 8 and create a __'root'__ user with the password: __123456789__.  
 4. Install Tomcat at least version 9. Open the __tomcat-users.xml__ file in the _conf_ folder (_/Tomcat 9.0/conf/tomcat-users.xml_).
-In __tomcat-users.xml__ file after the tag __<tomcat-users ...>__ insert the tag: __<user username = "user" password = "pass" roles = "manager-gui, manager-script"/>__
+In __tomcat-users.xml__ file after the tag __<tomcat-users ...>__ insert the tag: __< user username = "user" password = "pass" roles = "manager-gui, manager-script" />__
 or replace with the specified tag if __<user ...>__ already exists, save the changes. Download __mysql-connector-java-8.0.20.jar__
 (_https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.20_) and place it in the _lib_ folder (_/Tomcat 9.0/lib_).
 Run Tomcat (in the _bin_ folder (_/Tomcat 9.0/bin/startup.bat_) run the __startup.bat__ file or in the __Tomcat Monitor__ run
@@ -54,7 +54,7 @@ ___
 2. Встановіть Maven не нижче 3 версії. Встановіть змінні середовища для Maven.
 3. Встановіть MySQl не нижче 8 версії та створіть користувача __root__ з паролем: __123456789__.
 4. Встановіть Tomcat не нижче 9 версії. В папці _conf_ (_/Tomcat 9.0/conf/tomcat-users.xml_) відкрийте файл __tomcat-users.xml__,
-в якому після тегу __<tomcat-users...>__ вставте тег: __<user username="user" password="pass" roles="manager-gui, manager-script"/>__ 
+в якому після тегу __<tomcat-users...>__ вставте тег: __< user username="user" password="pass" roles="manager-gui, manager-script" />__ 
 або замініть на вказаний тег якщо __<user...>__ вже існує, збережіть зміни. Завантажте __mysql-connector-java-8.0.20.jar__ 
 (_https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.20_) та помістіть його в папку _lib_ (_/Tomcat 9.0/lib_). 
 Запустіть Tomcat (в папці _bin_ (_/Tomcat 9.0/bin/startup.bat_) запустіть файл __startup.bat__ або в __Monitor Tomcat__ запустіть 
